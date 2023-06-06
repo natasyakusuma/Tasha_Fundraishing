@@ -1,0 +1,30 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: transparent;
+  
+    .card{
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 500px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #FFFF;
+  
+      .form-header{
+        img{
+          padding-bottom: 10px;
+        }
+      }
+  
+      form{
+        button{
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+  
+  }
+  }
