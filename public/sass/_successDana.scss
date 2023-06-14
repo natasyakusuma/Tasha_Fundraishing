@@ -1,0 +1,49 @@
+.success-dana {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .card {
+        justify-content: center;
+        margin-top: 25px;
+        .card-body {
+            header {
+                img {
+                    align-items: start;
+                }
+            }
+
+            main {
+                text-align: center;
+                align-items: center;
+                
+              
+
+                img {
+                    padding-bottom: 20px;
+                }
+
+                h2 {
+                    font-weight: bold;
+                    font-size: 24px;
+                    padding-bottom: 10px;
+
+                    p {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+
+               
+
+                a {
+                    width: 100%;
+                    font-size: 16px;
+                    font-size: medium;
+                }
+            }
+
+        }
+
+    }
+}

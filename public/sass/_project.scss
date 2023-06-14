@@ -1,0 +1,41 @@
+.project {
+    padding-top: 50px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: initial;
+    }
+
+    p {
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .project-dana1 {
+        padding-bottom: 50px;
+    }
+
+    .project-dana2 {
+        padding-bottom: 50px;
+
+        .col-6 {
+            text-align: end;
+
+            a {
+                height: 40px;
+                width: 50%;
+
+                p {
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: medium;
+                }
+            }
+        }
+    }
+}

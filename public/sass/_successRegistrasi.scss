@@ -1,0 +1,46 @@
+.success-registrasi {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .container {
+        .card {
+            justify-content: center;
+            margin-top: 25px;
+
+            .card-body {
+                header {
+                    img {
+                        align-items: start;
+                    }
+                }
+
+                main {
+                    text-align: center;
+                    align-items: center;
+
+                    img {
+
+                        padding-bottom: 20px;
+
+                    }
+
+                    h2 {
+                        font-weight: bold;
+                        font-size: 24px;
+                        padding-bottom: 20px;
+                    }
+
+                    .btn {
+                        font-size: 16px;
+                        font-size: medium;
+                    }
+                }
+
+            }
+
+        }
+
+
+    }
+}

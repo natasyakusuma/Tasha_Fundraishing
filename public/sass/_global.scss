@@ -1,0 +1,18 @@
+html {
+    overflow-x: hidden;
+
+    body{
+        background-color: rgba(223, 232, 253, 1);
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        list-style: none;
+    }
+}
