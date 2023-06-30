@@ -16,7 +16,7 @@
     --light-green: #E3FFCB;
     --blue: #1775F1;
     --light-blue: #D0E4FF;
-    --dark-blue: #144272;;
+    --dark-blue: #144272;
     --red: #FC3B56;
 }
 
@@ -240,7 +240,7 @@ li {
 }
 
 /* NAVBAR START */
-nav {
+.nav1 {
     background: var(--light);
     height: 64px;
     padding: 0 20px;
@@ -253,22 +253,22 @@ nav {
     z-index: 100;
 }
 
-nav .toggle-sidebar {
+.nav1 .toggle-sidebar {
     font-size: 18px;
     cursor: pointer;
 }
 
-nav form {
+.nav1 form {
     max-width: 400px;
     width: 100%;
     margin-right: auto;
 }
 
-nav .form-group {
+.nav1 .form-group {
     position: relative;
 }
 
-nav .form-group input {
+.nav1 .form-group input {
     width: 100%;
     background: var(--grey);
     border-radius: 5px;
@@ -278,11 +278,11 @@ nav .form-group input {
     transition: all .3s ease;
 }
 
-nav .form-group input:focus {
+.nav1 .form-group input:focus {
     box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
 }
 
-nav .form-group .icon {
+.nav1 .form-group .icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -290,16 +290,16 @@ nav .form-group .icon {
     color: var(--dark-grey);
 }
 
-nav .nav-link {
+.nav1 .nav-link {
     position: relative;
 }
 
-nav .nav-link .icon {
+.nav1 .nav-link .icon {
     font-size: 18px;
     color: var(--dark);
 }
 
-nav .nav-link .badge {
+.nav1 .nav-link .badge {
     position: absolute;
     top: -12px;
     right: -12px;
@@ -316,18 +316,18 @@ nav .nav-link .badge {
     font-weight: 700;
 }
 
-nav .divider {
+.nav1 .divider {
     width: 1px;
     background: var(--grey);
     height: 12px;
     display: block;
 }
 
-nav .profile {
+.nav1 .profile {
     position: relative;
 }
 
-nav .profile img {
+.nav1 .profile img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -335,7 +335,7 @@ nav .profile img {
     cursor: pointer;
 }
 
-nav .profile .profile-link {
+.nav1 .profile .profile-link {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -349,13 +349,13 @@ nav .profile .profile-link {
     transition: all .3s ease;
 }
 
-nav .profile .profile-link.show {
+.nav1 .profile .profile-link.show {
     opacity: 1;
     pointer-events: visible;
     top: 100%;
 }
 
-nav .profile .profile-link a {
+.nav1 .profile .profile-link a {
     padding: 10px 16px;
     display: flex;
     grid-gap: 10px;
@@ -365,7 +365,7 @@ nav .profile .profile-link a {
     transition: all .3s ease;
 }
 
-nav .profile .profile-link a:hover {
+.nav1 .profile .profile-link a:hover {
     background: var(--grey);
 }
 
@@ -516,6 +516,15 @@ main .content-data .head h3 {
     font-weight: 600;
 }
 
+main .content-data h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+main .content-data p {
+    text-align: justify;
+}
+
 main .content-data .head .menu {
     position: relative;
     display: flex;
@@ -560,17 +569,23 @@ main .content-data .head .menu-link a:hover {
     background: var(--grey);
 }
 
-main .content-data canvas #mychart {
-    width: 30%;
-    max-width: 50%;
-    overflow-x: auto;
-    scrollbar-width: none;
-    justify-content: center;
+
+main .content-data .container .progress{
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ddd;
+    width: 100%;
+    margin-bottom: 15px;
+}
+main .content-data .progress .progress-bar {
+    background-color: var(--dark-blue);
+   
 }
 
-main .content-data canvas #mychart::-webkit-scrollbar {
+main .content-data .progress .progress-bar::-webkit-scrollbar {
     display: none;
 }
+
 
 
 /* form */

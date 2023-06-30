@@ -1,4 +1,5 @@
-.nav1 {
+/* NAVBAR START */
+.nav2 {
 	background: $color_5;
 	height: 64px;
 	padding: 0 20px;
@@ -29,7 +30,7 @@
                 padding: 10px 36px 10px 16px;
                 transition: all .3s ease;
                 &:focus {
-                    box-shadow: 0 0 0 1px $color_2, 0 0 0 4px $color_3;
+                    box-shadow: 0 0 0 1px $color_10, 0 0 0 4px $color_3;
                 }
             }
             .icon {
@@ -37,7 +38,7 @@
                 top: 50%;
                 transform: translateY(-50%);
                 right: 16px;
-                color: $color_1;
+                color: $color_9;
             }
         }
 	}

@@ -14,13 +14,12 @@ Dana Sukses
                 </header>
 
                 <main>
-                    <img src="{{ asset('img/undraw_completed_03xt 1.png') }}" alt="">
+                    <img src="{{ asset('img/undraw_join_re_w1lh 1.png') }}" alt="">
                     <h2>
-                        Terimakasih Telah Melakukan Pengajuan Pendanaan Proyek Anda
+                        Terimakasih Telah Melakukan Penarikan Dana Proyek Anda
                     </h2>
 
-                    <p> Anda telah melakukan pengajuan laporan proyek Anda, Tim Kami sedang melakukan verifikasi proyek
-                        Anda! </p>
+                    <p> Anda telah melakukan penarikan dana proyek Anda, Tim Kami sedang melakukan verifikasi 3x24!</p>
 
                     <div>
                         <a href="{{route('dashboard')}}" class="col-12 btn btn-primary mb-3 shadow"> Kembali Ke Halaman
@@ -32,3 +31,7 @@ Dana Sukses
     </div>
 </div>
 @endsection
+
+@push('addon-script')
+<link rel="stylesheet" href={{ asset('sass/app.css') }}>
+@endpush

@@ -12,6 +12,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "feather-icons": "^4.29.0",
         "saas": "^1.0.0"
     }
 }

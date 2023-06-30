@@ -9,7 +9,7 @@ Pengajuan Dana Proyek
     <div class="container">
         <div class="row">
             <h2> Penarikan Dana </h2>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-detail">
                         <table class="mb-5">
@@ -72,7 +72,7 @@ Pengajuan Dana Proyek
                                         <p> <b> Status</b> </p>
                                     </td>
                                     <td>
-                                        <p>Tercapai</p>
+                                        <p style="color: green">Tercapai</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -81,7 +81,7 @@ Pengajuan Dana Proyek
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-up">
 
@@ -122,7 +122,6 @@ Pengajuan Dana Proyek
 
                 <div class="card">
                     <div class="card-down">
-
                         <head>
                             <h3> Summary Penarikan </h3>
                         </head>
@@ -136,7 +135,6 @@ Pengajuan Dana Proyek
                                         <p> Rp. 10.000.000</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Biaya Pendaftaran Proyek</b> </p>
@@ -153,6 +151,19 @@ Pengajuan Dana Proyek
                                         <p>Rp. 10.000 </p>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td colspan="12">
+                                        <hr style="margin-top: 10px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p> <b> Total Dana Yang Ditarik </b> </p>
+                                    </td>
+                                    <td>
+                                        <p> Rp 9.900.000 </p>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('pro1')}}">
@@ -160,6 +171,7 @@ Pengajuan Dana Proyek
                         </a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

@@ -2,11 +2,23 @@
 
 
 @section('title')
-Project
+Pengajuan Dana Proyek
 @endsection
 
 @section('content')
 <div class="project">
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-container">
+            <h2>Pengajuan Dana Proyek</h2>
+            <p>
+                Untuk melakukan pengajuan dana proyek, siapkan proyektus Anda untuk diupload nanti!
+            </p>
+            <button id="next-button" type="submit"> Selanjutnya </button>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+    </div>
+
+
     <div class="container project-dana1">
         <div class="card ">
             <div class="card-body">
@@ -59,12 +71,6 @@ Project
                                 Informasi Investasi
                             </h2>
                         </div>
-
-                        <div class="col-6">
-                            <a type="submit" class="col-6 btn btn-primary mb-3 shadow" href="#"><p>Simulasi Investasi</p></a>
-                            <div class="popup">
-                            </div>
-                        </div>
                     </div>
 
                 </header>
@@ -79,7 +85,7 @@ Project
                                 <label for="InputTenor" class="form-label">Tenor</label>
                                 <input type="t" class="form-control" id="InputTenor">
                             </div>
-                            
+
                             <div class="form-group mb-3">
                                 <label for="InputReturn" class="form-label">Return Investasi</label>
                                 <input type="text" class="form-control" id="InputReturn">
@@ -112,7 +118,7 @@ Project
                     <div class="row">
                         <div class="col-12">
                             <a type="submit" class="col-12 btn btn-primary mb-3 shadow"
-                                href="{{route('pro2')}}">Submit</a>
+                                href="{{route('pro-success')}}">Submit</a>
                         </div>
                     </div>
                 </form>
@@ -125,3 +131,8 @@ Project
 @push('addon-script')
 <link rel="stylesheet" href={{ asset('sass/app.css') }}>
 @endpush
+
+@push('prepend-script')
+<script src="{{ asset('js/popup.js') }}"></script>
+@endpush
+

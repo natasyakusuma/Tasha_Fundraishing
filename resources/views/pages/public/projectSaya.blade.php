@@ -39,11 +39,11 @@ Project Saya
                             <td> 
                                 <div class="row">
                                     <div class="col-6">
-                                        icon
+                                        <i data-feather="edit"></i>
                                     </div>
 
                                     <div class="col-6">
-                                        icon
+                                        <i data-feather="trash"></i>
                                     </div>
                                 </div> 
                             </td>
@@ -58,11 +58,11 @@ Project Saya
                             <td> 
                                 <div class="row">
                                     <div class="col-6">
-                                        icon
+                                        <i data-feather="edit"></i>
                                     </div>
 
                                     <div class="col-6">
-                                        icon
+                                        <i data-feather="trash" ></i>
                                     </div>
                                 </div> 
                             </td>
@@ -74,3 +74,11 @@ Project Saya
         </div>
     </div>
 @endsection
+
+@push('addon-script')
+<link rel="stylesheet" href={{ asset('sass/app.css') }}>
+@endpush
+
+@push('prepend-script')
+<script src="{{ asset('js/projectSaya.js') }}"></script>
+@endpush

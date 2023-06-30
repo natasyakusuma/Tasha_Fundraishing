@@ -25,9 +25,14 @@ Route::get('/registrasi1', function () {
     return view('pages.auth.registrasi1');
 })->name('reg2');
 
+
 Route::get('/successReg', function () {
     return view('pages.auth.successRegistrasi');
 })->name('reg3-success');
+
+Route::get('/profile', function () {
+    return view('pages.public.profile');
+})->name('profile');
 
 
 Route::get('/dashboard', function () {
@@ -52,6 +57,42 @@ Route::get('/projectSaya', function () {
 })->name('proSaya');
 
 Route::get('/successDana', function () {
-    return view('pages.public.successDana');
-})->name('dana-success');
+    return view('pages.public.successProject');
+})->name('pro-success');
+
+Route::get('/successTarikDana', function () {
+    return view('pages.public.successTarikDana');
+})->name('pro-succesTD');
+
+Route::get('/laporanSaya', function () {
+    return view('pages.public.laporanProjectSaya');
+})->name('proLaporanSaya');
+
+Route::get('/successCreateProject', function () {
+    return view('pages.public.createProjectSuccess');
+})->name('pro-succesCreate');
+
+Route::get('/detailLaporanSaya', function () {
+    return view('pages.public.detailLaporanProject');
+})->name('detailLaporanSaya');
+
+Route::get('/ReturnDanaSaya', function () {
+    return view('pages.public.returnProject');
+})->name('ReturnDana');
+
+Route::get('/PengembalianDana', function () {
+    return view('pages.public.pengembalianDanaSaya');
+})->name('myReturnDana');
+
+Route::get('/SimulasiDana', function () {
+    return view('pages.public.simulationDana');
+})->name('DanaSimul');
+
+Route::get('/createProject', function () {
+    return view('pages.public.createDocProject');
+})->name('proCreate');
+
+Route::get('/returnProject', function () {
+    return view('pages.public.returnProject');
+})->name('proReturn');
 

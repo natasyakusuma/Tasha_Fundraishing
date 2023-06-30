@@ -113,8 +113,11 @@ Proyek Saya
                                         <p> <b> Status </p>
                                     </td>
                                     <td>
-                                        <p style="color:rgb(197, 197, 20)"> Menunggu Verifikasi </p>
+                                        <button class="btn btn-verification" disabled style="pointer-events: none;">
+                                            <span>Menunggu Verifikasi</span>
+                                        </button>
                                     </td>
+                                    
                                 </tr>
 
                                 <tr>
@@ -165,29 +168,29 @@ Proyek Saya
                                     Gambar
                                 </h2>
                             </div>
-                            <div id="carouselControls" class="carousel-slide" data-ride="carousel">
+                            <div id="carouselControls" class="carousel slide" data-ride="carousel" data-interval="3000">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}"
-                                            alt="Second slide">
+                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Third slide">
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselControls" role="button"
-                                    data-slide="prev">
+                                <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">
-                                        < </span> </a> <a class="carousel-control-next" href="#carouselControls"
-                                            role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only"> > </span>
+                                    <span class="sr-only"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only"></span>
                                 </a>
                             </div>
+                            
+                            
                         </div>
 
                         <div class="row">

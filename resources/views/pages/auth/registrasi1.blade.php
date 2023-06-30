@@ -34,8 +34,12 @@ Registrasi
                                 <input type="text" class="form-control" id="InputUsaha">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="InputKategori" class="form-label">Kategori</label>
-                                <input type="text" class="form-control" id="InputKategori">
+                                <label for="InputAlamat" class="form-label">Alamat Usaha</label>
+                                <input type="text" class="form-control" id="InputAlamat">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="InputNorek" class="form-label">Nomor Rekening Usaha</label>
+                                <input type="text" class="form-control" id="InputNorek">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputBank" class="form-label">Bank Tujuan</label>
