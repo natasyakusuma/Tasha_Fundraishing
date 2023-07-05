@@ -1,8 +1,5 @@
-.project {
-<<<<<<< HEAD
-    padding-top: 50px;
-=======
-    padding-top: 30px;
+.create-project {
+    padding-top: 20px;
 
     .popup-overlay {
         position: fixed;
@@ -37,15 +34,34 @@
         text-align: center;
     }
 
-    button[type="submit"] {
+    button.button {
+        width: 150px;
+        height: 40px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
         padding: 10px 20px;
-        background-color: #144272;
-        color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        margin-right: 10px;
-    }
+        transition: background-color 0.3s ease;
+      }
+  
+      button#cancel-button {
+        background-color: red;
+  
+        &:hover {
+          background-color: darkred;
+        }
+      }
+  
+      button#next-button {
+        background-color: #007bff;
+  
+        &:hover {
+          background-color: #0069d9;
+        }
+      }
 
     .close-btn {
         position: absolute;
@@ -57,7 +73,6 @@
         cursor: pointer;
     }
 
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
     h2 {
         font-size: 20px;
@@ -72,28 +87,5 @@
 
     label {
         font-size: 16px;
-    }
-
-    .project-dana1 {
-        padding-bottom: 50px;
-    }
-
-    .project-dana2 {
-        padding-bottom: 50px;
-
-        .col-6 {
-            text-align: end;
-
-            a {
-                height: 40px;
-                width: 50%;
-
-                p {
-                    text-align: center;
-                    font-size: 16px;
-                    font-weight: medium;
-                }
-            }
-        }
     }
 }

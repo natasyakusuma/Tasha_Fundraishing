@@ -97,7 +97,10 @@ sidebar.addEventListener('mouseenter', function () {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 // PROFILE DROPDOWN
 const profile = document.querySelector('nav .profile');
 const imgProfile = profile.querySelector('img');
@@ -107,9 +110,12 @@ imgProfile.addEventListener('click', function () {
 	dropdownProfile.classList.toggle('show');
 })
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 // MENU
 const allMenu = document.querySelectorAll('main .content-data .head .menu');
 
@@ -193,5 +199,9 @@ tooltip: {
 },
 };
 
+<<<<<<< HEAD
 var chart = new ApexCharts(document.querySelector("#chart"), options);
+=======
+var chart = new ApexCharts(document.querySelector("#Mychart"), options);
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 chart.render();

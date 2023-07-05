@@ -1,5 +1,9 @@
   <!-- NAVBAR -->
+<<<<<<< HEAD
   <nav>
+=======
+  <nav class="nav1">
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     <i class='bx bx-menu toggle-sidebar'></i>
     <form action="#">
       <div class="form-group">

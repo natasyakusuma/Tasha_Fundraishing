@@ -2,11 +2,30 @@
 
 
 @section('title')
+<<<<<<< HEAD
 Project
+=======
+Pengajuan Dana Proyek
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 @endsection
 
 @section('content')
 <div class="project">
+<<<<<<< HEAD
+=======
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-container">
+            <h2>Pengajuan Dana Proyek</h2>
+            <p>
+                Untuk melakukan pengajuan dana proyek, siapkan proyektus Anda untuk diupload nanti!
+            </p>
+            <button id="next-button" type="submit"> Selanjutnya </button>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+    </div>
+
+
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     <div class="container project-dana1">
         <div class="card ">
             <div class="card-body">
@@ -59,6 +78,7 @@ Project
                                 Informasi Investasi
                             </h2>
                         </div>
+<<<<<<< HEAD
 
                         <div class="col-6">
                             <a type="submit" class="col-6 btn btn-primary mb-3 shadow" href="#"><p>Simulasi Investasi</p></a>
@@ -66,6 +86,8 @@ Project
 
                             </div>
                         </div>
+=======
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                     </div>
 
                 </header>
@@ -80,7 +102,11 @@ Project
                                 <label for="InputTenor" class="form-label">Tenor</label>
                                 <input type="t" class="form-control" id="InputTenor">
                             </div>
+<<<<<<< HEAD
                             
+=======
+
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             <div class="form-group mb-3">
                                 <label for="InputReturn" class="form-label">Return Investasi</label>
                                 <input type="text" class="form-control" id="InputReturn">
@@ -90,7 +116,11 @@ Project
                         <div class="col-md-6">
                             <div class="form-group mb-3">
                                 <label for="InputSukuk" class="form-label">Harga Per-Sukuk</label>
+<<<<<<< HEAD
                                 <input type="numbers" class="form-control" id="InputSukuk">
+=======
+                                <input type="numbers" class="form-control" id="InputSukuk" disabled>
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                             <div class="form-group mb-3">
                                 <label for="ReturnDate" class="form-label"> Waktu Pengembalian </label>
@@ -98,7 +128,11 @@ Project
                             </div>
                             <div class="form-group mb-3">
                                 <label for="TotalSuku" class="form-label">Jumlah Suku yang Tersedia </label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" id="TotalSuku" disabled>
+=======
+                                <input type="text" class="form-control" id="TotalSuku">
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                         </div>
                     </div>
@@ -113,7 +147,11 @@ Project
                     <div class="row">
                         <div class="col-12">
                             <a type="submit" class="col-12 btn btn-primary mb-3 shadow"
+<<<<<<< HEAD
                                 href="{{route('pro2')}}">Submit</a>
+=======
+                                href="{{route('pro-success')}}">Submit</a>
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                         </div>
                     </div>
                 </form>
@@ -126,3 +164,11 @@ Project
 @push('addon-script')
 <link rel="stylesheet" href={{ asset('sass/app.css') }}>
 @endpush
+<<<<<<< HEAD
+=======
+
+@push('prepend-script')
+<script src="{{ asset('js/popup.js') }}"></script>
+@endpush
+
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573

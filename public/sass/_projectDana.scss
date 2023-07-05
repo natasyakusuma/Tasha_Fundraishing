@@ -1,0 +1,79 @@
+.dana-project {
+    margin-top: 20px;
+    margin-left: 20px;
+  
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: initial;
+    }
+  
+    td {
+      width: 40%;
+    }
+  
+    .col-lg-6 {
+
+      .card {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+  
+        .card-detail {
+          table {
+            td {
+              p {
+                text-align: justify;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+  
+        .card-up {
+          h3 {
+            font-size: 18px;
+            font-weight: bold;
+          }
+  
+          table {
+            td {
+              p {
+                text-align: justify;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+  
+        .card-down {
+          h3 {
+            font-size: 18px;
+            font-weight: bold;
+          }
+  
+          table {
+            td {
+              p {
+                text-align: justify;
+                font-size: 14px;
+              }
+            }
+          }
+  
+          a {
+            height: 40px;
+            background-color: #144272;
+  
+            p {
+              text-align: center;
+              font-size: 16px;
+              font-weight: medium;
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -7,6 +7,130 @@ html body {
   overflow-x: hidden;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+<<<<<<< HEAD
+=======
+html a {
+  text-decoration: none;
+}
+html li {
+  list-style: none;
+}
+
+/* NAVBAR START */
+.nav2 {
+  background: #fff;
+  height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  grid-gap: 28px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.nav2 .toggle-sidebar {
+  font-size: 18px;
+  cursor: pointer;
+}
+.nav2 form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+}
+.nav2 form .form-group {
+  position: relative;
+}
+.nav2 form .form-group input {
+  width: 100%;
+  background: #F1F0F6;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px 36px 10px 16px;
+  transition: all 0.3s ease;
+}
+.nav2 form .form-group input:focus {
+  box-shadow: 0 0 0 1px #F1F0F6, 0 0 0 4px #D0E4FF;
+}
+.nav2 form .form-group .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  color: #000;
+}
+.nav2 .nav-link {
+  position: relative;
+}
+.nav2 .nav-link .icon {
+  font-size: 18px;
+  color: #1775F1;
+}
+.nav2 .nav-link .badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #FC3B56;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #D0E4FF;
+  font-size: 10px;
+  font-weight: 700;
+}
+.nav2 .divider {
+  width: 1px;
+  background: #F1F0F6;
+  height: 12px;
+  display: block;
+}
+.nav2 .profile {
+  position: relative;
+}
+.nav2 .profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.nav2 .profile .profile-link {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 160px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.nav2 .profile .profile-link a {
+  padding: 10px 16px;
+  display: flex;
+  grid-gap: 10px;
+  font-size: 14px;
+  color: #1775F1;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.nav2 .profile .profile-link a:hover {
+  background: #F1F0F6;
+}
+.nav2 .profile .profile-link.show {
+  opacity: 1;
+  pointer-events: visible;
+  top: 100%;
+}
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 .login-page {
   display: flex;
@@ -245,7 +369,58 @@ html body {
 }
 
 .project {
+<<<<<<< HEAD
   padding-top: 50px;
+=======
+  padding-top: 30px;
+}
+.project .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.project .popup-container {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+}
+.project .popup-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.project .popup-container p {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.project button[type=submit] {
+  padding: 10px 20px;
+  background-color: #144272;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.project .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }
 .project h2 {
   font-size: 20px;
@@ -291,6 +466,10 @@ html body {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
+<<<<<<< HEAD
+=======
+  margin-top: 20px;
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }
 .detail-project .col-md-6 .card .card-detail table td {
   width: 50%;
@@ -299,6 +478,7 @@ html body {
   text-align: justify;
   font-size: 14px;
 }
+<<<<<<< HEAD
 .detail-project .col-md-6 .card .card-up {
   margin-bottom: 20px;
 }
@@ -311,10 +491,52 @@ html body {
   padding-bottom: 20px;
 }
 .detail-project .col-md-6 .card .card-down .head h2 {
+=======
+.detail-project .col-md-6 .card .card-detail table td .btn-verification {
+  background-color: rgb(255, 255, 44);
+  border: 10px;
+  padding: 5px 10px;
+  cursor: default;
+}
+.detail-project .col-md-6 .card .card-detail table td .btn-verification span {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+.detail-project .col-md-6 .card-up .progress {
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ddd;
+  width: 100%;
+}
+.detail-project .col-md-6 .card-up .progress .progress-bar {
+  background-color: #144272;
+}
+.detail-project .col-md-6 .card-down {
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.detail-project .col-md-6 .card-down .head h2 {
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
   text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+.detail-project .col-md-6 .card-down .caraousel-slide {
+  margin-top: 10px;
+}
+.detail-project .col-md-6 .card-down a {
+  height: 40px;
+  background-color: #144272;
+}
+.detail-project .col-md-6 .card-down a p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: medium;
+}
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 .success-registrasi {
   display: flex;
@@ -343,4 +565,396 @@ html body {
 .success-registrasi .container .card .card-body main .btn {
   font-size: 16px;
   font-size: medium;
+<<<<<<< HEAD
+=======
+}
+
+.success-dana {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.success-dana .card {
+  justify-content: center;
+  margin-top: 25px;
+}
+.success-dana .card .card-body header img {
+  align-items: start;
+}
+.success-dana .card .card-body main {
+  text-align: center;
+  align-items: center;
+}
+.success-dana .card .card-body main img {
+  padding-bottom: 20px;
+}
+.success-dana .card .card-body main h2 {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.success-dana .card .card-body main h2 p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.success-dana .card .card-body main a {
+  width: 100%;
+  font-size: 16px;
+  font-size: medium;
+}
+
+.dana-project {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.dana-project h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: initial;
+}
+.dana-project td {
+  width: 40%;
+}
+.dana-project .col-lg-6 .card {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+.dana-project .col-lg-6 .card .card-detail table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.dana-project .col-lg-6 .card .card-up h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.dana-project .col-lg-6 .card .card-up table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.dana-project .col-lg-6 .card .card-down h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.dana-project .col-lg-6 .card .card-down table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.dana-project .col-lg-6 .card .card-down a {
+  height: 40px;
+  background-color: #144272;
+}
+.dana-project .col-lg-6 .card .card-down a p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: medium;
+}
+
+.project-saya {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.project-saya h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: initial;
+}
+.project-saya .card {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.project-saya .card .card-body {
+  border-radius: 10px;
+}
+.project-saya .card .card-body th {
+  background-color: #144272;
+  text-align: justify;
+  color: #fff;
+}
+.project-saya .card .card-body td {
+  text-align: justify;
+  font-size: 14px;
+}
+.project-saya .card .card-body td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.create-project {
+  padding-top: 20px;
+}
+.create-project .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.create-project .popup-container {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+}
+.create-project .popup-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.create-project .popup-container p {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.create-project button.button {
+  width: 150px;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.create-project button#cancel-button {
+  background-color: red;
+}
+.create-project button#cancel-button:hover {
+  background-color: darkred;
+}
+.create-project button#next-button {
+  background-color: #007bff;
+}
+.create-project button#next-button:hover {
+  background-color: #0069d9;
+}
+.create-project .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.create-project h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: initial;
+}
+.create-project p {
+  text-align: justify;
+  font-size: 14px;
+}
+.create-project label {
+  font-size: 16px;
+}
+
+.project-laporansaya {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.project-laporansaya h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: initial;
+}
+.project-laporansaya .card {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.project-laporansaya .card .card-body {
+  border-radius: 10px;
+}
+.project-laporansaya .card .card-body th {
+  background-color: #144272;
+  text-align: justify;
+  color: #fff;
+}
+.project-laporansaya .card .card-body td {
+  text-align: justify;
+  font-size: 14px;
+}
+.project-laporansaya .card .card-body td .btn-verification {
+  background-color: #FC3B56;
+  border: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  height: 30px;
+  cursor: default;
+}
+.project-laporansaya .card .card-body td .btn-verification span {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+.project-laporansaya .card .card-body td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail-laporanproject {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.detail-laporanproject h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: initial;
+}
+.detail-laporanproject .col-md-6 .card {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+.detail-laporanproject .col-md-6 .card .card-detail table td {
+  width: 50%;
+}
+.detail-laporanproject .col-md-6 .card .card-detail table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.detail-laporanproject .col-md-6 .card .card-detail2 {
+  border-radius: 10px;
+}
+.detail-laporanproject .col-md-6 .card .card-detail2 th {
+  background-color: #144272;
+  text-align: justify;
+  color: #fff;
+}
+.detail-laporanproject .col-md-6 .card .card-detail2 td {
+  text-align: justify;
+  font-size: 14px;
+}
+.detail-laporanproject .col-md-6 .card .card-detail2 td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.return-dana {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.return-dana .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.return-dana .popup-container {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+}
+.return-dana .popup-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.return-dana .popup-container p {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.return-dana button[type=submit] {
+  padding: 10px 20px;
+  background-color: #144272;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.return-dana .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.return-dana h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: initial;
+}
+.return-dana p {
+  text-align: justify;
+  font-size: 14px;
+}
+.return-dana label {
+  font-size: 16px;
+}
+
+.MyReturnDana {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.MyReturnDana h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: initial;
+}
+.MyReturnDana .card {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.MyReturnDana .card .card-body {
+  border-radius: 10px;
+}
+.MyReturnDana .card .card-body th {
+  background-color: #144272;
+  text-align: justify;
+  color: #fff;
+}
+.MyReturnDana .card .card-body td {
+  text-align: justify;
+  font-size: 14px;
+}
+.MyReturnDana .card .card-body td .btn-verification {
+  background-color: greenyellow;
+  border: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  height: 30px;
+  cursor: default;
+}
+.MyReturnDana .card .card-body td .btn-verification span {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+.MyReturnDana .card .card-body td a {
+  text-decoration: none;
+  color: inherit;
+>>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }/*# sourceMappingURL=app.css.map */

@@ -1,9 +1,8 @@
-.project {
-<<<<<<< HEAD
-    padding-top: 50px;
-=======
-    padding-top: 30px;
-
+.return-dana{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
     .popup-overlay {
         position: fixed;
         top: 0;
@@ -57,8 +56,6 @@
         cursor: pointer;
     }
 
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
-
     h2 {
         font-size: 20px;
         font-weight: bold;
@@ -74,26 +71,5 @@
         font-size: 16px;
     }
 
-    .project-dana1 {
-        padding-bottom: 50px;
-    }
-
-    .project-dana2 {
-        padding-bottom: 50px;
-
-        .col-6 {
-            text-align: end;
-
-            a {
-                height: 40px;
-                width: 50%;
-
-                p {
-                    text-align: center;
-                    font-size: 16px;
-                    font-weight: medium;
-                }
-            }
-        }
-    }
+    
 }
