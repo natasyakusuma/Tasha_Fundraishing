@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('pages.auth.login');
-})->name('login');
+
+
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');  
+Route::post('/login', [AuthController::class, 'login'])->name('loginForm');
 
 Route::get('/registrasi', function () {
     return view('pages.auth.registrasi');
@@ -95,4 +98,7 @@ Route::get('/createProject', function () {
 Route::get('/returnProject', function () {
     return view('pages.public.returnProject');
 })->name('proReturn');
+
+Route::get('/ujicoba', [Controller::class, 'getApiData']);
+
 

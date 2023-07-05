@@ -18,16 +18,17 @@ Login
                 </p>
             </div>
 
-            <form action="#">
+            <form action="{{route('loginForm')}}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="InputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="InputEmail1">
+                    <input name="email "type="email" class="form-control" id="InputEmail1">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="InputPassword">
+                    <input name="password" type="password" class="form-control" id="InputPassword">
                 </div>
-                <button type="submit" class="col-12 btn btn-primary mb-2 shadow"> <a href=" ./index.html"></a> Submit</button>
+                <button type="submit" class="col-12 btn btn-primary mb-2 shadow"> Submit</button>
             </form>
 
             <p class="text-center belum">
