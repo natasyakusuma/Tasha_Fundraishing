@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>API Data:</h1>
+    <h1>API Data</h1>
     {{$responseData['title']}}
 </body>
 </html>
