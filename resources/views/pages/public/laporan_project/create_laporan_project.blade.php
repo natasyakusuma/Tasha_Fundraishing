@@ -45,7 +45,7 @@ Membuat Laporan Proyek
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('pro-succesCreate')}}">Submit</a>
+                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('success_laporan_project')}}">Submit</a>
                         </div>
                     </div>
                 </form>

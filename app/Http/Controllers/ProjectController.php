@@ -9,7 +9,7 @@ class ProjectController extends Controller
 {
     public function projectPage()
     {
-        return view('pages.public.project');
+        return view('pages.public.daftar_project.create_project');
     }
 
     public function project(Request $request)
@@ -36,7 +36,7 @@ class ProjectController extends Controller
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
 
-            return redirect()->route('proSaya');
+            return redirect()->route('list_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
@@ -55,7 +55,7 @@ class ProjectController extends Controller
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
 
-            return view('pages.public.projectSaya', compact('responseData'));
+            return view('pages.public.daftar_project.list_project', compact('responseData'));
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
@@ -65,6 +65,6 @@ class ProjectController extends Controller
 
     public function projectDetail($id)
     {
-        return view('pages.public.project1');
+        return view('pages.public.daftar_project.detail_project');
     }
 }

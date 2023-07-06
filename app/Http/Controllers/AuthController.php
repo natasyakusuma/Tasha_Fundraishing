@@ -34,7 +34,7 @@ class AuthController extends Controller
 
     public function regPage1()
     {
-        return view('pages.auth.registrasi');
+        return view('pages.auth.registrasi1');
     }
 
     // public function reg1(Request $request)
@@ -57,12 +57,12 @@ class AuthController extends Controller
 
     public function regPage2()
     {
-        return view('pages.auth.registrasi1');
+        return view('pages.auth.registrasi2');
     }
 
     public function regPage3()
     {
-        return view('pages.auth.successRegistrasi');
+        return view('pages.auth.success_registrasi');
     }
 
     public function logout()
