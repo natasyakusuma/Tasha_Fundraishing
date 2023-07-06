@@ -1,9 +1,5 @@
   <!-- NAVBAR -->
-<<<<<<< HEAD
-  <nav>
-=======
   <nav class="nav1">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     <i class='bx bx-menu toggle-sidebar'></i>
     <form action="#">
       <div class="form-group">
@@ -23,7 +19,10 @@
       <ul class="profile-link">
         <li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a></li>
         <li><a href="#"><i class='bx bxs-cog'></i> Settings</a></li>
-        <li><a href="#"><i class='bx bxs-log-out-circle'></i> Logout</a></li>
+        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class='bx bxs-log-out-circle'></i> Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>                            
       </ul>
     </div>
   </nav>

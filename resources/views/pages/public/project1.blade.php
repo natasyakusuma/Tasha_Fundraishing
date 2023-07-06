@@ -10,10 +10,6 @@ Proyek Saya
         <div class="row">
             <h2> Detail Proyek </h2>
             <div class="col-md-6">
-<<<<<<< HEAD
-
-=======
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                 <div class="card">
                     <div class="card-detail">
                         <table class="mb-5">
@@ -117,16 +113,11 @@ Proyek Saya
                                         <p> <b> Status </p>
                                     </td>
                                     <td>
-<<<<<<< HEAD
-                                        <p style="color:rgb(197, 197, 20)"> Menunggu Verifikasi </p>
-                                    </td>
-=======
                                         <button class="btn btn-verification" disabled style="pointer-events: none;">
                                             <span>Menunggu Verifikasi</span>
                                         </button>
                                     </td>
                                     
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                                 </tr>
 
                                 <tr>
@@ -143,15 +134,6 @@ Proyek Saya
                 </div>
             </div>
 
-<<<<<<< HEAD
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-up">
-                            <div>
-                                <canvas id="myChart"></canvas>
-                            </div>
-=======
             <div class="col-md-6 ">
                 <div class="card">
                     <div class="card-up">
@@ -174,59 +156,30 @@ Proyek Saya
                                     <p> Dana Sudah Terkumpul </p>
                                 </div>
                             </div> --}}
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-<<<<<<< HEAD
-                    <div class="card-body">
-                        <div class="card-down">
-=======
                     <div class="card-down">
                         <div class="card-body">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             <div class="head">
                                 <h2>
                                     Gambar
                                 </h2>
                             </div>
-<<<<<<< HEAD
-
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-=======
                             <div id="carouselControls" class="carousel slide" data-ride="carousel" data-interval="3000">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-<<<<<<< HEAD
-                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}"
-                                            alt="Second slide">
-=======
                                         <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Second slide">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Third slide">
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-=======
                                 <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only"></span>
@@ -244,25 +197,12 @@ Proyek Saya
                             <div class="col-12">
                                 <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('proDana')}}">Penarikan Dana </a>
                             </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    @endsection
-
-    @push('prepend-script')
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    @endpush
-
-    @push('addon-script')
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ asset('js/chart.js') }}"></script>
-    @endpush
-=======
 </div>
 @endsection
 
@@ -275,4 +215,3 @@ Proyek Saya
 
 <script src="{{ asset('js/bar.js') }}"></script>
 @endpush
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573

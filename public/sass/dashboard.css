@@ -16,11 +16,7 @@
     --light-green: #E3FFCB;
     --blue: #1775F1;
     --light-blue: #D0E4FF;
-<<<<<<< HEAD
-    --dark-blue: #0C5FCD;
-=======
     --dark-blue: #144272;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     --red: #FC3B56;
 }
 
@@ -140,11 +136,7 @@ li {
 
 #sidebar .side-menu>li>a.active,
 #sidebar .side-menu>li>a.active:hover {
-<<<<<<< HEAD
-    background: var(--blue);
-=======
     background: var(--dark-blue);
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     color: var(--light);
 }
 
@@ -178,17 +170,10 @@ li {
 }
 
 #sidebar .side-dropdown a:hover {
-<<<<<<< HEAD
-    color: var(--blue);
-}
-
-#sidebar .ads {
-=======
     color: var(--dark-blue);
 }
 
 /* #sidebar .ads {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     width: 100%;
     padding: 20px;
 }
@@ -214,11 +199,7 @@ li {
     align-items: center;
     padding: 12px 0;
     color: var(--light);
-<<<<<<< HEAD
-    background: var(--blue);
-=======
     background: var(--dark-blue);
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     transition: all .3s ease;
     border-radius: 5px;
     font-weight: 600;
@@ -237,11 +218,7 @@ li {
 
 #sidebar .ads .wrapper p span {
     font-weight: 700;
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 /* SIDEBAR END */
 
@@ -263,11 +240,7 @@ li {
 }
 
 /* NAVBAR START */
-<<<<<<< HEAD
-nav {
-=======
 .nav1 {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     background: var(--light);
     height: 64px;
     padding: 0 20px;
@@ -280,38 +253,22 @@ nav {
     z-index: 100;
 }
 
-<<<<<<< HEAD
-nav .toggle-sidebar {
-=======
 .nav1 .toggle-sidebar {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     font-size: 18px;
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-nav form {
-=======
 .nav1 form {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     max-width: 400px;
     width: 100%;
     margin-right: auto;
 }
 
-<<<<<<< HEAD
-nav .form-group {
-    position: relative;
-}
-
-nav .form-group input {
-=======
 .nav1 .form-group {
     position: relative;
 }
 
 .nav1 .form-group input {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     width: 100%;
     background: var(--grey);
     border-radius: 5px;
@@ -321,19 +278,11 @@ nav .form-group input {
     transition: all .3s ease;
 }
 
-<<<<<<< HEAD
-nav .form-group input:focus {
-    box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
-}
-
-nav .form-group .icon {
-=======
 .nav1 .form-group input:focus {
     box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
 }
 
 .nav1 .form-group .icon {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -341,28 +290,16 @@ nav .form-group .icon {
     color: var(--dark-grey);
 }
 
-<<<<<<< HEAD
-nav .nav-link {
-    position: relative;
-}
-
-nav .nav-link .icon {
-=======
 .nav1 .nav-link {
     position: relative;
 }
 
 .nav1 .nav-link .icon {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     font-size: 18px;
     color: var(--dark);
 }
 
-<<<<<<< HEAD
-nav .nav-link .badge {
-=======
 .nav1 .nav-link .badge {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     position: absolute;
     top: -12px;
     right: -12px;
@@ -379,30 +316,18 @@ nav .nav-link .badge {
     font-weight: 700;
 }
 
-<<<<<<< HEAD
-nav .divider {
-=======
 .nav1 .divider {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     width: 1px;
     background: var(--grey);
     height: 12px;
     display: block;
 }
 
-<<<<<<< HEAD
-nav .profile {
-    position: relative;
-}
-
-nav .profile img {
-=======
 .nav1 .profile {
     position: relative;
 }
 
 .nav1 .profile img {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -410,11 +335,7 @@ nav .profile img {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-nav .profile .profile-link {
-=======
 .nav1 .profile .profile-link {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
@@ -428,21 +349,13 @@ nav .profile .profile-link {
     transition: all .3s ease;
 }
 
-<<<<<<< HEAD
-nav .profile .profile-link.show {
-=======
 .nav1 .profile .profile-link.show {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     opacity: 1;
     pointer-events: visible;
     top: 100%;
 }
 
-<<<<<<< HEAD
-nav .profile .profile-link a {
-=======
 .nav1 .profile .profile-link a {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     padding: 10px 16px;
     display: flex;
     grid-gap: 10px;
@@ -452,11 +365,7 @@ nav .profile .profile-link a {
     transition: all .3s ease;
 }
 
-<<<<<<< HEAD
-nav .profile .profile-link a:hover {
-=======
 .nav1 .profile .profile-link a:hover {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     background: var(--grey);
 }
 
@@ -499,10 +408,7 @@ main .breadcrumbs li.divider {
 main .info-data {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-<<<<<<< HEAD
-=======
     justify-content: center;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }
 
 main .info-data .card {
@@ -510,15 +416,6 @@ main .info-data .card {
     border-radius: 10px;
     background: var(--light);
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
-<<<<<<< HEAD
-}
-
-/* main .card .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-} */
-=======
     text-align: center;
 }
 
@@ -529,7 +426,6 @@ main .info-data .card p{
 main .content-data {
     width: 50%;
 }
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 main .title h1 {
     font-size: 24px;
@@ -543,18 +439,11 @@ main p {
 main .col-md-6 .img-fluid{
     padding-top: 50px;
     padding-bottom: 50px;
-<<<<<<< HEAD
-    background: rgb(108, 108, 164);
-=======
     background: var(--dark-blue);
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     border-radius: 30px;
     text-align: center;
 }
 
-<<<<<<< HEAD
-main .card .head .icon {
-=======
 /* main .card .head {
     display: flex;
     justify-content: space-between;
@@ -564,7 +453,6 @@ main .card .head .icon {
 
 
 /* main .card .head .icon {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     font-size: 20px;
     color: var(--green);
 }
@@ -598,11 +486,7 @@ main .card .progress::before {
 main .card .label {
     font-size: 14px;
     font-weight: 700;
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 main .data {
     display: flex;
@@ -632,8 +516,6 @@ main .content-data .head h3 {
     font-weight: 600;
 }
 
-<<<<<<< HEAD
-=======
 main .content-data h2 {
     font-size: 30px;
     font-weight: 600;
@@ -643,7 +525,6 @@ main .content-data p {
     text-align: justify;
 }
 
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 main .content-data .head .menu {
     position: relative;
     display: flex;
@@ -688,88 +569,6 @@ main .content-data .head .menu-link a:hover {
     background: var(--grey);
 }
 
-<<<<<<< HEAD
-main .content-data .chart {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-main .content-data .chart::-webkit-scrollbar {
-    display: none;
-}
-
-/* main .chat-box {
-	width: 100%;
-	max-height: 360px;
-	overflow-y: auto;
-	scrollbar-width: none;
-}
-main .chat-box::-webkit-scrollbar {
-	display: none;
-}
-main .chat-box .day {
-	text-align: center;
-	margin-bottom: 10px;
-}
-main .chat-box .day span {
-	display: inline-block;
-	padding: 6px 12px;
-	border-radius: 20px;
-	background: var(--light-blue);
-	color: var(--blue);
-	font-size: 12px;
-	font-weight: 600;
-}
-main .chat-box .msg img {
-	width: 28px;
-	height: 28px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-main .chat-box .msg {
-	display: flex;
-	grid-gap: 6px;
-	align-items: flex-start;
-}
-main .chat-box .profile .username {
-	font-size: 14px;
-	font-weight: 600;
-	display: inline-block;
-	margin-right: 6px;
-}
-main .chat-box .profile .time {
-	font-size: 12px;
-	color: var(--dark-grey);
-}
-main .chat-box .chat p {
-	font-size: 14px;
-	padding: 6px 10px;
-	display: inline-block;
-	max-width: 400px;
-	line-height: 150%;
-}
-main .chat-box .msg:not(.me) .chat p {
-	border-radius: 0 5px 5px 5px;
-	background: var(--blue);
-	color: var(--light);
-}
-main .chat-box .msg.me {
-	justify-content: flex-end;
-}
-main .chat-box .msg.me .profile {
-	text-align: right;
-}
-main .chat-box .msg.me p {
-	background: var(--grey);
-	border-radius: 5px 0 5px 5px;
-} */
-
-
-/* form */
-main form {
-=======
 
 main .content-data .container .progress{
     height: 30px;
@@ -791,7 +590,6 @@ main .content-data .progress .progress-bar::-webkit-scrollbar {
 
 /* form */
 /* main form {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
     margin-top: 6px;
 }
 
@@ -828,23 +626,12 @@ main .btn-send {
 
 main .btn-send:hover {
     background: var(--dark-blue);
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 /* MAIN */
 /* CONTENT */
 
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 @media screen and (max-width: 768px) {
     #content {
         position: relative;

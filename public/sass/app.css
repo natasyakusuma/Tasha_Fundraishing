@@ -7,8 +7,6 @@ html body {
   overflow-x: hidden;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-<<<<<<< HEAD
-=======
 html a {
   text-decoration: none;
 }
@@ -130,7 +128,6 @@ html li {
   pointer-events: visible;
   top: 100%;
 }
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 .login-page {
   display: flex;
@@ -369,9 +366,6 @@ html li {
 }
 
 .project {
-<<<<<<< HEAD
-  padding-top: 50px;
-=======
   padding-top: 30px;
 }
 .project .popup-overlay {
@@ -420,7 +414,6 @@ html li {
   border: none;
   background-color: transparent;
   cursor: pointer;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }
 .project h2 {
   font-size: 20px;
@@ -466,10 +459,7 @@ html li {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-<<<<<<< HEAD
-=======
   margin-top: 20px;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }
 .detail-project .col-md-6 .card .card-detail table td {
   width: 50%;
@@ -478,20 +468,6 @@ html li {
   text-align: justify;
   font-size: 14px;
 }
-<<<<<<< HEAD
-.detail-project .col-md-6 .card .card-up {
-  margin-bottom: 20px;
-}
-.detail-project .col-md-6 .card .card-up canvas #myChart {
-  justify-content: center;
-  width: 300px;
-  height: 200px;
-}
-.detail-project .col-md-6 .card .card-down {
-  padding-bottom: 20px;
-}
-.detail-project .col-md-6 .card .card-down .head h2 {
-=======
 .detail-project .col-md-6 .card .card-detail table td .btn-verification {
   background-color: rgb(255, 255, 44);
   border: 10px;
@@ -517,13 +493,10 @@ html li {
   margin-top: 20px;
 }
 .detail-project .col-md-6 .card-down .head h2 {
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
   text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
-<<<<<<< HEAD
-=======
 .detail-project .col-md-6 .card-down .caraousel-slide {
   margin-top: 10px;
 }
@@ -536,7 +509,6 @@ html li {
   font-size: 16px;
   font-weight: medium;
 }
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 
 .success-registrasi {
   display: flex;
@@ -565,8 +537,6 @@ html li {
 .success-registrasi .container .card .card-body main .btn {
   font-size: 16px;
   font-size: medium;
-<<<<<<< HEAD
-=======
 }
 
 .success-dana {
@@ -956,5 +926,4 @@ html li {
 .MyReturnDana .card .card-body td a {
   text-decoration: none;
   color: inherit;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 }/*# sourceMappingURL=app.css.map */

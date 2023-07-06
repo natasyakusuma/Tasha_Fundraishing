@@ -29,44 +29,27 @@ Project Saya
                         </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td><a href="{{route('pro2')}}"> Produksi Kue Kering Brand Ina Cookies Cake and Gift</a></td>
-                            <td> 19-01-2023 </td>
-                            <td> 19-01-2024 </td>
-                            <td> Rp. 10.000.000 </td>
-                            <td> Rp. 10.000.000 </td>
-                            <td> Tercapai </td>
-                            <td> 
-                                <div class="row">
-                                    <div class="col-6">
-                                        <i data-feather="edit"></i>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <i data-feather="trash"></i>
-                                    </div>
-                                </div> 
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> Produksi Kue Kering Brand Ina Cookies Cake and Gift</td>
-                            <td> 19-01-2023 </td>
-                            <td> 19-01-2024 </td>
-                            <td> Rp. 10.000.000 </td>
-                            <td> Rp. 10.000.000 </td>
-                            <td> Menunggu Verifikasi</td>
-                            <td> 
-                                <div class="row">
-                                    <div class="col-6">
-                                        <i data-feather="edit"></i>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <i data-feather="trash" ></i>
-                                    </div>
-                                </div> 
-                            </td>
-                          </tr>
+                            @foreach ($responseData['data'] as $item)
+                            <tr>
+                                <td><a href="{{route('pro2')}}">{{ $item['name'] }}</a></td>
+                                <td>{{ $item['start_date'] }}</td>
+                                <td>{{ $item['closing_date'] }}</td>
+                                <td>Rp {{ number_format($item['current_funding_amount'], 0, ".", ".") }}</td>
+                                <td>Rp {{ number_format($item['target_funding_amount'], 0, ".", ".") }}</td>
+                                <td>{{ $item['status'] }}</td>
+                                <td> 
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <i data-feather="edit"></i>
+                                        </div>
+    
+                                        <div class="col-6">
+                                            <i data-feather="trash"></i>
+                                        </div>
+                                    </div> 
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                       </table>
                 </div>

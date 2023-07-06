@@ -1,41 +1,84 @@
 <?php
 
 namespace App\Http\Controllers;
-<<<<<<< HEAD
 
-=======
-use GuzzleHttp\Client;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
-<<<<<<< HEAD
-    //
-=======
-    public function loginPage(){
+    public function loginPage()
+    {
         return view('pages.auth.login');
     }
 
-    public function login(Request $request){
-        $client = new Client();
-        $url = "https://deploytasha.000webhostapp.com/api/login";
-        $params = [
-            'email' => $request->input('email'),
-            'password' => $request->input('password'),
-            // Tambahkan parameter lain sesuai kebutuhan
-        ];
-   
-        $response = $client->request('POST', $url,[
-            'json' => $params,
-            'verify'=> false,
+    public function login(Request $request)
+    {
+        $response = Http::asForm()->post('https://deploytasha.000webhostapp.com/api/login', [
+            'email' => $request->email,
+            'password' => $request->password,
         ]);
 
-        $responseData = json_decode($response->getBody());
-        return dd($responseData);
-       
-        // return view('pages.auth.index', compact('responseData'));
+        if ($response->successful()) {
+            // Permintaan berhasil, menampilkan data respons
+            $responseData = $response->json();
+            session(['token' => $responseData['authorisation']['token']]);
+
+            return redirect()->route('dashboard');
+        } else {
+            // Permintaan gagal, menampilkan pesan error
+            $errorResponse = $response->json();
+            return dd($errorResponse);
+        }
     }
 
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+    public function regPage1()
+    {
+        return view('pages.auth.registrasi');
+    }
+
+    // public function reg1(Request $request)
+    // {
+    //     $response = Http::asForm()->post('https://deploytasha.000webhostapp.com/api/user/register', [
+    //         'email' => $request->email,
+    //         'password' => $request->password,
+    //     ]);
+
+    //     if ($response->successful()) {
+    //         // Permintaan berhasil, menampilkan data respons
+
+    //         return redirect()->route('dashboard');
+    //     } else {
+    //         // Permintaan gagal, menampilkan pesan error
+    //         $errorResponse = $response->json();
+    //         return dd($errorResponse);
+    //     }
+    // }
+
+    public function regPage2()
+    {
+        return view('pages.auth.registrasi1');
+    }
+
+    public function regPage3()
+    {
+        return view('pages.auth.successRegistrasi');
+    }
+
+    public function logout()
+    {
+        $token = session('token');
+        $response = Http::withToken($token)->post('https://deploytasha.000webhostapp.com/api/logout');
+
+        if ($response->successful()) {
+            // Permintaan berhasil, menampilkan data respons
+            session()->invalidate();
+
+            return redirect()->route('login');
+        } else {
+            // Permintaan gagal, menampilkan pesan error
+            $errorResponse = $response->json();
+            return dd($errorResponse);
+        }
+    }
 }

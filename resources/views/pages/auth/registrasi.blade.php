@@ -32,27 +32,30 @@ Registrasi
                         <form action="#" id="form-step1">
                             <div class="form-group mb-3">
                                 <label for="InputName" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="InputName">
+                                <input type="text" class="form-control" id="InputName" name="fullName" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="InputEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="InputEmail" name="email" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="InputPassword"
-                                    placeholder="Kata sandi minimal 8 karakter">
+                                <input type="password" class="form-control" id="InputPassword" placeholder="Kata sandi minimal 8 karakter" name="password" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputPasswordConfirm" class="form-label">Re-Password</label>
-                                <input type="password" class="form-control" id="InputPasswordConfirm">
+                                <input type="password" class="form-control" id="InputPasswordConfirm" name="rePassword" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputBirthDate" class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" id="InputBirthDate">
+                                <input type="date" class="form-control" id="InputBirthDate" name="dateOfBirth" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputGender" class="form-label">Gender</label>
-                                <select class="form-select" id="InputGender">
+                                <select class="form-select" id="InputGender" name="gender" required>
                                     <option value="">Pilih gender</option>
-                                    <option value="male">Pria</option>
-                                    <option value="female">Wanita</option>
+                                    <option value="M">Pria</option>
+                                    <option value="F">Wanita</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3">

@@ -13,35 +13,19 @@ Login
             <div class="col-md-6">
                 <img class="img-fluid" src="{{asset('img/undraw_hello_re_3evm 1.png')}}" alt="">
             </div>
-<<<<<<< HEAD
-            <div class="col-md-6">
-                <div class="info-data">
-
-=======
 
             <div class="col-md-6">
                 <div class="info-data">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                     <div class="row">
                         <div class="col-6">
                             <div class="card">
                                 <div class="head">
                                     <div>
-<<<<<<< HEAD
-                                        <h2>1500</h2>
-                                        <p>Traffic</p>
-                                    </div>
-                                    <i class='bx bx-trending-up icon'></i>
-                                </div>
-                                <span class="progress" data-value="40%"></span>
-                                <span class="label">40%</span>
-=======
                                         <p> Jumlah Daftar Proyek </p>
                                         <h2> 2 </h2>
                                         <p>  Proyek </p>
                                     </div>
                                 </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                         </div>
 
@@ -49,21 +33,11 @@ Login
                             <div class="card">
                                 <div class="head">
                                     <div>
-<<<<<<< HEAD
-                                        <h2>1500</h2>
-                                        <p>Traffic</p>
-                                    </div>
-                                    <i class='bx bx-trending-up icon'></i>
-                                </div>
-                                <span class="progress" data-value="40%"></span>
-                                <span class="label">40%</span>
-=======
                                         <p> Jumlah Laporan Proyek </p>
                                         <h2> 2 </h2>
                                         <p> Proyek </p>
                                     </div>
                                 </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                         </div>
 
@@ -71,21 +45,11 @@ Login
                             <div class="card">
                                 <div class="head">
                                     <div>
-<<<<<<< HEAD
-                                        <h2>1500</h2>
-                                        <p>Traffic</p>
-                                    </div>
-                                    <i class='bx bx-trending-up icon'></i>
-                                </div>
-                                <span class="progress" data-value="40%"></span>
-                                <span class="label">40%</span>
-=======
                                         <p> Total Pengembalian Dana </p>
                                         <h2> 2 </h2>
                                         <p> Proyek </p>
                                     </div>
                                 </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                         </div>
 
@@ -93,21 +57,11 @@ Login
                             <div class="card">
                                 <div class="head">
                                     <div>
-<<<<<<< HEAD
-                                        <h2>1500</h2>
-                                        <p>Traffic</p>
-                                    </div>
-                                    <i class='bx bx-trending-up icon'></i>
-                                </div>
-                                <span class="progress" data-value="40%"></span>
-                                <span class="label">40%</span>
-=======
                                         <p> Total Penarikan Dana </p>
                                         <h2> 2 </h2>
                                         <p> Proyek </p>
                                     </div>
                                 </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                             </div>
                         </div>
                     </div>
@@ -118,45 +72,11 @@ Login
         <!-- Data  -->
         <div class="data">
             <div class=" content-data">
-<<<<<<< HEAD
-
-=======
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
                 <div class="row">
                     <div class="col-md-6">
                         <div class="head">
                             <h3> Produksi Batik Tulis dan Cap</h3>
                         </div>
-<<<<<<< HEAD
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto commodi quis pariatur
-                            tempora
-                            laudantium dolore eligendi expedita distinctio sint doloremque debitis, id dolor. Maxime
-                            commodi
-                            nostrum
-                            repudiandae. Veritatis, quas!</p>
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="head">
-                            <div class="menu">
-                                <i class='bx bx-dots-horizontal-rounded icon'></i>
-                                <ul class="menu-link">
-                                    <li><a href="#">Edit</a></li>
-                                    <li><a href="#">Save</a></li>
-                                    <li><a href="#">Remove</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-=======
                         <h2> Rp.2000.0000</h2>
                         <p> Ina Cookies merupakan produsen kue kering yang secara legal berdiri sejak 2012. Namun,
                             secara resmi beroperasi pada tahun 1992 dengan berfokus pada bisnis produsen kue kering
@@ -197,7 +117,6 @@ Login
             </div>
         </div>
     </div>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 </main>
 @endsection
 
@@ -207,10 +126,6 @@ Login
 
 @push('addon-script')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<<<<<<< HEAD
-<script src="{{ asset('js/chart.js') }}"></script>
-=======
 
 <script src="{{ asset('js/bar.js') }}"></script>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
 @endpush
