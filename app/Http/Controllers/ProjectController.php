@@ -35,7 +35,6 @@ class ProjectController extends Controller
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
-
             return redirect()->route('list_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
@@ -44,7 +43,7 @@ class ProjectController extends Controller
         }
     }
 
-    public function projectSayaPage()
+    public function projectListPage()
     {
         $token = session('token');
         $response = Http::withHeaders([
@@ -54,7 +53,6 @@ class ProjectController extends Controller
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
-
             return view('pages.public.daftar_project.list_project', compact('responseData'));
         } else {
             // Permintaan gagal, menampilkan pesan error
@@ -63,8 +61,21 @@ class ProjectController extends Controller
         }
     }
 
-    public function projectDetail($id)
+    public function projectDetailPage($id)
     {
-        return view('pages.public.daftar_project.detail_project');
+        $token = session('token');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->get('https://deploytasha.000webhostapp.com/api/campaign/' . $id);
+
+        if ($response->successful()) {
+            // Permintaan berhasil, menampilkan data respons
+            $responseData = $response->json();
+            return view('pages.public.daftar_project.detail_project', compact('responseData'));
+        } else {
+            // Permintaan gagal, menampilkan pesan error
+            $errorResponse = $response->json();
+            return dd($errorResponse);
+        }
     }
 }

@@ -27,7 +27,7 @@ Pengembalian Dana Saya
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="{{route('pro2')}}"> Produksi Kue Kering Brand Ina Cookies Cake and Gift</a>
+                            <td><a href="#"> Produksi Kue Kering Brand Ina Cookies Cake and Gift</a>
                             </td>
                             <td> 19-01-2023 </td>
                             <td> Pengembalian Ke-2 </td>

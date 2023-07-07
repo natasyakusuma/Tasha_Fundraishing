@@ -12,14 +12,14 @@ Proyek Saya
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-detail">
-                        <table class="mb-5">
+                        <table class="table table-borderless">
                             <tbody>
                                 <tr>
                                     <td>
                                         <p> <b> Nama Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>Produksi Kue Kering Brand Ina Cookies Cake and Gift</p>
+                                        <p>{{ $responseData['data']['name'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -27,11 +27,7 @@ Proyek Saya
                                         <p> <b> Deskripsi Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>Ina Cookies telah memiliki pengalaman lebih dari 30 tahun dalam industri kue
-                                            kering.
-                                            Hal ini menjadikan Ina Cookies sangat peduli terhadap seluruh kualitas kue
-                                            kering
-                                            yang diproduksi sehingga menjalankan sistem manajemen .</p>
+                                        <p>{{ $responseData['data']['description'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -39,7 +35,7 @@ Proyek Saya
                                         <p> <b> Tanggal Mulai </b> </p>
                                     </td>
                                     <td>
-                                        <p>19-01-2023</p>
+                                        <p>{{ $responseData['data']['start_date'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -47,7 +43,7 @@ Proyek Saya
                                         <p> <b> Mulai Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>19-01-2024</p>
+                                        <p>{{ $responseData['data']['closing_date'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -55,11 +51,7 @@ Proyek Saya
                                         <p> <b> Akhir Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>Ina Cookies telah memiliki pengalaman lebih dari 30 tahun dalam industri kue
-                                            kering.
-                                            Hal ini menjadikan Ina Cookies sangat peduli terhadap seluruh kualitas kue
-                                            kering
-                                            yang diproduksi sehingga menjalankan sistem manajemen .</p>
+                                        <p style="color: red">- ga ada di return BE -</p>
                                     </td>
                                 </tr>
 
@@ -68,7 +60,7 @@ Proyek Saya
                                         <p> <b> Sisa Waktu Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p> 10 Hari</p>
+                                        <p style="color: red">- ga ada di return BE -</p>
                                     </td>
                                 </tr>
 
@@ -77,7 +69,7 @@ Proyek Saya
                                         <p> <b> Tipe Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p> Musyarakah </p>
+                                        <p>{{ $responseData['data']['type'] }}</p>
                                     </td>
                                 </tr>
 
@@ -86,7 +78,7 @@ Proyek Saya
                                         <p> <b> Kategori </b> </p>
                                     </td>
                                     <td>
-                                        <p> Makanan </p>
+                                        <p>{{ $responseData['data']['category'] }}</p>
                                     </td>
                                 </tr>
 
@@ -95,7 +87,7 @@ Proyek Saya
                                         <p> <b> Tenor </b> </p>
                                     </td>
                                     <td>
-                                        <p> 1 Tahun </p>
+                                        <p>{{ $responseData['data']['tenors'] }} Bulan</p>
                                     </td>
                                 </tr>
 
@@ -104,7 +96,7 @@ Proyek Saya
                                         <p> <b> Total Dana Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p> Rp. 10.000.000 </p>
+                                        <p>Rp {{ number_format($responseData['data']['target_funding_amount'], 0, ".", ".") }}</p>
                                     </td>
                                 </tr>
 
@@ -114,7 +106,7 @@ Proyek Saya
                                     </td>
                                     <td>
                                         <button class="btn btn-verification" disabled style="pointer-events: none;">
-                                            <span>Menunggu Verifikasi</span>
+                                            <span>{{ $responseData['data']['status'] }}</span>
                                         </button>
                                     </td>
                                     
@@ -125,7 +117,8 @@ Proyek Saya
                                         <p> <b> Dokumen Proyektus </b> </p>
                                     </td>
                                     <td>
-                                        <i class='bx bxs-dashboard icon'></i>
+                                        
+                                        <a href="{{ $responseData['data']['prospektus_url'] }}"><i class='bx bxs-dashboard icon'></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -143,7 +136,8 @@ Proyek Saya
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                                         aria-valuemax="100"></div>
-                                    <div id="progress-input" data-value="40"></div>
+                                    <div id="progress-max" data-value="{{ $responseData['data']['target_funding_amount'] }}"></div>
+                                    <div id="progress-input" data-value="{{ $responseData['data']['current_funding_amount'] }}"></div>
                                 </div>
                             </div>
 
@@ -168,6 +162,7 @@ Proyek Saya
                                     Gambar
                                 </h2>
                             </div>
+                            <p style="color: red">- ga ada di return BE -</p>
                             <div id="carouselControls" class="carousel slide" data-ride="carousel" data-interval="3000">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -195,7 +190,7 @@ Proyek Saya
 
                         <div class="row">
                             <div class="col-12">
-                                <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('proDana')}}">Penarikan Dana </a>
+                                {{-- <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('proDana')}}">Penarikan Dana </a> --}}
                             </div>
                         </div>
                     </div>
