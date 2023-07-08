@@ -31,7 +31,7 @@ Project Saya
                         <tbody>
                             @foreach ($responseData['data'] as $item)
                             <tr>
-                                <td><a href="{{route('pro2')}}">{{ $item['name'] }}</a></td>
+                                <td><a href="{{route('detail_project')}}">{{ $item['name'] }}</a></td>
                                 <td>{{ $item['start_date'] }}</td>
                                 <td>{{ $item['closing_date'] }}</td>
                                 <td>Rp {{ number_format($item['current_funding_amount'], 0, ".", ".") }}</td>

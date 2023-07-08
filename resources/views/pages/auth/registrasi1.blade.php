@@ -90,4 +90,7 @@ Registrasi
 
 @push('addon-script')
 <script src={{asset('js/registrasi.js')}}></script>
+<script src={{asset('js/local_storage/registrasi-localstorage.js')}}></script>
 @endpush
+
+
