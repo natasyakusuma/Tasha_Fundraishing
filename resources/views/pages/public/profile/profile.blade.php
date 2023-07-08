@@ -68,14 +68,11 @@ Profil
                             <div class="col-md-6"><label class="labels"> Nomor Rekening Usaha </label><input type="text"
                                     class="form-control" value="" placeholder="Masukkan Nomor Rekening Anda">
                             </div>
-
                         </div>
                     </div>
 
-
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
-                            Profile</button>
-                    </div>
+                    <button class="button" id="cancel-button" type="submit"> Ubah </button>
+                    <button class="button" id="next-button" type="submit"> Submit</button>
                 </div>
             </div>
         </div>
