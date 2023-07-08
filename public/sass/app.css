@@ -162,11 +162,29 @@ html li {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.profile-page .add-experience:hover {
-  background: #BA68C8;
-  color: #1775F1;
+.profile-page button[type=submit] {
+  padding: 10px 20px;
+  background-color: #144272;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  border: solid 1px #BA68C8;
+  margin-right: 10px;
+  width: 150px;
+  height: 40px;
+  justify-items: flex-end;
+}
+.profile-page button#cancel-button {
+  background-color: red;
+}
+.profile-page button#cancel-button:hover {
+  background-color: darkred;
+}
+.profile-page button#next-button {
+  background-color: #144272;
+}
+.profile-page button#next-button:hover {
+  background-color: #132435;
 }
 
 .success {
