@@ -1,21 +1,38 @@
+
+// component SCSS
 @import "global";
 // @import "sidebar";
 @import "navbar2";
 // @import "dashboard";
-@import "login";
-@import "registrasi";
-@import "registrasi1";
 @import "profile";
-@import "project";
-@import "project1";
-@import "successRegistrasi";
-@import "successDana";
-@import "projectDana";
-@import "projectSaya";
-@import "createDocProject";
-@import "laporanProjectSaya";
-@import "detailLaporanProject";
-@import "returnProject";
-@import "pengembalianDanaSaya";
+@import "success";
+
+
+// Auth SCSS
+@import "login";
+@import "registrasi1";
+@import "registrasi2";
+@import "registrasi-success";
+
+
+// daftar_project SCSS
+@import "create-project";
+@import "detail-project";
+@import "list-project";
+
+
+// laporan_project SCSS
+@import "create-laporan-project";
+@import "detail-laporan-project";
+@import "list-laporan-project";
+
+
+// pengembalian_dana SCSS
+@import "create-return-dana-project";
+@import "detail-return-dana-project";
+@import "list-return-dana-project";
+@import "simulation-return-dana-project";
+
+
 
 

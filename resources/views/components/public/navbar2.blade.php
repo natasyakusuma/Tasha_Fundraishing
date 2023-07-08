@@ -1,5 +1,5 @@
 <nav class=nav2>
-    <a href="#" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
+    <a href="{{ route('dashboard') }}" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
     <i class='bx bx-menu toggle-sidebar'></i>
     <form action="#">
         <div class="form-group">

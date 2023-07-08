@@ -5,7 +5,7 @@ Registration Success
 @endsection
 
 @section('content')
-<div class="success-registrasi">
+<div class="registrasi-success">
     <div class="container">
         <div class="card p-2">
             <div class="card-body">
@@ -19,8 +19,8 @@ Registration Success
                         Terima Kasih Telah Melakukan Registrasi
                      </h2>
                      <div class="col-12">
-                        <a href="{{route('dashboard')}}"
-                            class="col-12 btn btn-primary mb-3 shadow"> Kembali Ke Dashboard </a>
+                        <a href="{{route('login')}}"
+                            class="col-12 btn btn-primary mb-3 shadow"> Kembali Ke Halaman Login </a>
                     </div>
                 </main>
             </div>

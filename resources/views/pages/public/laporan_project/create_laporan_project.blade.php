@@ -6,7 +6,7 @@ Membuat Laporan Proyek
 
 
 @section('content')
-<div class="create-project">
+<div class="create-laporan-project">
 
     <div class="popup-overlay" id="popup-overlay">
         <div class="popup-container">

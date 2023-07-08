@@ -6,7 +6,7 @@ Pengajuan Pengembalian Dana
 
 
 @section('content')
-<div class="return-dana">
+<div class="create-return-dana">
     <div class="popup-overlay" id="popup-overlay">
         <div class="popup-container">
             <h2>Pengajuan Pengembalian Dana </h2>

@@ -5,7 +5,7 @@ Project Saya
 @endsection
 
 @section('content')
-    <div class="project-saya">
+    <div class="list-project">
         <div class="head">
             <h2>
                 Projek Saya

@@ -1,5 +1,5 @@
-.project {
-    padding-top: 30px;
+.create-laporan-project {
+    padding-top: 20px;
 
     .popup-overlay {
         position: fixed;
@@ -34,7 +34,7 @@
         text-align: center;
     }
 
-    button[type="submit"] {
+    button[type=submit] {
         padding: 10px 20px;
         background-color: #144272;
         color: #fff;
@@ -42,6 +42,22 @@
         border-radius: 4px;
         cursor: pointer;
         margin-right: 10px;
+    }
+
+    button#cancel-button {
+        background-color: red;
+
+        &:hover {
+            background-color: darkred;
+        }
+    }
+
+    button#next-button {
+        background-color: #007bff;
+
+        &:hover {
+            background-color: #0069d9;
+        }
     }
 
     .close-btn {
@@ -68,28 +84,5 @@
 
     label {
         font-size: 16px;
-    }
-
-    .project-dana1 {
-        padding-bottom: 50px;
-    }
-
-    .project-dana2 {
-        padding-bottom: 50px;
-
-        .col-6 {
-            text-align: end;
-
-            a {
-                height: 40px;
-                width: 50%;
-
-                p {
-                    text-align: center;
-                    font-size: 16px;
-                    font-weight: medium;
-                }
-            }
-        }
     }
 }

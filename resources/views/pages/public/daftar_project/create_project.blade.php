@@ -6,7 +6,7 @@ Pengajuan Dana Proyek
 @endsection
 
 @section('content')
-<div class="project">
+<div class="create-project">
     <div class="popup-overlay" id="popup-overlay">
         <div class="popup-container">
             <h2>Pengajuan Dana Proyek</h2>

@@ -62,7 +62,7 @@ class AuthController extends Controller
 
     public function regPage3()
     {
-        return view('pages.auth.success_registrasi');
+        return view('pages.auth.registrasi_success');
     }
 
     public function logout()

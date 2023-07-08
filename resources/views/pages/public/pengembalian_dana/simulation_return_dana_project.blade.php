@@ -6,7 +6,7 @@ Simulasi Pengembalian Dana
 
 
 @section('content')
-<div class="return-dana">
+<div class="simulation-return-dana-project">
     <div class="container">
         <header>
             <h2>

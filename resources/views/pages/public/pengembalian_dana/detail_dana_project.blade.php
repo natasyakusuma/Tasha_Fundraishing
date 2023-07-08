@@ -5,7 +5,7 @@ Pengajuan Dana Proyek
 @endsection
 
 @section('content')
-<div class="dana-project">
+<div class="detail-dana-project">
     <div class="container">
         <div class="row">
             <h2> Penarikan Dana </h2>
@@ -166,7 +166,7 @@ Pengajuan Dana Proyek
                                 </tr>
                             </tbody>
                         </table>
-                        <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('pro1')}}">
+                        <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="">
                             <p>Tarik Dana </p>
                         </a>
                     </div>

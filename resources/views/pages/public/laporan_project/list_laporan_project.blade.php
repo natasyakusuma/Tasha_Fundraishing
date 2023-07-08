@@ -5,7 +5,7 @@ Laporan Proyek Saya
 @endsection
 
 @section('content')
-<div class="project-laporansaya">
+<div class="list-laporan-project">
     <div class="head">
         <h2>
             Projek Saya
@@ -28,7 +28,7 @@ Laporan Proyek Saya
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="{{route('detailLaporanSaya')}}"> Laporan Proyek Bulan Februari</a></td>
+                            <td><a href="{{route('detail_laporan_project')}}"> Laporan Proyek Bulan Februari</a></td>
                             <td> Produksi Kue Kering Brand Ina Cookies Cake and Gift </td>
                             <td> 19-01-2023 </td>
                             <td> Pengembalian ke-2 </td>

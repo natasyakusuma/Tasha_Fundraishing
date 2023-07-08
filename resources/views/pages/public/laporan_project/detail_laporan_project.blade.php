@@ -5,7 +5,7 @@ Detail Laporan Proyek
 @endsection
 
 @section('content')
-<div class="detail-laporanproject">
+<div class="detail-laporan-project">
     <div class="container">
         <div class="row">
             <h2> Detail Proyek </h2>

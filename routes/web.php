@@ -36,7 +36,7 @@ Route::middleware('auth.check')->group(function () {
 });
 
 Route::get('/profile', function () {
-    return view('pages.public.profile');
+    return view('pages.public.profile.profile');
 })->name('profile');
 
 Route::get('/detail_project', function () {
@@ -57,9 +57,9 @@ Route::get('/create_laporan_project', function () {
     return view('pages.public.laporan_project.create_laporan_project');
 })->name('create_laporan_project');
 
-Route::get('/detail_laporan_saya', function () {
-    return view('pages.public.laporan_project.detail_laporan_saya');
-})->name('detail_laporan_saya');
+Route::get('/detail_laporan_saya_project', function () {
+    return view('pages.public.laporan_project.detail_laporan_project');
+})->name('detail_laporan_project');
 
 Route::get('/list_laporan_project', function () {
     return view('pages.public.laporan_project.list_laporan_project');
@@ -76,13 +76,13 @@ Route::get('/create_return_dana', function () {
     return view('pages.public.pengembalian_dana.create_return_dana_project');
 })->name('create_return_dana');
 
-Route::get('/list_dana_project', function () {
-    return view('pages.public.pengembalian_dana.list_dana_project');
-})->name('list_dana_project');
+Route::get('/detail_dana_project', function () {
+    return view('pages.public.pengembalian_dana.detail_dana_project');
+})->name('detail_dana_project');
 
-Route::get('/return_dana_project', function () {
-    return view('pages.public.pengembalian_dana.return_dana_project');
-})->name('return_dana_project');
+Route::get('/list_return_dana_project', function () {
+    return view('pages.public.pengembalian_dana.list_return_dana_project');
+})->name('list_return_dana_project');
 
 Route::get('/simulation_return_dana_project', function () {
     return view('pages.public.pengembalian_dana.simulation_return_dana_project');

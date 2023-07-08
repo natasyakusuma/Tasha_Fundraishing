@@ -5,7 +5,7 @@ Dana Sukses
 @endsection
 
 @section('content')
-<div class="success-dana">
+<div class="success">
     <div class="container">
         <div class="card p-2">
             <div class="card-body">

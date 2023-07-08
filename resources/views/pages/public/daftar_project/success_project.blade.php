@@ -5,7 +5,7 @@ Dana Sukses
 @endsection
 
 @section('content')
-<div class="success-dana">
+<div class="success">
     <div class="container">
         <div class="card p-2">
             <div class="card-body">
@@ -19,7 +19,7 @@ Dana Sukses
                         Terimakasih Telah Melakukan Pengajuan Pendanaan Proyek Anda
                     </h2>
 
-                    <p> Anda telah melakukan pengajuan laporan proyek Anda, Tim Kami sedang melakukan verifikasi proyek
+                    <p> Anda telah melakukan  Pengajuan Pendanaan Proyek Anda, Tim Kami sedang melakukan verifikasi proyek
                         Anda! </p>
 
                     <div>
