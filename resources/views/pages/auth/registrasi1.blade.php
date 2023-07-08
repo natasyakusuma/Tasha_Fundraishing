@@ -1,7 +1,7 @@
 @extends('layouts.auth');
 
 @section('title')
-Registrasi
+Registrasi 1
 @endsection
 
 
