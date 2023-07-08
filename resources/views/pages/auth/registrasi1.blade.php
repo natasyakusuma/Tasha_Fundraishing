@@ -4,6 +4,7 @@
 Registrasi
 @endsection
 
+
 @section('content')
 <div class="container">
     <div class="registrasi-page">
@@ -11,12 +12,12 @@ Registrasi
             <div class="col-4 box-left">
                 <div class="stepper">
                     <div class="stepper-item">
-                        <div class="stepper-number">1</div>
-                        <div class="stepper-title"> Data Diri</div>
+                        <div class="stepper-number active">1</div>
+                        <div class="stepper-title"> Data Diri </div>
                     </div>
                     <div class="stepper-line"></div>
                     <div class="stepper-item">
-                        <div class="stepper-number  active">2</div>
+                        <div class="stepper-number">2</div>
                         <div class="stepper-title"> Data Usaha</div>
                     </div>
                 </div>
@@ -26,53 +27,54 @@ Registrasi
                     <div class="card-body p-4">
                         <!-- form -->
                         <div class="form-header mb-3 mt-3">
-                            <img src="{{ asset('img/Logo2.png')}}" alt="logo">
+                            <img src="{{asset('img/Logo2.png')}}" alt="logo">
                         </div>
-                        <form action="#" id="form-step2">
+                        <form action="#" id="form-step1">
                             <div class="form-group mb-3">
-                                <label for="InputUsaha" class="form-label">Nama Usaha</label>
-                                <input type="text" class="form-control" id="InputUsaha">
+                                <label for="InputName" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="InputName" name="fullName" required>
                             </div>
                             <div class="form-group mb-3">
-<<<<<<< HEAD
-                                <label for="InputKategori" class="form-label">Kategori</label>
-                                <input type="text" class="form-control" id="InputKategori">
-=======
-                                <label for="InputAlamat" class="form-label">Alamat Usaha</label>
-                                <input type="text" class="form-control" id="InputAlamat">
+                                <label for="InputEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="InputEmail" name="email" required>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="InputNorek" class="form-label">Nomor Rekening Usaha</label>
-                                <input type="text" class="form-control" id="InputNorek">
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+                                <label for="InputPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="InputPassword" placeholder="Kata sandi minimal 8 karakter" name="password" required>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="InputBank" class="form-label">Bank Tujuan</label>
-                                <select class="form-select" id="InputBank">
-                                    <option value="">Pilih Bank</option>
-                                    <option value="bni">Bank Syariah Indonesia</option>
-                                    <option value="mandiri">Bank Mandiri</option>
+                                <label for="InputPasswordConfirm" class="form-label">Re-Password</label>
+                                <input type="password" class="form-control" id="InputPasswordConfirm" name="rePassword" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="InputBirthDate" class="form-label">Tanggal Lahir</label>
+                                <input type="date" class="form-control" id="InputBirthDate" name="dateOfBirth" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="InputGender" class="form-label">Gender</label>
+                                <select class="form-select" id="InputGender" name="gender" required>
+                                    <option value="">Pilih gender</option>
+                                    <option value="M">Pria</option>
+                                    <option value="F">Wanita</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="InputNamaRekening" class="form-label">Nama Rekening</label>
-                                <input type="text" class="form-control" id="InputNamaRekening">
+                                <label for="InputJobs" class="form-label">Pekerjaan</label>
+                                <input type="text" class="form-control" id="InputJobs">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="UploadFile" class="form-label">Surat Izin Usaha</label>
-                                <input type="file" class="form-control" id="UploadFile">
+                                <label for="InputNIK" class="form-label">NIK</label>
+                                <input type="number" class="form-control" id="InputNIK">
                             </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="{{route('reg1')}}"
-                                        class="col-12 btn btn-danger mb-3 shadow">Sebelumnya</a>
-                                </div>
-                                <div class="col-6">
-                                    <a href="{{route('reg3-success')}}"
-                                        class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</a>
-                                </div>
-                            </div>
+                            <a href="{{ route('reg2')}}" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya </a>
+            
                         </form>
+                        <p class="text-center">
+                            Sudah Punya Akun?
+                            <a href="{{ route('login') }}">
+                                Login disini
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

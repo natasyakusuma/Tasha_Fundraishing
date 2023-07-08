@@ -6,8 +6,4 @@
   integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <!-- CSS/Style -->
 <link rel="stylesheet" href={{ asset('sass/dashboard.css') }}>
-<<<<<<< HEAD
 <link rel="stylesheet" href={{ asset('sass/app.css') }}>
-=======
-<link rel="stylesheet" href={{ asset('sass/app.css') }}>
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573

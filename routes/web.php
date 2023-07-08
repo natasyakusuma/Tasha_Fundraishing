@@ -1,10 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,108 +17,78 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/login', function () {
-    return view('pages.auth.login');
-})->name('login');
-=======
-
-
-Route::get('/login', [AuthController::class, 'loginPage'])->name('login');  
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('loginForm');
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+Route::get('/registrasi-phase1', [AuthController::class, 'regPage1'])->name('reg1');
+Route::get('/registrasi-phase2', [AuthController::class, 'regPage2'])->name('reg2');
+Route::get('/registrasi-success', [AuthController::class, 'regPage3'])->name('reg3-success');
 
-Route::get('/registrasi', function () {
-    return view('pages.auth.registrasi');
-})->name('reg1');
+Route::middleware('auth.check')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->name('dashboard');
 
-Route::get('/registrasi1', function () {
-    return view('pages.auth.registrasi1');
-})->name('reg2');
+    Route::prefix('project')->group(function () {
+        Route::get('/', [ProjectController::class, 'projectPage'])->name('create_project');
+        Route::post('/', [ProjectController::class, 'project'])->name('projectForm');
+        Route::get('/list', [ProjectController::class, 'projectSayaPage'])->name('list_project');
+        // Route::get('/{id}', [ProjectController::class, 'projectDetail'])->name('pro2');
+    });
+});
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
-Route::get('/successReg', function () {
-    return view('pages.auth.successRegistrasi');
-})->name('reg3-success');
-
-<<<<<<< HEAD
-=======
 Route::get('/profile', function () {
-    return view('pages.public.profile');
+    return view('pages.public.profile.profile');
 })->name('profile');
 
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+Route::get('/detail_project', function () {
+    return view('pages.public.daftar_project.detail_project');
+})->name('detail_project');
 
-Route::get('/dashboard', function () {
-    return view('pages.public.index');
-})->name('dashboard');
+Route::get('/list_project', function () {
+    return view('pages.public.daftar_project.list_project');
+})->name('list_project');
+
+Route::get('/success_project', function () {
+    return view('pages.public.daftar_project.success_project');
+})->name('success_project');
 
 
-Route::get('/project', function () {
-    return view('pages.public.project');
-})->name('pro1');
 
-Route::get('/project1', function () {
-    return view('pages.public.project1');
-})->name('pro2');
+Route::get('/create_laporan_project', function () {
+    return view('pages.public.laporan_project.create_laporan_project');
+})->name('create_laporan_project');
 
-<<<<<<< HEAD
-Route::get('/successDana', function () {
-    return view('pages.public.successDana');
-})->name('dana-success');
-=======
-Route::get('/projectDana', function () {
-    return view('pages.public.projectDana');
-})->name('proDana');
+Route::get('/detail_laporan_saya_project', function () {
+    return view('pages.public.laporan_project.detail_laporan_project');
+})->name('detail_laporan_project');
 
-Route::get('/projectSaya', function () {
-    return view('pages.public.projectSaya');
-})->name('proSaya');
+Route::get('/list_laporan_project', function () {
+    return view('pages.public.laporan_project.list_laporan_project');
+})->name('list_laporan_project');
 
-Route::get('/successDana', function () {
-    return view('pages.public.successProject');
-})->name('pro-success');
+Route::get('/success_project', function () {
+    return view('pages.public.laporan_project.success_laporan_project');
+})->name('success_laporan_project');
 
-Route::get('/successTarikDana', function () {
-    return view('pages.public.successTarikDana');
-})->name('pro-succesTD');
 
-Route::get('/laporanSaya', function () {
-    return view('pages.public.laporanProjectSaya');
-})->name('proLaporanSaya');
 
-Route::get('/successCreateProject', function () {
-    return view('pages.public.createProjectSuccess');
-})->name('pro-succesCreate');
 
-Route::get('/detailLaporanSaya', function () {
-    return view('pages.public.detailLaporanProject');
-})->name('detailLaporanSaya');
+Route::get('/create_return_dana', function () {
+    return view('pages.public.pengembalian_dana.create_return_dana_project');
+})->name('create_return_dana');
 
-Route::get('/ReturnDanaSaya', function () {
-    return view('pages.public.returnProject');
-})->name('ReturnDana');
+Route::get('/detail_dana_project', function () {
+    return view('pages.public.pengembalian_dana.detail_dana_project');
+})->name('detail_dana_project');
 
-Route::get('/PengembalianDana', function () {
-    return view('pages.public.pengembalianDanaSaya');
-})->name('myReturnDana');
+Route::get('/list_return_dana_project', function () {
+    return view('pages.public.pengembalian_dana.list_return_dana_project');
+})->name('list_return_dana_project');
 
-Route::get('/SimulasiDana', function () {
-    return view('pages.public.simulationDana');
-})->name('DanaSimul');
+Route::get('/simulation_return_dana_project', function () {
+    return view('pages.public.pengembalian_dana.simulation_return_dana_project');
+})->name('simulation_return_dana_project');
 
-Route::get('/createProject', function () {
-    return view('pages.public.createDocProject');
-})->name('proCreate');
-
-Route::get('/returnProject', function () {
-    return view('pages.public.returnProject');
-})->name('proReturn');
-
-Route::get('/ujicoba', [Controller::class, 'getApiData']);
-
->>>>>>> 33e7db5be10da1cb84b62c4c2146939475370573
+Route::get('/success_dana_project', function () {
+    return view('pages.public.pengembalian_dana.success_dana_project');
+})->name('success_dana_project');
 

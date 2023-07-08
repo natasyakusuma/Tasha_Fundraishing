@@ -1,10 +1,8 @@
 .profile-page{
-    background-color: #682773;
-
     .form-control {
         &:focus {
             box-shadow: none;
-            border-color: $border-color_1;
+            border-color: blue;
         }
     }
 
@@ -35,8 +33,14 @@
         }
     }
 
-    .labels {
-        font-size: 11px;
+    h4{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    label {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .add-experience {

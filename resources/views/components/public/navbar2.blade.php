@@ -1,5 +1,5 @@
 <nav class=nav2>
-    <a href="#" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
+    <a href="{{ route('dashboard') }}" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
     <i class='bx bx-menu toggle-sidebar'></i>
     <form action="#">
         <div class="form-group">
@@ -17,7 +17,10 @@
             alt="">
         <ul class="profile-link">
             <li><a href="#"><i class='bx bxs-cog'></i> Setelan </a></li>
-            <li><a href="#"><i class='bx bxs-log-out-circle'></i> Logout </a></li>
+            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class='bx bxs-log-out-circle'></i> Logout</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>   
         </ul>
     </div>
 </nav>
