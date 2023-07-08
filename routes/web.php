@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('loginForm');
 Route::get('/registrasi-phase1', [AuthController::class, 'regPage1'])->name('reg1');
+Route::post('/registrasi-phase1', [AuthController::class, 'reg1'])->name('reg1Form');
 Route::get('/registrasi-phase2', [AuthController::class, 'regPage2'])->name('reg2');
+Route::post('/registrasi-phase2', [AuthController::class, 'reg2'])->name('reg2Form');
 Route::get('/registrasi-success', [AuthController::class, 'regPage3'])->name('reg3-success');
 
 Route::middleware('auth.check')->group(function () {
@@ -30,8 +32,15 @@ Route::middleware('auth.check')->group(function () {
     Route::prefix('project')->group(function () {
         Route::get('/', [ProjectController::class, 'projectPage'])->name('create_project');
         Route::post('/', [ProjectController::class, 'project'])->name('projectForm');
-        Route::get('/list', [ProjectController::class, 'projectSayaPage'])->name('list_project');
-        // Route::get('/{id}', [ProjectController::class, 'projectDetail'])->name('pro2');
+        Route::get('/list', [ProjectController::class, 'projectListPage'])->name('list_project');
+        Route::get('/{id}', [ProjectController::class, 'projectDetailPage'])->name('detail_project');
+    });
+
+    Route::prefix('project-report')->group(function () {
+        // Route::get('/', [ProjectController::class, 'projectPage'])->name('create_project');
+        // Route::post('/', [ProjectController::class, 'project'])->name('projectForm');
+        Route::get('/list', [ReportController::class, 'projectReportListPage'])->name('list_laporan_project');
+        Route::get('/{id}', [ReportController::class, 'projectReportDetailPage'])->name('detail_laporan_project');
     });
 });
 
@@ -39,19 +48,9 @@ Route::get('/profile', function () {
     return view('pages.public.profile.profile');
 })->name('profile');
 
-Route::get('/detail_project', function () {
-    return view('pages.public.daftar_project.detail_project');
-})->name('detail_project');
-
-Route::get('/list_project', function () {
-    return view('pages.public.daftar_project.list_project');
-})->name('list_project');
-
 Route::get('/success_project', function () {
     return view('pages.public.daftar_project.success_project');
 })->name('success_project');
-
-
 
 Route::get('/create_laporan_project', function () {
     return view('pages.public.laporan_project.create_laporan_project');
@@ -68,7 +67,6 @@ Route::get('/list_laporan_project', function () {
 Route::get('/success_project', function () {
     return view('pages.public.laporan_project.success_laporan_project');
 })->name('success_laporan_project');
-
 
 
 
@@ -91,4 +89,3 @@ Route::get('/simulation_return_dana_project', function () {
 Route::get('/success_dana_project', function () {
     return view('pages.public.pengembalian_dana.success_dana_project');
 })->name('success_dana_project');
-

@@ -27,19 +27,21 @@ Laporan Proyek Saya
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="{{route('detail_laporan_project')}}"> Laporan Proyek Bulan Februari</a></td>
-                            <td> Produksi Kue Kering Brand Ina Cookies Cake and Gift </td>
-                            <td> 19-01-2023 </td>
-                            <td> Pengembalian ke-2 </td>
-                            <td>
-                                <button class="btn btn-verification" disabled style="pointer-events: none;">
-                                    <span> Ditolak</span>
-                                </button></td>
-                            <td>
-                                <i data-feather="file-text"></i>  
-                            </td>
-                        </tr>
+                        @foreach ($responseData['data'] as $item)
+                            <tr>
+                                <td><a href="{{ route('detail_laporan_project', $item['id']) }}">{{ $item['document_name'] }}</a></td>
+                                <td style="color: red">- ga ada di return BE -</td>
+                                <td>{{ \Carbon\Carbon::parse($item['created_at'])->format('d-m-Y') }}</td>
+                                <td style="color: red">- ga ada di return BE -</td>
+                                <td>
+                                    <button class="btn btn-verification" disabled style="pointer-events: none;">
+                                        <span style="color: red">- ga ada di return BE -</span>
+                                    </button></td>
+                                <td>
+                                    <a href="{{ $item['document_url'] }}"><i data-feather="file-text"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

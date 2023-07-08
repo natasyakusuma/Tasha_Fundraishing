@@ -29,7 +29,8 @@ Registrasi
                         <div class="form-header mb-3 mt-3">
                             <img src="{{asset('img/Logo2.png')}}" alt="logo">
                         </div>
-                        <form action="#" id="form-step1">
+                        <form action="{{ route('reg1Form') }}" method="POST" id="form-step1">
+                            @csrf
                             <div class="form-group mb-3">
                                 <label for="InputName" class="form-label">Nama Lengkap</label>
                                 <input type="text" class="form-control" id="InputName" name="fullName" required>
@@ -47,6 +48,10 @@ Registrasi
                                 <input type="password" class="form-control" id="InputPasswordConfirm" name="rePassword" required>
                             </div>
                             <div class="form-group mb-3">
+                                <label for="InputPhone" class="form-label">Nomor Telepon</label>
+                                <input type="text" class="form-control" id="InputPhone" name="phone" required>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="InputBirthDate" class="form-label">Tanggal Lahir</label>
                                 <input type="date" class="form-control" id="InputBirthDate" name="dateOfBirth" required>
                             </div>
@@ -60,14 +65,13 @@ Registrasi
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputJobs" class="form-label">Pekerjaan</label>
-                                <input type="text" class="form-control" id="InputJobs">
+                                <input type="text" class="form-control" id="InputJobs" name="employmentStatus" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputNIK" class="form-label">NIK</label>
-                                <input type="number" class="form-control" id="InputNIK">
+                                <input type="number" class="form-control" id="InputNIK" name="nik" required>
                             </div>
-                            <a href="{{ route('reg2')}}" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya </a>
-            
+                            <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</button>
                         </form>
                         <p class="text-center">
                             Sudah Punya Akun?
