@@ -40,7 +40,7 @@ Project Saya
                                 <td> 
                                     <div class="row">
                                         <div class="col-6">
-                                            <i data-feather="edit"></i>
+                                            <i id="editIcon" class="icon-edit" data-project-id="{{ $item['id'] }}"></i>
                                         </div>
     
                                         <div class="col-6">

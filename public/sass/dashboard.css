@@ -126,6 +126,7 @@ li {
     white-space: nowrap;
 }
 
+
 #sidebar .side-menu>li>a:hover {
     background: var(--grey);
 }
@@ -159,7 +160,7 @@ li {
 }
 
 #sidebar .side-dropdown {
-    padding-left: 54px;
+    padding-left: 30px;
     max-height: 0;
     overflow-y: hidden;
     transition: all .15s ease;

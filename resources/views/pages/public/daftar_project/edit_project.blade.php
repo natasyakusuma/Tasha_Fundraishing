@@ -7,17 +7,6 @@ Pengajuan Dana Proyek
 
 @section('content')
 <div class="create-project">
-    <div class="popup-overlay" id="popup-overlay">
-        <div class="popup-container">
-            <h2>Pengajuan Dana Proyek</h2>
-            <p>
-                Untuk melakukan pengajuan dana proyek, siapkan proyektus Anda untuk diupload nanti!
-            </p>
-            <button id="next-button" type="submit"> Selanjutnya </button>
-            <button class="close-btn" id="close-btn">&times;</button>
-        </div>
-    </div>
-
     <div class="container">
         <form action="{{ route('projectForm') }}" method="post" id="form-dana1" enctype="multipart/form-data">
             @csrf

@@ -3,7 +3,7 @@
 
     box-sizing: border-box;
     position: fixed;
-    max-width: 260px;
+    max-width: 280px;
     width: 100%;
     background: var(--grey);
     top: 0;
@@ -13,6 +13,7 @@
     scrollbar-width: none;
     transition: all .3s ease;
     z-index: 200;
+    
 
     &::-webkit-scrollbar {
         display: none;

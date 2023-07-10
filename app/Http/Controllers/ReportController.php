@@ -18,6 +18,8 @@ class ReportController extends Controller
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
             return view('pages.public.laporan_project.list_laporan_project', compact('responseData'));
+
+       
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();

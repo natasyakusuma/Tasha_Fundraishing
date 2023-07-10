@@ -42,11 +42,22 @@ Route::middleware('auth.check')->group(function () {
         Route::get('/list', [ReportController::class, 'projectReportListPage'])->name('list_laporan_project');
         Route::get('/{id}', [ReportController::class, 'projectReportDetailPage'])->name('detail_laporan_project');
     });
-});
 
-Route::get('/profile', function () {
-    return view('pages.public.profile.profile');
-})->name('profile');
+    Route::prefix('project-dana')->group(function () {
+    
+    });
+});
+Route::get('/view_profile', function () {
+    return view('pages.public.profile.view_profile');
+})->name('view_profile');
+
+Route::get('/edit_profile', function () {
+    return view('pages.public.profile.edit_profile');
+})->name('edit_profile');
+
+Route::get('/edit_project', function () {
+    return view('pages.public.daftar_project.edit_project');
+})->name('edit_project');
 
 Route::get('/success_project', function () {
     return view('pages.public.daftar_project.success_project');
@@ -60,9 +71,7 @@ Route::get('/detail_laporan_saya_project', function () {
     return view('pages.public.laporan_project.detail_laporan_project');
 })->name('detail_laporan_project');
 
-Route::get('/list_laporan_project', function () {
-    return view('pages.public.laporan_project.list_laporan_project');
-})->name('list_laporan_project');
+
 
 Route::get('/success_project', function () {
     return view('pages.public.laporan_project.success_laporan_project');
