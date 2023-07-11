@@ -69,7 +69,11 @@ Registrasi 1
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputNIK" class="form-label">NIK</label>
-                                <input type="number" class="form-control" id="InputNIK" name="nik" required>
+                                <input type="text" class="form-control" id="InputNIK" name="nik" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="InputNPWP" class="form-label">NPWP</label>
+                                <input type="text" class="form-control" id="InputNPWP" name="nik" required>
                             </div>
                             <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</button>
                         </form>
