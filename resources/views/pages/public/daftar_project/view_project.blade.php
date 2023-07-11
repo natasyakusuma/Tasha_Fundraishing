@@ -2,7 +2,7 @@
 
 
 @section('title')
-Edit Pengajuan Dana Proyek
+View Pengajuan Dana Proyek
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@ Edit Pengajuan Dana Proyek
                     <div class="card-body">
                         <header>
                             <h2>
-                                Edit Informasi Proyek
+                                Informasi Proyek
                             </h2>
                         </header>
                         <div class="form-group mb-3">
@@ -24,7 +24,8 @@ Edit Pengajuan Dana Proyek
                         </div>
                         <div class="form-group mb-3">
                             <label for="DeskripsiProyek" class="form-label">Deskripsi Proyek</label>
-                            <textarea cols="10" rows="4"class="form-control" id="DeskripsiProyek" name="description" required></textarea>
+                            <textarea cols="10" rows="4" class="form-control" id="DeskripsiProyek" name="description"
+                                required></textarea>
                         </div>
                         <div class="form-group mb-3">
                             <label for="InputBank" class="form-label">Tipe Proyek</label>
@@ -54,14 +55,15 @@ Edit Pengajuan Dana Proyek
                     <div class="card-body">
                         <header>
                             <h2>
-                               Edit Informasi Investasi
+                                Informasi Investasi
                             </h2>
                         </header>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
                                     <label for="InputTotal" class="form-label">Total Dana Yang Diperlukan</label>
-                                    <input type="number" class="form-control" id="InputTotal" name="targetFundingAmount" required>
+                                    <input type="number" class="form-control" id="InputTotal" name="targetFundingAmount"
+                                        required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="InputTenor" class="form-label">Tenor</label>
@@ -69,7 +71,8 @@ Edit Pengajuan Dana Proyek
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="InputReturn" class="form-label">Return Investasi</label>
-                                    <input type="number" class="form-control" id="InputReturn" min="0" max="1" step="0.1"  name="profitShare" required>
+                                    <input type="number" class="form-control" id="InputReturn" min="0" max="1"
+                                        step="0.1" name="profitShare" required>
                                 </div>
                             </div>
 
@@ -80,7 +83,8 @@ Edit Pengajuan Dana Proyek
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="ReturnDate" class="form-label"> Waktu Pengembalian </label>
-                                    <input type="number" class="form-control" id="ReturnDate" name="returnInvestmentPeriod" required>
+                                    <input type="number" class="form-control" id="ReturnDate"
+                                        name="returnInvestmentPeriod" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="TotalSuku" class="form-label">Jumlah Suku yang Tersedia </label>
@@ -97,8 +101,7 @@ Edit Pengajuan Dana Proyek
                             <input type="file" class="form-control" id="UploadImage" name="banner" multiple required>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button class="button" id="cancel-button" type="submit"> Batal </button>
-                            <button class="button" id="next-button" type="submit"> Simpan</button>
+                            <button class="button" id="cancel-button" type="submit"> Edit </button>
                         </div>
                     </div>
                 </div>
@@ -115,4 +118,3 @@ Edit Pengajuan Dana Proyek
 @push('prepend-script')
 <script src="{{ asset('js/popup.js') }}"></script>
 @endpush
-

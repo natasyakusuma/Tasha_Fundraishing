@@ -1,17 +1,17 @@
 <section id="sidebar">
     <a href="{{ route('dashboard') }}" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
     <ul class="side-menu">
-        <li><a href="{{ route('dashboard') }}" class="{{ (request()->is('dashboard')) ? 'active' : '' }}"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+        <li><a href="{{ route('dashboard') }}" class="{{ (request()->is('dashboard')) ? 'active' : '' }}"><i data-feather="grid" class = "icon"></i> Dashboard</a></li>
         <li class="divider" data-text="main">Main</li>
         <li>
-            <a href="#" class="{{ (request()->is('project*')) ? 'active' : '' }}"><i class='bx bxs-inbox icon'></i> Daftar Proyek <i class='bx bx-chevron-right icon-right'></i></a>
+            <a href="#" class="{{ (request()->is('project*')) ? 'active' : '' }}"><i data-feather="edit" class = "icon"></i> Daftar Proyek <i class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_project') }}"> Pengajuan Dana Proyek </a></li>
                 <li><a href=" {{ route('list_project') }}"> Proyek Saya </a></li>
             </ul>
         </li>
         <li>
-            <a href="#"><i class='bx bxs-inbox icon'></i> Pengembalian Dana <i
+            <a href="#"><i data-feather="file-minus" class = "icon"></i> Pengembalian Dana <i
                     class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_return_dana') }}"> Ajukan Pengembalian </a></li>
@@ -21,7 +21,7 @@
         </li>
 
         <li>
-            <a href="#" {{ (request()->is('project-report*')) ? 'active' : '' }}><i class='bx bxs-inbox icon'></i> Laporan Proyek <i
+            <a href="#" {{ (request()->is('project-report*')) ? 'active' : '' }}><i data-feather="file-text" class = "icon"></i> Laporan Proyek <i
                     class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_laporan_project') }}"> Membuat Laporan Proyek </a></li>

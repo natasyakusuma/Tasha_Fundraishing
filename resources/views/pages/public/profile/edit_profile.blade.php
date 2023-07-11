@@ -72,8 +72,8 @@ Profil
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button class="button" id="cancel-button" type="submit"> Ubah </button>
-                        <button class="button" id="next-button" type="submit"> Submit</button>
+                        <button class="button" id="cancel-button" type="submit"> Batal </button>
+                        <button class="button" id="next-button" type="submit"> Simpan</button>
                     </div>
                 </div>
             </div>

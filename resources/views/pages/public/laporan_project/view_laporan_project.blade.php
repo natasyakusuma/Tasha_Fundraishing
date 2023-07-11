@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Edit Laporan Proyek
+View Laporan Proyek
 @endsection
 
 
@@ -10,7 +10,7 @@ Edit Laporan Proyek
     <div class="container">
         <header>
             <h2>
-                Edit Laporan Proyek
+                Lihat Laporan Proyek
             </h2>
         </header>
         <div class="card">
@@ -29,10 +29,8 @@ Edit Laporan Proyek
                         <label for="UploadDocument" class="form-label">Upload File Laporan</label>
                         <input type="file" class="form-control" id="UploadDocument">
                     </div>
-
                     <div class="d-flex justify-content-end">
-                        <button class="button" id="cancel-button" type="submit"> Batal </button>
-                        <button class="button" id="next-button" type="submit"> Simpan</button>
+                        <button class="button" id="cancel-button" type="submit"> Edit </button>
                     </div>
                 </form>
             </div>

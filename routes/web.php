@@ -55,6 +55,11 @@ Route::get('/edit_profile', function () {
     return view('pages.public.profile.edit_profile');
 })->name('edit_profile');
 
+// Route - Project
+Route::get('/view_project', function () {
+    return view('pages.public.daftar_project.view_project');
+})->name('view_project');
+
 Route::get('/edit_project', function () {
     return view('pages.public.daftar_project.edit_project');
 })->name('edit_project');
@@ -63,6 +68,8 @@ Route::get('/success_project', function () {
     return view('pages.public.daftar_project.success_project');
 })->name('success_project');
 
+
+// Route - Laporan Project
 Route::get('/create_laporan_project', function () {
     return view('pages.public.laporan_project.create_laporan_project');
 })->name('create_laporan_project');
@@ -71,17 +78,31 @@ Route::get('/detail_laporan_saya_project', function () {
     return view('pages.public.laporan_project.detail_laporan_project');
 })->name('detail_laporan_project');
 
+Route::get('/edit_laporan_project', function () {
+    return view('pages.public.laporan_project.edit_laporan_project');
+})->name('edit_laporan_project');
 
+Route::get('/view_laporan_project', function () {
+    return view('pages.public.laporan_project.view_project');
+})->name('view_laporan_project');
 
-Route::get('/success_project', function () {
+Route::get('/success_laporan_project', function () {
     return view('pages.public.laporan_project.success_laporan_project');
 })->name('success_laporan_project');
 
 
-
+// Route - Return Dana
 Route::get('/create_return_dana', function () {
     return view('pages.public.pengembalian_dana.create_return_dana_project');
 })->name('create_return_dana');
+
+Route::get('/view_return_dana_project', function () {
+    return view('pages.pengembalian_dana.view_return_dana_project');
+})->name('view_return_dana_project');
+
+Route::get('/edit_return_dana_project', function () {
+    return view('pages.pengembalian_dana.edit_return_dana_project');
+})->name('/edit_return_dana_project');
 
 Route::get('/detail_dana_project', function () {
     return view('pages.public.pengembalian_dana.detail_dana_project');

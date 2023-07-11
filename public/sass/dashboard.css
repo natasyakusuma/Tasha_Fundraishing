@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
-
+@import url();
 * {
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
@@ -182,7 +182,7 @@ li {
 #sidebar.hide .ads {
     display: none;
 }
-
+00
 #sidebar.hide:hover .ads {
     display: block;
 }
