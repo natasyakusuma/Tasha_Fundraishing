@@ -40,11 +40,15 @@ Project Saya
                                 <td> 
                                     <div class="row">
                                         <div class="col-6">
-                                            <i id="editIcon" class="icon-edit" data-project-id="{{ $item['id'] }}"></i>
+                                           <a href="{{route('edit_project')}}">
+                                            <i data-feather="edit" id="editIcon" class="icon-edit" data-project-id="{{ $item['id'] }}"></i>
+                                           </a>
                                         </div>
     
                                         <div class="col-6">
-                                            <i data-feather="trash"></i>
+                                            <a href="#">
+                                                <i data-feather="trash"></i>
+                                            </a>
                                         </div>
                                     </div> 
                                 </td>

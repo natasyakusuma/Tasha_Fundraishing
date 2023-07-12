@@ -1,4 +1,4 @@
-.detail-dana-project {
+.detail-withdraw-project {
     margin-top: 20px;
     margin-left: 20px;
   
@@ -22,6 +22,7 @@
   
         .card-detail {
           table {
+             width: 100%;
             td {
               p {
                 text-align: justify;
@@ -38,6 +39,10 @@
           }
   
           table {
+            width: 100%;
+            .td-3 {
+              width: 0;
+             }
             td {
               p {
                 text-align: justify;
@@ -54,6 +59,10 @@
           }
   
           table {
+            width: 100%;
+            .td-3 {
+              width: 30%;
+             }
             td {
               p {
                 text-align: justify;
@@ -62,10 +71,11 @@
             }
           }
   
-          a {
+          .btn {
             height: 40px;
             background-color: #144272;
-  
+            width: 100%;
+            margin-bottom: 20px;
             p {
               text-align: center;
               font-size: 16px;

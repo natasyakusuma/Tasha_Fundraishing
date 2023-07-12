@@ -6,104 +6,179 @@ Edit Pengajuan Dana Proyek
 @endsection
 
 @section('content')
-<div class="create-project">
+<div class="edit-project">
     <div class="container">
-        <form action="{{ route('projectForm') }}" method="post" id="form-dana1" enctype="multipart/form-data">
-            @csrf
-            <div class="project-dana1">
-                <div class="card">
-                    <div class="card-body">
-                        <header>
-                            <h2>
-                                Edit Informasi Proyek
-                            </h2>
-                        </header>
-                        <div class="form-group mb-3">
-                            <label for="InputProyek" class="form-label">Nama Proyek</label>
-                            <input type="text" class="form-control" id="InputUsaha" name="name" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="DeskripsiProyek" class="form-label">Deskripsi Proyek</label>
-                            <textarea cols="10" rows="4"class="form-control" id="DeskripsiProyek" name="description" required></textarea>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="InputBank" class="form-label">Tipe Proyek</label>
-                            <select class="form-select" id="InputBank" name="type" required>
-                                <option value="">Pilih Tipe Proyek</option>
-                                <option value="musyarakah">Akad Musyarakah</option>
-                            </select>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="InputKategori" class="form-label">Kategori</label>
-                            <input type="text" class="form-control" id="InputKategori" name="category" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="StartDate" class="form-label"> Mulai Pengumpulan Dana</label>
-                            <input type="date" class="form-control" id="StartDate" name="startDate" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="EndDate" class="form-label"> Akhir Pengumpulan Dana</label>
-                            <input type="date" class="form-control" id="EndDate" name="closingDate" required>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="card-left">
+                        <div class="card-body">
+                            <table class="table table-borderless">
+                                <header>
+                                    <h3>
+                                        Informasi Proyek
+                                    </h3>
+                                </header>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Nama Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="InputProyek" name="name"
+                                                required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Deskripsi Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <textarea cols="10" rows="4" class="form-control" id="DeskripsiProyek"
+                                                name="description" required></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Mulai Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="form-control" id="StartDate" name="startDate"
+                                                required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Akhir Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="form-control" id="EndDate" name="closingDate"
+                                                required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p> <b> Sisa Waktu Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="SisaWaktu" name="name" required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p> <b> Tipe Proyek </b> </p>
+                                        </td>
+                                        <td>
+                                            <select class="form-select" id="InputBank" name="type" required>
+                                                <option value="">Pilih Tipe Proyek</option>
+                                                <option value="musyarakah">Akad Musyarakah</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p> <b> Kategori </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="InputKategori" name="category"
+                                                required>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-dana2">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-body">
-                        <header>
-                            <h2>
-                               Edit Informasi Investasi
-                            </h2>
-                        </header>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="InputTotal" class="form-label">Total Dana Yang Diperlukan</label>
-                                    <input type="number" class="form-control" id="InputTotal" name="targetFundingAmount" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="InputTenor" class="form-label">Tenor</label>
-                                    <input type="number" class="form-control" id="InputTenor" name="tenor" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="InputReturn" class="form-label">Return Investasi</label>
-                                    <input type="number" class="form-control" id="InputReturn" min="0" max="1" step="0.1"  name="profitShare" required>
-                                </div>
-                            </div>
+                    <div class="card-right">
+                        <div class="card-body">
+                            <table class="table table-borderless">
+                                <header>
+                                    <h3>
+                                        Informasi Investasi
+                                    </h3>
+                                </header>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Total Dana Yang Diperlukan </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="InputTotal"
+                                                name="targetFundingAmount" required>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Tenor </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="InputTenor" name="tenor"
+                                                required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Return Investasi </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="InputReturn" min="0" max="1"
+                                                step="0.1" name="profitShare" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Waktu Pengembalian </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="ReturnDate"
+                                                name="returnInvestmentPeriod" required>
+                                        </td>
+                                    </tr>
 
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for="InputSukuk" class="form-label">Harga Per-Sukuk</label>
-                                    <input type="numbers" class="form-control" id="InputSukuk" disabled>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="ReturnDate" class="form-label"> Waktu Pengembalian </label>
-                                    <input type="number" class="form-control" id="ReturnDate" name="returnInvestmentPeriod" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="TotalSuku" class="form-label">Jumlah Suku yang Tersedia </label>
-                                    <input type="number" class="form-control" id="TotalSuku" name="sukuk" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="UploadFile" class="form-label">Upload Prospektus Anda</label>
-                            <input type="file" class="form-control" id="UploadFile" name="prospektus" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="UploadImage" class="form-label">Upload Gambar</label>
-                            <input type="file" class="form-control" id="UploadImage" name="banner" multiple required>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button class="button" id="cancel-button" type="submit"> Batal </button>
-                            <button class="button" id="next-button" type="submit"> Simpan</button>
+                                    <tr>
+                                        <td>
+                                            <p> <b> Jumlah Suku yang Tersedia</b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" id="TotalSuku" name="sukuk"
+                                                required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p> <b> Upload Perspektus</b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="file" class="form-control" id="UploadFile" name="prospektus"
+                                                required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p> <b> Upload Gambar </b> </p>
+                                        </td>
+                                        <td>
+                                            <input type="file" class="form-control" id="UploadImage" name="banner"
+                                                multiple required>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+
+        <button type="submit" class="col-12 btn btn-primary mb-3 shadow"> Simpan </button>
     </div>
 </div>
 @endsection
@@ -115,4 +190,3 @@ Edit Pengajuan Dana Proyek
 @push('prepend-script')
 <script src="{{ asset('js/popup.js') }}"></script>
 @endpush
-

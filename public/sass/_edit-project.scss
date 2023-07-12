@@ -1,0 +1,35 @@
+.edit-project {
+    padding-top: 30px;
+
+    button {
+        margin-top: 10px;
+        background-color:$color_4;
+
+        &:hover {
+            background-color: $color_11;
+        }
+    }
+
+    .card {
+
+        margin-left: 10px;
+        margin-right: 10px;
+
+        td {
+            width: 50%;
+        }
+
+        header {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+
+
+    }
+}

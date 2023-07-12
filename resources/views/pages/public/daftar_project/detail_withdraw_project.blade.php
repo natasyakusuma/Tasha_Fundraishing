@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-Pengajuan Dana Proyek
+Detail Penarikan Dana
 @endsection
 
 @section('content')
-<div class="detail-dana-project">
+<div class="detail-withdraw-project">
     <div class="container">
         <div class="row">
             <h2> Penarikan Dana </h2>
@@ -72,7 +72,7 @@ Pengajuan Dana Proyek
                                         <p> <b> Status</b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: green">Tercapai</p>
+                                        <p style="color: #67B74B">Tercapai</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -122,6 +122,7 @@ Pengajuan Dana Proyek
 
                 <div class="card">
                     <div class="card-down">
+
                         <head>
                             <h3> Summary Penarikan </h3>
                         </head>
@@ -134,6 +135,9 @@ Pengajuan Dana Proyek
                                     <td>
                                         <p> Rp. 10.000.000</p>
                                     </td>
+                                    <td class="td-3">
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -142,19 +146,29 @@ Pengajuan Dana Proyek
                                     <td>
                                         <p>Rp. 100.000</p>
                                     </td>
+                                    <td class="td-3">
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <p> <b> Biaya Aplikasi </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp. 10.000 </p>
+                                        <p>Rp.10.000 </p>
+                                    </td>
+                                    <td class="td-3">
+
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="12">
+                                    <td colspan="2">
                                         <hr style="margin-top: 10px;">
                                     </td>
+                                    <td style="padding-left: 20px;">
+                                        <hr style=" margin-top: 10px; width: 15px ">
+                                    </td>
+
                                 </tr>
                                 <tr>
                                     <td>
@@ -163,17 +177,51 @@ Pengajuan Dana Proyek
                                     <td>
                                         <p> Rp 9.900.000 </p>
                                     </td>
+
+                                    <td>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="">
-                            <p>Tarik Dana </p>
-                        </a>
+                        <button type="button" class="btn btn-primary" id="liveToastBtn"> Tarik Dana </button>
+                        <div class="toast-container position-fixed top-0 end-0 p-3">
+                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    {{-- <img src="..." class="rounded me-2" alt="..."> --}}
+                                    <strong class="me-auto"> Berhasil </strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                   Selamat Penarikan Dana Berhasil!
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
+@push('addon-script')
+<script>
+// Get the button element
+var button = document.getElementById("liveToastBtn");
+
+// Add click event listener to the button
+button.addEventListener("click", function() {
+  // Get the toast element
+  var toast = document.getElementById("liveToast");
+  
+  // Show the toast
+  var bootstrapToast = new bootstrap.Toast(toast);
+  bootstrapToast.show();
+});
+
+
+</script>
+@endpush

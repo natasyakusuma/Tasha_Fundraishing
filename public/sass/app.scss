@@ -17,7 +17,9 @@
 
 // daftar_project SCSS
 @import "create-project";
+@import "edit-project";
 @import "detail-project";
+@import "detail-withdraw-project";
 @import "list-project";
 
 
@@ -29,7 +31,6 @@
 
 // pengembalian_dana SCSS
 @import "create-return-dana-project";
-@import "detail-return-dana-project";
 @import "list-return-dana-project";
 @import "simulation-return-dana-project";
 

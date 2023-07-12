@@ -11,10 +11,10 @@ Login
             <div class="form-header">
                 <img src="{{ asset('img/Logo2.png')}}" alt="">
                 <h2>
-                    Hello, Let's get started!
+                    Selamat datang di Tasha Crowdfunding
                 </h2>
                 <p>
-                    Login untuk dapat masuk ke Tasya
+                    Untuk dapat masuk ke dashboard Tasha, masukkan email dan password Anda
                 </p>
             </div>
 

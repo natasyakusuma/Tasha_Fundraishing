@@ -1,5 +1,5 @@
 .create-laporan-project {
-    padding-top: 20px;
+    padding-top: 30px;
 
     .popup-overlay {
         position: fixed;
@@ -45,7 +45,7 @@
     }
 
     button#cancel-button {
-        background-color: red;
+        background-color: $color_6;
 
         &:hover {
             background-color: darkred;
@@ -53,10 +53,10 @@
     }
 
     button#next-button {
-        background-color: #007bff;
+        background-color:$color_2;
 
         &:hover {
-            background-color: #0069d9;
+            background-color: $color_4;
         }
     }
 

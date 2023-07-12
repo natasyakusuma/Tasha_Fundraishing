@@ -231,10 +231,13 @@ html li {
 .login-page .card {
   padding-left: 20px;
   padding-right: 20px;
-  width: 500px;
+  width: 550px;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: white;
+}
+.login-page .card h2 {
+  font-size: 28px;
 }
 .login-page .card .form-header img {
   padding-bottom: 10px;
@@ -487,7 +490,6 @@ html li {
 }
 
 .create-project {
-  padding-top: 50px;
   padding-top: 30px;
 }
 .create-project .popup-overlay {
@@ -528,6 +530,9 @@ html li {
   cursor: pointer;
   margin-right: 10px;
 }
+.create-project button[type=submit]:hover {
+  background-color: #1c1c80;
+}
 .create-project .close-btn {
   position: absolute;
   top: 10px;
@@ -566,6 +571,33 @@ html li {
   text-align: center;
   font-size: 16px;
   font-weight: medium;
+}
+
+.edit-project {
+  padding-top: 30px;
+}
+.edit-project button {
+  margin-top: 10px;
+  background-color: #144272;
+}
+.edit-project button:hover {
+  background-color: #1c1c80;
+}
+.edit-project .card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.edit-project .card td {
+  width: 50%;
+}
+.edit-project .card header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.edit-project .card header h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .detail-project {
@@ -632,13 +664,78 @@ html li {
   font-weight: medium;
 }
 
+.detail-withdraw-project {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.detail-withdraw-project h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: initial;
+}
+.detail-withdraw-project td {
+  width: 40%;
+}
+.detail-withdraw-project .col-lg-6 .card {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+.detail-withdraw-project .col-lg-6 .card .card-detail table {
+  width: 100%;
+}
+.detail-withdraw-project .col-lg-6 .card .card-detail table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.detail-withdraw-project .col-lg-6 .card .card-up h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.detail-withdraw-project .col-lg-6 .card .card-up table {
+  width: 100%;
+}
+.detail-withdraw-project .col-lg-6 .card .card-up table .td-3 {
+  width: 0;
+}
+.detail-withdraw-project .col-lg-6 .card .card-up table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down table {
+  width: 100%;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down table .td-3 {
+  width: 30%;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down table td p {
+  text-align: justify;
+  font-size: 14px;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down .btn {
+  height: 40px;
+  background-color: #144272;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.detail-withdraw-project .col-lg-6 .card .card-down .btn p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: medium;
+}
+
 .list-project {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
 }
 .list-project h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-align: initial;
 }
@@ -666,7 +763,7 @@ html li {
 }
 
 .create-laporan-project {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 .create-laporan-project .popup-overlay {
   position: fixed;
@@ -707,16 +804,16 @@ html li {
   margin-right: 10px;
 }
 .create-laporan-project button#cancel-button {
-  background-color: red;
+  background-color: #FC3B56;
 }
 .create-laporan-project button#cancel-button:hover {
   background-color: darkred;
 }
 .create-laporan-project button#next-button {
-  background-color: #007bff;
+  background-color: #1775F1;
 }
 .create-laporan-project button#next-button:hover {
-  background-color: #0069d9;
+  background-color: #144272;
 }
 .create-laporan-project .close-btn {
   position: absolute;
@@ -784,8 +881,11 @@ html li {
   margin-left: 20px;
   margin-right: 20px;
 }
+.list-laporan-project td {
+  width: 50%;
+}
 .list-laporan-project h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-align: initial;
 }
@@ -809,6 +909,7 @@ html li {
 }
 .list-laporan-project .card .card-body td .btn-verification {
   background-color: #FC3B56;
+  color: #fff;
   border: 10px;
   padding: 5px 10px;
   width: 100%;
@@ -868,6 +969,9 @@ html li {
   cursor: pointer;
   margin-right: 10px;
 }
+.create-return-dana button[type=submit]:hover {
+  background-color: #1c1c80;
+}
 .create-return-dana .close-btn {
   position: absolute;
   top: 10px;
@@ -890,61 +994,13 @@ html li {
   font-size: 16px;
 }
 
-.detail-dana-project {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.detail-dana-project h2 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: initial;
-}
-.detail-dana-project td {
-  width: 40%;
-}
-.detail-dana-project .col-lg-6 .card {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 20px;
-}
-.detail-dana-project .col-lg-6 .card .card-detail table td p {
-  text-align: justify;
-  font-size: 14px;
-}
-.detail-dana-project .col-lg-6 .card .card-up h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
-.detail-dana-project .col-lg-6 .card .card-up table td p {
-  text-align: justify;
-  font-size: 14px;
-}
-.detail-dana-project .col-lg-6 .card .card-down h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
-.detail-dana-project .col-lg-6 .card .card-down table td p {
-  text-align: justify;
-  font-size: 14px;
-}
-.detail-dana-project .col-lg-6 .card .card-down a {
-  height: 40px;
-  background-color: #144272;
-}
-.detail-dana-project .col-lg-6 .card .card-down a p {
-  text-align: center;
-  font-size: 16px;
-  font-weight: medium;
-}
-
 .list-return-dana-project {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
 }
 .list-return-dana-project h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-align: initial;
 }
@@ -1026,6 +1082,9 @@ html li {
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+}
+.simulation-return-dana-project button[type=submit]:hover {
+  background-color: #1c1c80;
 }
 .simulation-return-dana-project .close-btn {
   position: absolute;

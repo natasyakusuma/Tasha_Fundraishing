@@ -189,9 +189,9 @@ Proyek Saya
                         </div>
 
                         <div class="row">
-                            <div class="col-12">
-                                {{-- <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('proDana')}}">Penarikan Dana </a> --}}
-                            </div>
+                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('detail_withdraw_project')}}">
+                                <p> Penarikan Dana </p>
+                            </a>
                         </div>
                     </div>
                 </div>

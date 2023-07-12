@@ -68,6 +68,11 @@ Route::get('/success_project', function () {
     return view('pages.public.daftar_project.success_project');
 })->name('success_project');
 
+Route::get('/detail_withdraw_project', function () {
+    return view('pages.public.daftar_project.detail_withdraw_project');
+})->name('detail_withdraw_project');
+
+
 
 // Route - Laporan Project
 Route::get('/create_laporan_project', function () {
@@ -104,9 +109,6 @@ Route::get('/edit_return_dana_project', function () {
     return view('pages.pengembalian_dana.edit_return_dana_project');
 })->name('/edit_return_dana_project');
 
-Route::get('/detail_dana_project', function () {
-    return view('pages.public.pengembalian_dana.detail_dana_project');
-})->name('detail_dana_project');
 
 Route::get('/list_return_dana_project', function () {
     return view('pages.public.pengembalian_dana.list_return_dana_project');

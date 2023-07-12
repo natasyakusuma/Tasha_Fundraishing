@@ -48,11 +48,7 @@ Simulasi Pengembalian Dana
                             <option value="3"> 1 Tahun </option>
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="">Submit</a>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary col-12" id="liveToastBtn"> Submit </button>
                 </form>
             </div>
         </div>

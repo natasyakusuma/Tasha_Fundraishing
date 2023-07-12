@@ -6,7 +6,7 @@ Edit Laporan Proyek
 
 
 @section('content')
-<div class="create-laporan-project">
+<div class="edit-laporan-project">
     <div class="container">
         <header>
             <h2>

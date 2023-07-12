@@ -32,12 +32,12 @@ Membuat Laporan Proyek
 
                 <form action="#" id="form-createproyek1">
                     <div class="form-group mb-3">
-                        <label for="InputProyek" class="form-label">Nama Dokumen</label>
-                        <input type="text" class="form-control" id="InputUsaha">
+                        <label for="InputDokumen" class="form-label">Nama Dokumen</label>
+                        <input type="text" class="form-control" id="InputDokumen" placeholder="Masukkan Nama Dokumen">
                     </div>
                     <div class="form-group mb-3">
                         <label for="InputProyek" class="form-label">Nama Proyek</label>
-                        <input type="text" class="form-control" id="InputUsaha">
+                        <input type="text" class="form-control" id="InputProyek" placeholder="Masukkan Nama Proyek">
                     </div>
                     <div class="form-group mb-3">
                         <label for="UploadDocument" class="form-label">Upload File Laporan</label>

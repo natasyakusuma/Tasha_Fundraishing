@@ -3,9 +3,12 @@
     margin-left: 20px;
     margin-right: 20px;
     
+    td{
+        width: 50%;
+    }
 
     h2 {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         text-align: initial;
     }
@@ -31,6 +34,7 @@
 
                 .btn-verification {
                     background-color: $color_6;
+                    color: $color_5;
                     border: 10px;
                     padding: 5px 10px;
                     width: 100%;
