@@ -14,7 +14,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $response = Http::asForm()->post('https://deploytasha.000webhostapp.com/api/login', [
+        $response = Http::asForm()->post(env('API_URL').'login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -22,7 +22,7 @@ class AuthController extends Controller
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
-            session(['token' => $responseData['authorisation']['token']]);
+            session(['token' => $responseData['authorization']['token']]);
             return redirect()->route('dashboard');
         } else {
             // Permintaan gagal, menampilkan pesan error
@@ -38,7 +38,7 @@ class AuthController extends Controller
 
     public function reg1(Request $request)
     {
-        $response = Http::asForm()->post('https://deploytasha.000webhostapp.com/api/register', [
+        $response = Http::asForm()->post(env('API_URL').'register', [
             'full_name' => $request->fullName,
             'email' => $request->email,
             'password' => $request->password,
@@ -48,7 +48,7 @@ class AuthController extends Controller
             'employment_status' => $request->employmentStatus,
             'phone_number' => $request->phone,
             'id_card' => $request->nik,
-            'tax_registration_number' => 9871234567892,
+            'tax_registration_number' => $request->npwp,
             'authorization_level' => 2
         ]);
 
@@ -96,7 +96,7 @@ class AuthController extends Controller
     public function logout()
     {
         $token = session('token');
-        $response = Http::withToken($token)->post('https://deploytasha.000webhostapp.com/api/logout');
+        $response = Http::withToken($token)->post(env('API_URL').'logout');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons

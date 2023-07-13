@@ -25,10 +25,10 @@ Registrasi 1
             <div class="col-8 box-right">
                 <div class="card">
                     <div class="card-body p-4">
-                        <!-- form -->
                         <div class="form-header mb-3 mt-3">
                             <img src="{{asset('img/Logo2.png')}}" alt="logo">
                         </div>
+                        <!-- form -->
                         <form action="{{ route('reg1Form') }}" method="POST" id="form-step1">
                             @csrf
                             <div class="form-group mb-3">
@@ -59,8 +59,8 @@ Registrasi 1
                                 <label for="InputGender" class="form-label">Gender</label>
                                 <select class="form-select" id="InputGender" name="gender" required>
                                     <option value="">Pilih gender</option>
-                                    <option value="M">Pria</option>
-                                    <option value="F">Wanita</option>
+                                    <option value="Pria">Pria</option>
+                                    <option value="Wanita">Wanita</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3">
@@ -73,7 +73,7 @@ Registrasi 1
                             </div>
                             <div class="form-group mb-3">
                                 <label for="InputNPWP" class="form-label">NPWP</label>
-                                <input type="text" class="form-control" id="InputNPWP" name="nik" required>
+                                <input type="text" class="form-control" id="InputNPWP" name="npwp" required>
                             </div>
                             <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</button>
                         </form>
