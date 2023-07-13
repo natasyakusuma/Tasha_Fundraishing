@@ -2,8 +2,26 @@
     padding-top: 30px;
 
     button {
-        margin-top: 10px;
-        background-color:$color_4;
+        padding: 10px 20px;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        width: 150px;
+        height: 40px;
+    }
+
+    button#cancel-button {
+        background-color: red;
+
+        &:hover {
+            background-color: darkred;
+        }
+    }
+
+    button#next-button {
+        background-color: $color_4;
 
         &:hover {
             background-color: $color_11;

@@ -133,26 +133,6 @@ html li {
   box-shadow: none;
   border-color: blue;
 }
-.profile-page .profile-button {
-  background: rgb(99, 39, 120);
-  box-shadow: none;
-  border: none;
-}
-.profile-page .profile-button:hover {
-  background: #682773;
-}
-.profile-page .profile-button:focus {
-  background: #682773;
-  box-shadow: none;
-}
-.profile-page .profile-button:active {
-  background: #682773;
-  box-shadow: none;
-}
-.profile-page .back:hover {
-  color: #682773;
-  cursor: pointer;
-}
 .profile-page h4 {
   font-size: 20px;
   font-weight: bold;
@@ -577,10 +557,25 @@ html li {
   padding-top: 30px;
 }
 .edit-project button {
-  margin-top: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 150px;
+  height: 40px;
+}
+.edit-project button#cancel-button {
+  background-color: red;
+}
+.edit-project button#cancel-button:hover {
+  background-color: darkred;
+}
+.edit-project button#next-button {
   background-color: #144272;
 }
-.edit-project button:hover {
+.edit-project button#next-button:hover {
   background-color: #1c1c80;
 }
 .edit-project .card {
@@ -633,26 +628,38 @@ html li {
   font-weight: bold;
   font-size: 14px;
 }
-.detail-project .col-md-6 .card-up .progress {
+.detail-project .col-md-6 .card-up h2 {
+  padding-bottom: 20px;
+}
+.detail-project .col-md-6 .card-up .col-10 .progress {
   height: 30px;
   border-radius: 5px;
   background-color: #ddd;
   width: 100%;
 }
-.detail-project .col-md-6 .card-up .progress .progress-bar {
+.detail-project .col-md-6 .card-up .col-10 .progress .progress-bar {
   background-color: #144272;
+}
+.detail-project .col-md-6 .card-up .col-2 p {
+  font-size: 14px;
+  font-weight: bold;
 }
 .detail-project .col-md-6 .card-down {
   padding-bottom: 20px;
   margin-top: 20px;
 }
 .detail-project .col-md-6 .card-down .head h2 {
+  padding-bottom: 10px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
-.detail-project .col-md-6 .card-down .caraousel-slide {
+.detail-project .col-md-6 .card-down .caraousel {
   margin-top: 10px;
+}
+.detail-project .col-md-6 .card-down .caraousel .carousel-item img {
+  border-radius: 10px;
+  width: 400px;
 }
 .detail-project .col-md-6 .card-down a {
   height: 40px;
@@ -756,6 +763,7 @@ html li {
 .list-project .card .card-body td {
   text-align: justify;
   font-size: 14px;
+  width: 0;
 }
 .list-project .card .card-body td a {
   text-decoration: none;
@@ -796,7 +804,6 @@ html li {
 }
 .create-laporan-project button[type=submit] {
   padding: 10px 20px;
-  background-color: #144272;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -810,10 +817,10 @@ html li {
   background-color: darkred;
 }
 .create-laporan-project button#next-button {
-  background-color: #1775F1;
+  background-color: #144272;
 }
 .create-laporan-project button#next-button:hover {
-  background-color: #144272;
+  background-color: #1c1c80;
 }
 .create-laporan-project .close-btn {
   position: absolute;
@@ -906,6 +913,7 @@ html li {
 .list-laporan-project .card .card-body td {
   text-align: justify;
   font-size: 14px;
+  width: 0;
 }
 .list-laporan-project .card .card-body td .btn-verification {
   background-color: #FC3B56;
@@ -924,6 +932,47 @@ html li {
 .list-laporan-project .card .card-body td a {
   text-decoration: none;
   color: inherit;
+}
+
+.edit-laporan-project {
+  padding-top: 30px;
+}
+.edit-laporan-project h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: initial;
+  margin-bottom: 20px;
+}
+.edit-laporan-project p {
+  text-align: justify;
+  font-size: 14px;
+}
+.edit-laporan-project label {
+  font-size: 16px;
+}
+.edit-laporan-project button[type=submit] {
+  padding: 10px 20px;
+  background-color: #144272;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 150px;
+  height: 40px;
+  justify-items: flex-end;
+}
+.edit-laporan-project button#cancel-button {
+  background-color: red;
+}
+.edit-laporan-project button#cancel-button:hover {
+  background-color: darkred;
+}
+.edit-laporan-project button#next-button {
+  background-color: #144272;
+}
+.edit-laporan-project button#next-button:hover {
+  background-color: #132435;
 }
 
 .create-return-dana {
@@ -1014,6 +1063,7 @@ html li {
   border-radius: 10px;
 }
 .list-return-dana-project .card .card-body th {
+  width: 50%;
   background-color: #144272;
   text-align: justify;
   color: #fff;
@@ -1021,6 +1071,7 @@ html li {
 .list-return-dana-project .card .card-body td {
   text-align: justify;
   font-size: 14px;
+  width: 0;
 }
 .list-return-dana-project .card .card-body td .btn-verification {
   background-color: greenyellow;
@@ -1038,6 +1089,49 @@ html li {
 .list-return-dana-project .card .card-body td a {
   text-decoration: none;
   color: inherit;
+}
+
+.edit-return-dana {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.edit-return-dana button[type=submit] {
+  padding: 10px 20px;
+  background-color: #144272;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 150px;
+  height: 40px;
+  justify-items: flex-end;
+}
+.edit-return-dana button#cancel-button {
+  background-color: red;
+}
+.edit-return-dana button#cancel-button:hover {
+  background-color: darkred;
+}
+.edit-return-dana button#next-button {
+  background-color: #144272;
+}
+.edit-return-dana button#next-button:hover {
+  background-color: #132435;
+}
+.edit-return-dana h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: initial;
+  margin-bottom: 20px;
+}
+.edit-return-dana p {
+  text-align: justify;
+  font-size: 14px;
+}
+.edit-return-dana label {
+  font-size: 16px;
 }
 
 .simulation-return-dana-project {

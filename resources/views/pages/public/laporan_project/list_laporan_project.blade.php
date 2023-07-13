@@ -8,7 +8,7 @@ Laporan Proyek Saya
 <div class="list-laporan-project">
     <div class="head">
         <h2>
-            Projek Saya
+            Laporan Proyek Saya
         </h2>
     </div>
 

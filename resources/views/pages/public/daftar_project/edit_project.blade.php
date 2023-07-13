@@ -178,7 +178,10 @@ Edit Pengajuan Dana Proyek
             </div>
         </div>
 
-        <button type="submit" class="col-12 btn btn-primary mb-3 shadow"> Simpan </button>
+        <div class="d-flex justify-content-end">
+            <button class="button" id="cancel-button" type="submit"> Batal </button>
+            <button class="button" id="next-button" type="submit"> Simpan</button>
+        </div>
     </div>
 </div>
 @endsection

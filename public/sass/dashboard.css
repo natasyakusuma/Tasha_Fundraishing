@@ -445,6 +445,14 @@ main .col-md-6 .img-fluid{
     text-align: center;
 }
 
+main .data .content-data .content-detail {
+    border-right: #000;
+    border-width: 5px;
+}
+main .bar-chart .col-2 p {
+    font-weight: bold;
+}
+
 /* main .card .head {
     display: flex;
     justify-content: space-between;
