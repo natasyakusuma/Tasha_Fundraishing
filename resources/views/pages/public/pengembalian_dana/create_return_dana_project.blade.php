@@ -26,39 +26,28 @@ Pengajuan Pengembalian Dana
         </header>
         <div class="card">
             <div class="card-body">
-                <form action="#" id="form-dana1">
-
+                <form action="{{ route('refundForm') }}" method="POST" id="form-dana1" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group mb-3">
                         <label for="InputProyek" class="form-label">Nama Proyek</label>
-                        <input type="text" class="form-control" id="InputProyek" placeholder="Masukkan Nama Proyek">
+                        <select class="form-select" id="InputProyek" name="projectName" required>
+                            <option value="">Pilih Tipe Proyek</option>
+                            @foreach ($responseData['data'] as $item)
+                                <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                            @endforeach
+                        </select>
                     </div>
-
                     <div class="form-group mb-3">
                         <label for="InputProyek" class="form-label"> Total Dana Pengembalian </label>
-                        <input type="text" class="form-control" id="InputUsaha"
-                            placeholder="Masukkan Total Dana Pengembalian">
+                        <input type="number" class="form-control" id="InputUsaha" name="amount"
+                            placeholder="Masukkan Total Dana Pengembalian" required>
                     </div>
-
                     <div class="form-group mb-3">
                         <label for="UploadDocument" class="form-label"> Upload Bukti Transfer </label>
-                        <input type="file" class="form-control" id="UploadDocument">
+                        <input type="file" class="form-control" id="UploadDocument" name="fileReceipt" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary col-12" id="liveToastBtn"> Submit </button>
-                    <div class="toast-container position-fixed top-0 end-0 p-3">
-                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                {{-- <img src="..." class="rounded me-2" alt="..."> --}}
-                                <strong class="me-auto"> Berhasil </strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Selamat Pengajuan Dana Berhasil!
-                            </div>
-                        </div>
-                    </div>
-
+                    <button type="submit" class="btn btn-primary col-12"> Submit </button>
                 </form>
             </div>
         </div>
@@ -68,22 +57,6 @@ Pengajuan Pengembalian Dana
 
 @push('addon-script')
 <link rel="stylesheet" href={{ asset('sass/app.css') }}>
-
-<script>
-    // Get the button element
-    var button = document.getElementById("liveToastBtn");
-
-    // Add click event listener to the button
-    button.addEventListener("click", function () {
-        // Get the toast element
-        var toast = document.getElementById("liveToast");
-
-        // Show the toast
-        var bootstrapToast = new bootstrap.Toast(toast);
-        bootstrapToast.show();
-    });
-
-</script>
 @endpush
 
 @push('prepend-script')

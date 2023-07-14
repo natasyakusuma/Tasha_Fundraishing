@@ -19,7 +19,7 @@ Detail Penarikan Dana
                                         <p> <b> Nama Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>Produksi Kue Kering Brand Ina Cookies Cake and Gift</p>
+                                        <p>{{ $responseData['data']['name'] }}</p>
                                     </td>
                                 </tr>
 
@@ -28,7 +28,7 @@ Detail Penarikan Dana
                                         <p> <b> Mulai Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p> 19-01-2023</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['start_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -36,34 +36,31 @@ Detail Penarikan Dana
                                         <p> <b> Akhir Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>19-01-2024</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['closing_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Tipe Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>19-01-2024</p>
+                                        <p>{{ $responseData['data']['type'] }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Kategori</b> </p>
                                     </td>
                                     <td>
-                                        <p>Makanan</p>
+                                        <p>{{ $responseData['data']['category'] }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Total Dana Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp.10.000.000</p>
+                                        <p>Rp {{ number_format($responseData['data']['target_funding_amount'], 0, ".", ".") }}</p>
                                     </td>
                                 </tr>
 
@@ -72,7 +69,7 @@ Detail Penarikan Dana
                                         <p> <b> Status</b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: #67B74B">Tercapai</p>
+                                        <p style="color: #67B74B">{{ $responseData['data']['status'] }}</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -84,7 +81,6 @@ Detail Penarikan Dana
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-up">
-
                         <head>
                             <h3> Detail Rekening Tujuan </h3>
                         </head>
@@ -95,16 +91,15 @@ Detail Penarikan Dana
                                         <p> <b> Nama Lengkap Penerima </b> </p>
                                     </td>
                                     <td>
-                                        <p>Bola Bola Ubi</p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Bank Tujuan </b> </p>
                                     </td>
                                     <td>
-                                        <p> BSI Bank Syariah Indoensia</p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -112,7 +107,7 @@ Detail Penarikan Dana
                                         <p> <b> Nomor Rekening</b> </p>
                                     </td>
                                     <td>
-                                        <p>12021XXXXXX</p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -122,7 +117,6 @@ Detail Penarikan Dana
 
                 <div class="card">
                     <div class="card-down">
-
                         <head>
                             <h3> Summary Penarikan </h3>
                         </head>
@@ -133,7 +127,7 @@ Detail Penarikan Dana
                                         <p> <b> Total Dana Terkumpul </b> </p>
                                     </td>
                                     <td>
-                                        <p> Rp. 10.000.000</p>
+                                        <p>Rp {{ number_format($responseData['data']['current_funding_amount'], 0, ".", ".") }}</p>
                                     </td>
                                     <td class="td-3">
 
@@ -144,7 +138,7 @@ Detail Penarikan Dana
                                         <p> <b> Biaya Pendaftaran Proyek</b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp. 100.000</p>
+                                        <p>Rp 100.000</p>
                                     </td>
                                     <td class="td-3">
 
@@ -155,7 +149,7 @@ Detail Penarikan Dana
                                         <p> <b> Biaya Aplikasi </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp.10.000 </p>
+                                        <p>Rp 10.000</p>
                                     </td>
                                     <td class="td-3">
 
@@ -175,7 +169,7 @@ Detail Penarikan Dana
                                         <p> <b> Total Dana Yang Ditarik </b> </p>
                                     </td>
                                     <td>
-                                        <p> Rp 9.900.000 </p>
+                                        <p>Rp {{ number_format($totalWithDraw, 0, ".", ".") }}</p>
                                     </td>
 
                                     <td>
@@ -184,20 +178,11 @@ Detail Penarikan Dana
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-primary" id="liveToastBtn"> Tarik Dana </button>
-                        <div class="toast-container position-fixed top-0 end-0 p-3">
-                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    {{-- <img src="..." class="rounded me-2" alt="..."> --}}
-                                    <strong class="me-auto"> Berhasil </strong>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                   Selamat Penarikan Dana Berhasil!
-                                </div>
-                            </div>
-                        </div>
+                        <form action="{{ route('withdrawFrom', $responseData['data']['id']) }}" method="POST">
+                            @csrf
+                            <input type="number" name="amount" value="{{ $responseData['data']['current_funding_amount'] }}" hidden>
+                            <button type="submit" class="btn btn-primary" id="liveToastBtn">Tarik Dana</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -205,21 +190,3 @@ Detail Penarikan Dana
     </div>
 </div>
 @endsection
-
-
-@push('addon-script')
-<script>
-// Get the button element
-var button = document.getElementById("liveToastBtn");
-
-// Add click event listener to the button
-button.addEventListener("click", function() {
-  // Get the toast element
-  var toast = document.getElementById("liveToast");
-  
-  // Show the toast
-  var bootstrapToast = new bootstrap.Toast(toast);
-  bootstrapToast.show();
-});
-</script>
-@endpush

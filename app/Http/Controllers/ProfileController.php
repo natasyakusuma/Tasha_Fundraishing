@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class DashboardController extends Controller
+class ProfileController extends Controller
 {
-    public function dashboardPage()
-    {
+    public function profilePage() {
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'dashboard');
+        ])->get(env('API_URL') . 'user');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
-            return view('pages.public.dashboard', compact('responseData'));
+            $message = session('message');
+            session()->forget('message');
+            return view('pages.public.profile.view_profile', compact('responseData', 'message'));
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
@@ -25,7 +26,12 @@ class DashboardController extends Controller
 
             if ($errorResponse['error'] == "Unauthorized") {
                 session()->invalidate();
+                return redirect()->route('login');
             }
         }
+    }
+
+    public function profileEditPage() {
+        return view('pages.public.profile.edit_profile');
     }
 }
