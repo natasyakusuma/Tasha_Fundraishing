@@ -35,7 +35,7 @@ Proyek Saya
                                         <p> <b> Tanggal Mulai </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ $responseData['data']['start_date'] }}</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['start_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -43,7 +43,7 @@ Proyek Saya
                                         <p> <b> Mulai Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ $responseData['data']['closing_date'] }}</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['start_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -51,19 +51,17 @@ Proyek Saya
                                         <p> <b> Akhir Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- ga ada di return BE -</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['closing_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Sisa Waktu Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- ga ada di return BE -</p>
+                                        <p>{{ $remainingDate }} hari</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Tipe Proyek </b> </p>
@@ -72,7 +70,6 @@ Proyek Saya
                                         <p>{{ $responseData['data']['type'] }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Kategori </b> </p>
@@ -81,7 +78,6 @@ Proyek Saya
                                         <p>{{ $responseData['data']['category'] }}</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Tenor </b> </p>
@@ -90,7 +86,6 @@ Proyek Saya
                                         <p>{{ $responseData['data']['tenors'] }} Bulan</p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Total Dana Pengajuan </b> </p>
@@ -101,7 +96,6 @@ Proyek Saya
                                         </p>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Status </p>
@@ -111,15 +105,12 @@ Proyek Saya
                                             <span>{{ $responseData['data']['status'] }}</span>
                                         </button>
                                     </td>
-
                                 </tr>
-
                                 <tr>
                                     <td>
                                         <p> <b> Dokumen Proyektus </b> </p>
                                     </td>
                                     <td>
-
                                         <a href="{{ $responseData['data']['prospektus_url'] }}"><i
                                                 class='bx bxs-dashboard icon'></i></a>
                                     </td>
@@ -149,9 +140,7 @@ Proyek Saya
                                 </div>
 
                                 <div class="col-2">
-                                    <p>
-                                        70%
-                                    </p>
+                                    <p id="calculate-value"></p>
                                 </div>
                                </div>
                             </div>
@@ -177,38 +166,35 @@ Proyek Saya
                                     Gambar
                                 </h2>
                             </div>
-                            <p style="color: red">- ga ada di return BE -</p>
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
-                                  </div>
+                                    @foreach ($responseData['data']['banners'] as $key => $data)
+                                        <div class="carousel-item {{ $key == '0' ? 'active' : '' }}">
+                                            <img src="" class="d-block w-100" alt="...">
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Previous</span>
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Next</span>
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
                                 </button>
                               </div>
-
-
                         </div>
 
-                        <div class="row">
-                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow"
-                                href="{{route('detail_withdraw_project')}}">
+                        @if ($responseData['data']['status'] == "ACHIEVED")
+                            <a type="submit" class="w-100 btn btn-primary mb-3 shadow"
+                                href="{{ route('detail_withdraw_project', $responseData['data']['id']) }}">
                                 <p> Penarikan Dana </p>
                             </a>
-                        </div>
+                        @else
+                            <a class="w-100 btn btn-primary mb-3 shadow disabled" href="#">
+                                <p> Penarikan Dana </p>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

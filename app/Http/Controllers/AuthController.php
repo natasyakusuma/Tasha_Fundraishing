@@ -23,11 +23,13 @@ class AuthController extends Controller
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
             session(['token' => $responseData['authorization']['token']]);
+            session(['user_id' => $responseData['user']['id']]);
             return redirect()->route('dashboard');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
-            return dd($errorResponse);
+            error_log($errorResponse['message']);
+            return redirect()->back();
         }
     }
 
@@ -54,11 +56,15 @@ class AuthController extends Controller
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
+            $responseData = $response->json();
+            session(['token' => $responseData['authorization']['token']]);
+            session(['user_id' => $responseData['data']['id']]);
             return redirect()->route('reg2');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
-            return dd($errorResponse);
+            error_log($errorResponse['message']);
+            return redirect()->back();
         }
     }
 
@@ -69,22 +75,28 @@ class AuthController extends Controller
 
     public function reg2(Request $request)
     {
-        $response = Http::asForm()->post('https://deploytasha.000webhostapp.com/api/user', [
+        $token = session('token');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->asForm()->post(env('API_URL').'user', [
             'user_business_name' => $request->businessName,
             'user_business_address' => $request->businessAddress,
             'account_number' => $request->accountNumber,
             'bank_name' => $request->bankName,
             'account_name' => $request->accountName,
-            'file_certificate' => $request->certificate,
+            'file_certificate' => $request->file('certificate'),
         ]);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
+            // $responseData = $response->json();
+            // return dd($responseData);
             return redirect()->route('reg3-success');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
-            return dd($errorResponse);
+            error_log($errorResponse['message']);
+            return redirect()->back();
         }
     }
 
@@ -96,16 +108,9 @@ class AuthController extends Controller
     public function logout()
     {
         $token = session('token');
-        $response = Http::withToken($token)->post(env('API_URL').'logout');
+        Http::withToken($token)->post(env('API_URL').'logout');
 
-        if ($response->successful()) {
-            // Permintaan berhasil, menampilkan data respons
-            session()->invalidate();
-            return redirect()->route('login');
-        } else {
-            // Permintaan gagal, menampilkan pesan error
-            $errorResponse = $response->json();
-            return dd($errorResponse);
-        }
+        session()->invalidate();
+        return redirect()->route('login');
     }
 }

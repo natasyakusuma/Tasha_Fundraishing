@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RefundController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,91 +31,52 @@ Route::middleware('auth.check')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->name('dashboard');
 
-    Route::prefix('project')->group(function () {
-        Route::get('/', [ProjectController::class, 'projectPage'])->name('create_project');
-        Route::post('/', [ProjectController::class, 'project'])->name('projectForm');
-        Route::get('/list', [ProjectController::class, 'projectListPage'])->name('list_project');
-        Route::get('/{id}', [ProjectController::class, 'projectDetailPage'])->name('detail_project');
+    // Route - Profile
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [ProfileController::class, 'profilePage'])->name('view_profile');
+        Route::get('/edit', [ProfileController::class, 'profileEditPage'])->name('edit_profile');
     });
 
-    Route::prefix('project-report')->group(function () {
-        // Route::get('/', [ProjectController::class, 'projectPage'])->name('create_project');
-        // Route::post('/', [ProjectController::class, 'project'])->name('projectForm');
+    // Route - Proyek
+    Route::prefix('proyek')->group(function () {
+        Route::get('/create', [ProjectController::class, 'projectCreatePage'])->name('create_project');
+        Route::post('/create', [ProjectController::class, 'projectCreate'])->name('projectCreateForm');
+        Route::post('/success', [ProjectController::class, 'projectSuccessPage'])->name('success_project');
+        Route::get('/edit/{id}', [ProjectController::class, 'projectEditPage'])->name('edit_project');
+        Route::post('/update/{id}', [ProjectController::class, 'projectUpdate'])->name('projectUpdateForm');
+        Route::get('/list', [ProjectController::class, 'projectListPage'])->name('list_project');
+        Route::get('/{id}', [ProjectController::class, 'projectDetailPage'])->name('detail_project');
+        Route::get('/penarikan-dana/{id}', [ProjectController::class, 'projectWithdrawPage'])->name('detail_withdraw_project');
+        Route::post('/penarikan-dana/{id}', [ProjectController::class, 'projectWithdraw'])->name('withdrawFrom');
+    });
+
+    // Route - Laporan proyek
+    Route::prefix('laporan-proyek')->group(function () {
+        Route::get('/create', [ReportController::class, 'projectReportCreatePage'])->name('create_laporan_project');
+        Route::post('/create', [ReportController::class, 'projectReportCreate'])->name('projectReportCreateForm');
+        Route::post('/success', [ReportController::class, 'projectReportSuccessPage'])->name('success_laporan_project');
+        Route::get('/edit', [ReportController::class, 'projectReportEditPage'])->name('edit_laporan_project');
         Route::get('/list', [ReportController::class, 'projectReportListPage'])->name('list_laporan_project');
         Route::get('/{id}', [ReportController::class, 'projectReportDetailPage'])->name('detail_laporan_project');
     });
 
-    Route::prefix('project-dana')->group(function () {
-    
+    // Route - Pengembalian dana
+    Route::prefix('pengembalian-dana')->group(function () {
+        Route::get('/', [RefundController::class, 'refundPage'])->name('create_return_dana');
+        Route::post('/', [RefundController::class, 'refund'])->name('refundForm');
+        Route::post('/success', [RefundController::class, 'refundSuccessPage'])->name('success_dana_project');
+        Route::get('/edit', [RefundController::class, 'refundEditPage'])->name('edit_return_dana_project');
+        Route::get('simulasi', [RefundController::class, 'refundSimulation'])->name('simulation_return_dana_project');
+        Route::get('/list', [RefundController::class, 'refundListPage'])->name('list_return_dana_project');
     });
 });
-Route::get('/view_profile', function () {
-    return view('pages.public.profile.view_profile');
-})->name('view_profile');
-
-Route::get('/edit_profile', function () {
-    return view('pages.public.profile.edit_profile');
-})->name('edit_profile');
-
-// Route - Project
-
-Route::get('/edit_project', function () {
-    return view('pages.public.daftar_project.edit_project');
-})->name('edit_project');
-
-Route::get('/success_project', function () {
-    return view('pages.public.daftar_project.success_project');
-})->name('success_project');
-
-Route::get('/detail_withdraw_project', function () {
-    return view('pages.public.daftar_project.detail_withdraw_project');
-})->name('detail_withdraw_project');
-
-
 
 // Route - Laporan Project
-Route::get('/create_laporan_project', function () {
-    return view('pages.public.laporan_project.create_laporan_project');
-})->name('create_laporan_project');
-
-Route::get('/detail_laporan_saya_project', function () {
-    return view('pages.public.laporan_project.detail_laporan_project');
-})->name('detail_laporan_project');
-
-Route::get('/edit_laporan_project', function () {
-    return view('pages.public.laporan_project.edit_laporan_project');
-})->name('edit_laporan_project');
-
 Route::get('/view_laporan_project', function () {
     return view('pages.public.laporan_project.view_laporan_project');
 })->name('view_laporan_project');
 
-Route::get('/success_laporan_project', function () {
-    return view('pages.public.laporan_project.success_laporan_project');
-})->name('success_laporan_project');
-
-
 // Route - Return Dana
-Route::get('/create_return_dana', function () {
-    return view('pages.public.pengembalian_dana.create_return_dana_project');
-})->name('create_return_dana');
-
 Route::get('/view_return_dana_project', function () {
     return view('pages.public.pengembalian_dana.view_return_dana_project');
 })->name('view_return_dana_project');
-
-Route::get('/edit_return_dana_project', function () {
-    return view('pages.public.pengembalian_dana.edit_return_dana_project');
-})->name('edit_return_dana_project');
-
-Route::get('/list_return_dana_project', function () {
-    return view('pages.public.pengembalian_dana.list_return_dana_project');
-})->name('list_return_dana_project');
-
-Route::get('/simulation_return_dana_project', function () {
-    return view('pages.public.pengembalian_dana.simulation_return_dana_project');
-})->name('simulation_return_dana_project');
-
-Route::get('/success_dana_project', function () {
-    return view('pages.public.pengembalian_dana.success_dana_project');
-})->name('success_dana_project');

@@ -59,8 +59,8 @@ Registrasi 1
                                 <label for="InputGender" class="form-label">Gender</label>
                                 <select class="form-select" id="InputGender" name="gender" required>
                                     <option value="">Pilih gender</option>
-                                    <option value="Pria">Pria</option>
-                                    <option value="Wanita">Wanita</option>
+                                    <option value="M">Pria</option>
+                                    <option value="F">Wanita</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3">
