@@ -22,11 +22,7 @@ Login
                                 <div class="head">
                                     <div>
                                         <p> Jumlah Daftar Proyek </p>
-<<<<<<< HEAD
-                                        <h2> 2 </h2>
-=======
                                         <h2> {{ $responseData['data']['total_campaign'] }} </h2>
->>>>>>> 60ed16f47e1a7eca88802fb6543967e1f147620a
                                         <p> Proyek </p>
                                     </div>
                                 </div>
