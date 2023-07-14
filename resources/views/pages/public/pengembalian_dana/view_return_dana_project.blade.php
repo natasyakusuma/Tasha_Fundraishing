@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-Pengajuan Pengembalian Dana
+View Pengembalian Dana
 @endsection
 
 
 @section('content')
-<div class="create-return-dana">
+<div class="edit-return-dana">
     <div class="container">
         <header>
             <h2>
@@ -49,8 +49,7 @@ Pengajuan Pengembalian Dana
                         </select>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button class="button" id="cancel-button" type="submit"> Batal </button>
-                        <button class="button" id="next-button" type="submit"> Simpan</button>
+                        <button class="button" id="next-button" type="submit"> Edit </button>
                     </div>
                 </form>
             </div>

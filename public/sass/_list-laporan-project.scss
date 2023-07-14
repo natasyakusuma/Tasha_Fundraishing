@@ -23,14 +23,17 @@
             border-radius: 10px;
 
             th {
-                background-color: #144272;
+                background-color: $color_4;
                 text-align: justify;
                 color: #fff;
+               
+               
             }
 
             td {
                 text-align: justify;
                 font-size: 14px;
+                width: 0;
 
                 .btn-verification {
                     background-color: $color_6;
@@ -42,7 +45,7 @@
                     cursor: default;
 
                     span {
-                        color: #000;
+                        color: $color_9;
                         font-weight: bold;
                         font-size: 14px;
                     }

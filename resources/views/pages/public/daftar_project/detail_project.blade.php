@@ -96,7 +96,9 @@ Proyek Saya
                                         <p> <b> Total Dana Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp {{ number_format($responseData['data']['target_funding_amount'], 0, ".", ".") }}</p>
+                                        <p>Rp
+                                            {{ number_format($responseData['data']['target_funding_amount'], 0, ".", ".") }}
+                                        </p>
                                     </td>
                                 </tr>
 
@@ -109,7 +111,7 @@ Proyek Saya
                                             <span>{{ $responseData['data']['status'] }}</span>
                                         </button>
                                     </td>
-                                    
+
                                 </tr>
 
                                 <tr>
@@ -117,8 +119,9 @@ Proyek Saya
                                         <p> <b> Dokumen Proyektus </b> </p>
                                     </td>
                                     <td>
-                                        
-                                        <a href="{{ $responseData['data']['prospektus_url'] }}"><i class='bx bxs-dashboard icon'></i></a>
+
+                                        <a href="{{ $responseData['data']['prospektus_url'] }}"><i
+                                                class='bx bxs-dashboard icon'></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -133,12 +136,24 @@ Proyek Saya
                         <div class="card-body mb-5">
                             <h2> Progress Dana Terkumpul</h2>
                             <div class="container">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                    <div id="progress-max" data-value="{{ $responseData['data']['target_funding_amount'] }}"></div>
-                                    <div id="progress-input" data-value="{{ $responseData['data']['current_funding_amount'] }}"></div>
+                               <div class="row">
+                                <div class="col-10">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                        <div id="progress-max"
+                                            data-value="{{ $responseData['data']['target_funding_amount'] }}"></div>
+                                        <div id="progress-input"
+                                            data-value="{{ $responseData['data']['current_funding_amount'] }}"></div>
+                                    </div>
                                 </div>
+
+                                <div class="col-2">
+                                    <p>
+                                        70%
+                                    </p>
+                                </div>
+                               </div>
                             </div>
 
                             {{-- <div class="row">
@@ -163,33 +178,34 @@ Proyek Saya
                                 </h2>
                             </div>
                             <p style="color: red">- ga ada di return BE -</p>
-                            <div id="carouselControls" class="carousel slide" data-ride="carousel" data-interval="3000">
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('img/image25.png')}}" alt="Third slide">
-                                    </div>
+                                  <div class="carousel-item active">
+                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="{{asset('img/image25.png')}}" class="d-block w-100" alt="...">
+                                  </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only"></span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only"></span>
-                                </a>
-                            </div>
-                            
-                            
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+
+
                         </div>
 
                         <div class="row">
-                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow" href="{{route('detail_withdraw_project')}}">
+                            <a type="submit" class="col-12 btn btn-primary mb-3 shadow"
+                                href="{{route('detail_withdraw_project')}}">
                                 <p> Penarikan Dana </p>
                             </a>
                         </div>

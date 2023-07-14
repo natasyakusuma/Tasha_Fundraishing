@@ -56,9 +56,6 @@ Route::get('/edit_profile', function () {
 })->name('edit_profile');
 
 // Route - Project
-Route::get('/view_project', function () {
-    return view('pages.public.daftar_project.view_project');
-})->name('view_project');
 
 Route::get('/edit_project', function () {
     return view('pages.public.daftar_project.edit_project');
@@ -88,7 +85,7 @@ Route::get('/edit_laporan_project', function () {
 })->name('edit_laporan_project');
 
 Route::get('/view_laporan_project', function () {
-    return view('pages.public.laporan_project.view_project');
+    return view('pages.public.laporan_project.view_laporan_project');
 })->name('view_laporan_project');
 
 Route::get('/success_laporan_project', function () {
@@ -102,13 +99,12 @@ Route::get('/create_return_dana', function () {
 })->name('create_return_dana');
 
 Route::get('/view_return_dana_project', function () {
-    return view('pages.pengembalian_dana.view_return_dana_project');
+    return view('pages.public.pengembalian_dana.view_return_dana_project');
 })->name('view_return_dana_project');
 
 Route::get('/edit_return_dana_project', function () {
-    return view('pages.pengembalian_dana.edit_return_dana_project');
-})->name('/edit_return_dana_project');
-
+    return view('pages.public.pengembalian_dana.edit_return_dana_project');
+})->name('edit_return_dana_project');
 
 Route::get('/list_return_dana_project', function () {
     return view('pages.public.pengembalian_dana.list_return_dana_project');

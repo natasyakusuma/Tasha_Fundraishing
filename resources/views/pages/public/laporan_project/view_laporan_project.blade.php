@@ -6,7 +6,7 @@ View Laporan Proyek
 
 
 @section('content')
-<div class="create-laporan-project">
+<div class="edit-laporan-project">
     <div class="container">
         <header>
             <h2>
@@ -30,7 +30,7 @@ View Laporan Proyek
                         <input type="file" class="form-control" id="UploadDocument">
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button class="button" id="cancel-button" type="submit"> Edit </button>
+                        <button class="button" id="next-button" type="submit"> Edit </button>
                     </div>
                 </form>
             </div>

@@ -1,22 +1,8 @@
-.profile-page{
-    .form-control {
-        &:focus {
-            box-shadow: none;
-            border-color: blue;
-        }
-    }
+.edit-return-dana{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 
-   
-
-    h4{
-        font-size: 20px;
-        font-weight: bold;
-    }
-    label {
-        font-size: 14px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
 
     button[type=submit] {
         padding: 10px 20px;
@@ -47,5 +33,19 @@
             background-color: #132435;
         }
     }
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: initial;
+        margin-bottom: 20px;
+    }
 
+    p {
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 16px;
+    }
 }

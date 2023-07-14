@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-Pengajuan Pengembalian Dana
+Edit Pengembalian Dana
 @endsection
 
 
 @section('content')
-<div class="create-return-dana">
+<div class="edit-return-dana">
     <div class="container">
         <header>
             <h2>
-               Ajukan Pengembalian Dana
+               Edit Pengembalian Dana
             </h2>
         </header>
         <div class="card">

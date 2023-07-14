@@ -221,7 +221,5 @@ button.addEventListener("click", function() {
   var bootstrapToast = new bootstrap.Toast(toast);
   bootstrapToast.show();
 });
-
-
 </script>
 @endpush
