@@ -14,13 +14,12 @@ Detail Laporan Proyek
                     <div class="card-detail">
                         <table class="mb-5">
                             <tbody>
-
                                 <tr>
                                     <td>
                                         <p> <b> Nama Laporan </b> </p>
                                     </td>
                                     <td>
-                                        <p>laporan Proyek Januari</p>
+                                        <p>{{ $responseData['data']['document_name'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -28,7 +27,7 @@ Detail Laporan Proyek
                                         <p> <b> Nama Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>Produksi Kue Kering Brand Ina Cookies Cake and Gift</p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -36,7 +35,7 @@ Detail Laporan Proyek
                                         <p> <b> Tanggal Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p> 19-01-2023</p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -44,7 +43,7 @@ Detail Laporan Proyek
                                         <p> <b> Waktu Pengembalian </b> </p>
                                     </td>
                                     <td>
-                                        <p>Pengembalian Ke-2 </p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,7 +51,7 @@ Detail Laporan Proyek
                                         <p> <b> Tenor </b> </p>
                                     </td>
                                     <td>
-                                        <p>Per-3 Bulan </p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -60,7 +59,7 @@ Detail Laporan Proyek
                                         <p> <b> Periode </b> </p>
                                     </td>
                                     <td>
-                                        <p> 1 Tahun </p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
 
@@ -69,7 +68,7 @@ Detail Laporan Proyek
                                         <p> <b> Status </b> </p>
                                     </td>
                                     <td>
-                                        <p> Disetujui </p>
+                                        <p style="color: red">- Ga ada di return BE -</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -93,13 +92,6 @@ Detail Laporan Proyek
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td> 19-12-2023</td>
-                                        <td> Rp.2.000.000 </td>
-                                        <td> Membeli Bahan </td>
-                                        <td> Bukti </td>
-                                        <td> Keluar </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>

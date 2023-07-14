@@ -19,7 +19,7 @@ Pengajuan Dana Proyek
     </div>
 
     <div class="container">
-        <form action="{{ route('projectForm') }}" method="post" id="form-dana1" enctype="multipart/form-data">
+        <form action="{{ route('projectCreateForm') }}" method="post" id="form-dana1" enctype="multipart/form-data">
             @csrf
             <div class="project-dana1">
                 <div class="card">
@@ -41,7 +41,7 @@ Pengajuan Dana Proyek
                             <label for="InputBank" class="form-label">Tipe Proyek</label>
                             <select class="form-select" id="InputBank" name="type" required>
                                 <option value="">Pilih Tipe Proyek</option>
-                                <option value="musyarakah">Akad Musyarakah</option>
+                                <option value="Musyarakah">Akad Musyarakah</option>
                             </select>
                         </div>
                         <div class="form-group mb-3">
@@ -105,7 +105,7 @@ Pengajuan Dana Proyek
                         </div>
                         <div class="form-group mb-3">
                             <label for="UploadImage" class="form-label">Upload Gambar</label>
-                            <input type="file" class="form-control" id="UploadImage" name="banner" multiple required>
+                            <input type="file" class="form-control" id="UploadImage" name="banner[]" multiple required>
                         </div>
                         <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Submit</button>
                     </div>
@@ -123,4 +123,3 @@ Pengajuan Dana Proyek
 @push('prepend-script')
 <script src="{{ asset('js/popup.js') }}"></script>
 @endpush
-

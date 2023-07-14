@@ -4,14 +4,14 @@
         <li><a href="{{ route('dashboard') }}" class="{{ (request()->is('dashboard')) ? 'active' : '' }}"><i data-feather="grid" class = "icon"></i> Dashboard</a></li>
         <li class="divider" data-text="main">Main</li>
         <li>
-            <a href="#" class="{{ (request()->is('project*')) ? 'active' : '' }}"><i data-feather="edit" class = "icon"></i> Daftar Proyek <i class='bx bx-chevron-right icon-right'></i></a>
+            <a href="#" class="{{ (request()->is('proyek*')) ? 'active' : '' }}"><i data-feather="edit" class = "icon"></i> Daftar Proyek <i class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_project') }}"> Pengajuan Dana Proyek </a></li>
                 <li><a href=" {{ route('list_project') }}"> Proyek Saya </a></li>
             </ul>
         </li>
         <li>
-            <a href="#"><i data-feather="file-minus" class = "icon"></i> Pengembalian Dana <i
+            <a href="#" class="{{ (request()->is('pengembalian-dana*')) ? 'active' : '' }}"><i data-feather="file-minus" class = "icon"></i> Pengembalian Dana <i
                     class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_return_dana') }}"> Ajukan Pengembalian </a></li>
@@ -21,7 +21,7 @@
         </li>
 
         <li>
-            <a href="#" {{ (request()->is('project-report*')) ? 'active' : '' }}><i data-feather="file-text" class = "icon"></i> Laporan Proyek <i
+            <a href="#" class="{{ (request()->is('laporan-proyek*')) ? 'active' : '' }}"><i data-feather="file-text" class = "icon"></i> Laporan Proyek <i
                     class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
                 <li><a href="{{ route('create_laporan_project') }}"> Membuat Laporan Proyek </a></li>

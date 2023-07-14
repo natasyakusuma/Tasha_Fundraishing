@@ -47,6 +47,20 @@ Laporan Proyek Saya
             </div>
         </div>
     </div>
+    @if ($message)
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto"> Berhasil </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{ $message }}
+                </div>
+            </div>
+        </div>
+    @endif
 </div>
 @endsection
 
@@ -56,4 +70,5 @@ Laporan Proyek Saya
 
 @push('prepend-script')
 <script src="{{ asset('js/projectSaya.js') }}"></script>
+<script src="{{ asset('js/toast.js') }}"></script>
 @endpush

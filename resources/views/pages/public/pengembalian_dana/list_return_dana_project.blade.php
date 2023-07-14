@@ -26,25 +26,38 @@ Pengembalian Dana Saya
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="#"> Produksi Kue Kering Brand Ina Cookies Cake and Gift</a>
-                            </td>
-                            <td> 19-01-2023 </td>
-                            <td> Pengembalian Ke-2 </td>
-                            <td> Rp. 10.000.000 </td>
-                            <td>
-                                <button class="btn btn-verification" disabled style="pointer-events: none;">
-                                    <span> Tercapai </span>
-                                </button></td>
-                            <td>
-                           
-                        </tr>
-                    
+                        @foreach ($responseData['data'] as $item)
+                            <tr>
+                                <td style="color: red"><a href="#">- ga ada di return BE -</a></td>
+                                <td style="color: red">- ga ada di return BE -</td>
+                                <td style="color: red">- ga ada di return BE -</td>
+                                <td>Rp {{ number_format($item['amount'], 0, ".", ".") }}</td>
+                                <td>
+                                    <button class="btn btn-verification" disabled style="pointer-events: none;">
+                                        <span>{{ $item['status'] }}</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    @if ($message)
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto"> Berhasil </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{ $message }}
+                </div>
+            </div>
+        </div>
+    @endif
 </div>
 @endsection
 
@@ -54,4 +67,5 @@ Pengembalian Dana Saya
 
 @push('prepend-script')
 <script src="{{ asset('js/projectSaya.js') }}"></script>
+<script src="{{ asset('js/toast.js') }}"></script>
 @endpush
