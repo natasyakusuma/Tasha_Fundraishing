@@ -63,7 +63,7 @@ html li {
 }
 .nav2 .nav-link .icon {
   font-size: 18px;
-  color: #1775F1;
+  color: #000;
 }
 .nav2 .nav-link .badge {
   position: absolute;
@@ -116,7 +116,7 @@ html li {
   display: flex;
   grid-gap: 10px;
   font-size: 14px;
-  color: #1775F1;
+  color: #000;
   align-items: center;
   transition: all 0.3s ease;
 }
@@ -144,7 +144,6 @@ html li {
 }
 .profile-page button[type=submit] {
   padding: 10px 20px;
-  background-color: #144272;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -153,6 +152,9 @@ html li {
   width: 150px;
   height: 40px;
   justify-items: flex-end;
+}
+.profile-page a {
+  color: #fff;
 }
 .profile-page button#cancel-button {
   background-color: red;

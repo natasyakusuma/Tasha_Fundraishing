@@ -93,7 +93,7 @@ Profil
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <a href="{{ route('edit_profile', $responseData['data']['id']) }}" class="btn btn-primary" id="next-button"> Edit </a>
+                        <a href="{{ route('edit_profile', $responseData['data']['id']) }}">  <button class="button" id="next-button" type="submit"> Edit </button> </a>
                     </div>
                 </div>
             </div>
