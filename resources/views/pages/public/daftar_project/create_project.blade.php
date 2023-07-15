@@ -37,10 +37,9 @@ Pengajuan Dana Proyek
                             <label for="DeskripsiProyek" class="form-label">Deskripsi Proyek</label>
                             <textarea cols="10" rows="4"class="form-control" id="DeskripsiProyek" name="description" required></textarea>
                         </div>
-                        <div class="form-group mb-3">
-                            <label for="InputBank" class="form-label">Tipe Proyek</label>
-                            <select class="form-select" id="InputBank" name="type" required>
-                                <option value="">Pilih Tipe Proyek</option>
+                        <div class="form-group mb-3 ">
+                            <label for="InputBank" class="form-label" >Tipe Proyek</label>
+                            <select class="form-select" id="InputBank" name="type"  disabled>
                                 <option value="Musyarakah">Akad Musyarakah</option>
                             </select>
                         </div>

@@ -157,7 +157,7 @@ html li {
   color: #fff;
 }
 .profile-page button#cancel-button {
-  background-color: red;
+  background-color: #FC3B56;
 }
 .profile-page button#cancel-button:hover {
   background-color: darkred;
@@ -166,7 +166,7 @@ html li {
   background-color: #144272;
 }
 .profile-page button#next-button:hover {
-  background-color: #132435;
+  background-color: #1c1c80;
 }
 
 .success {
@@ -235,6 +235,10 @@ html li {
 .login-page .card form button {
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color: #144272;
+}
+.login-page .card form button:hover {
+  background-color: #1c1c80;
 }
 
 .registrasi-page {

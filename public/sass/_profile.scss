@@ -1,4 +1,4 @@
-.profile-page{
+.profile-page {
     .form-control {
         &:focus {
             box-shadow: none;
@@ -6,12 +6,13 @@
         }
     }
 
-   
 
-    h4{
+
+    h4 {
         font-size: 20px;
         font-weight: bold;
     }
+
     label {
         font-size: 14px;
         margin-top: 10px;
@@ -29,21 +30,21 @@
         height: 40px;
         justify-items: flex-end;
 
-      
+
     }
 
-    
 
-    a{
+
+    a {
         color: #fff;
     }
 
-  
 
-    
+
+
 
     button#cancel-button {
-        background-color: red;
+        background-color: $color_6;
 
         &:hover {
             background-color: darkred;
@@ -51,11 +52,10 @@
     }
 
     button#next-button {
-        background-color: #144272
-        ;
+        background-color: $color_4;
 
         &:hover {
-            background-color: #132435;
+            background-color: $color_11;
         }
     }
 
