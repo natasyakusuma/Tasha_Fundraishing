@@ -34,7 +34,7 @@ Route::middleware('auth.check')->group(function () {
     // Route - Profile
     Route::prefix('profile')->group(function () {
         Route::get('/', [ProfileController::class, 'profilePage'])->name('view_profile');
-        Route::get('/edit', [ProfileController::class, 'profileEditPage'])->name('edit_profile');
+        Route::get('/edit/{id}', [ProfileController::class, 'profileEditPage'])->name('edit_profile');
     });
 
     // Route - Proyek

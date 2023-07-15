@@ -32,6 +32,24 @@ class ProfileController extends Controller
     }
 
     public function profileEditPage() {
-        return view('pages.public.profile.edit_profile');
+        $token = session('token');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->get(env('API_URL') . 'user');
+
+        if ($response->successful()) {
+            // Permintaan berhasil, menampilkan data respons
+            $responseData = $response->json();
+            return view('pages.public.profile.edit_profile', compact('responseData'));
+        } else {
+            // Permintaan gagal, menampilkan pesan error
+            $errorResponse = $response->json();
+            error_log($errorResponse['message']);
+
+            if ($errorResponse['error'] == "Unauthorized") {
+                session()->invalidate();
+                return redirect()->route('login');
+            }
+        }
     }
 }

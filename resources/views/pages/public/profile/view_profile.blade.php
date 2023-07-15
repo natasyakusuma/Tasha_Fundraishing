@@ -25,38 +25,38 @@ Profil
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label class="labels"> Nama Lengkap </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['full_name'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['full_name'] }}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> Email </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['email'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['email'] }}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> Nomor Telepon </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['phone_number'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['phone_number'] }}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> NIK</label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['id_card'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['id_card'] }}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> Tanggal Lahir </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['date_of_birth'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['date_of_birth'] }}" readonly>
                         </div>
                         <div class="col-md-6"> 
                             <label for="InputBank" class="form-label">Gender</label>
-                            <select class="form-select" id="InputGender">
+                            <select class="form-select" id="InputGender" readonly>
                                 <option value="M" {{ $responseData['data']['gender'] == "M" ? 'selected' : '' }}>Pria</option>
                                 <option value="F" {{ $responseData['data']['gender'] == "F" ? 'selected' : '' }}>Wanita</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> Status Pekerjaan </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['employment_status'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['employment_status'] }}" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels"> NPWP </label>
-                            <input type="text" class="form-control" value="{{ $responseData['data']['tax_registration_number'] }}">
+                            <input type="text" class="form-control" value="{{ $responseData['data']['tax_registration_number'] }}" readonly>
                         </div>
                     </div>
 
@@ -67,33 +67,33 @@ Profil
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Nama Usaha </label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control" value="" readonly>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Alamat Usaha </label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control" value="" readonly>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Surat Izin</label>
-                                <input type="file" class="form-control" value="">
+                                <input type="file" class="form-control" value="" readonly>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Nama Rekening Usaha</label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control" value="" readonly>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Bank Tujuan </label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control" value="" readonly>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels" style="color: red"> Nomor Rekening Usaha </label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" class="form-control" value="" readonly>
                             </div>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <a href="{{ route('edit_profile') }}" class="btn btn-primary" id="next-button"> Edit </a>
+                        <a href="{{ route('edit_profile', $responseData['data']['id']) }}" class="btn btn-primary" id="next-button"> Edit </a>
                     </div>
                 </div>
             </div>

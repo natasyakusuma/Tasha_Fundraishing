@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -15,39 +17,135 @@ class ProjectController extends Controller
 
     public function projectCreate(Request $request)
     {
-        $token = session('token');
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-        ])->attach('file_prospektus', $request->file('prospektus'))
-        ->attach('file_banner[]', $request->file('banner'))
-        ->asForm()->post(env('API_URL').'campaign', [
-            'name' => $request->name,
-            'description' => $request->description,
-            'type' => $request->type,
-            'category' => $request->category,
-            'start_date' => $request->startDate,
-            'closing_date' => $request->closingDate,
-            'current_funding_amount' => 0,
-            'target_funding_amount' => $request->targetFundingAmount,
-            'tenors' => $request->tenor,
-            'profit_share' => $request->profitShare,
-            'return_investment_period' => $request->returnInvestmentPeriod,
-            'max_sukuk' => $request->sukuk,
-            'status' => "WAITING_VERIFICATION",
-            'is_approved' => 0,
-            'sold_sukuk' => 0,
-        ]);
+        // $token = session('token');
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer ' . $token,
+        // ])->attach('file_prospektus', $request->file('prospektus'))
+        // ->attach('file_banner[]', $request->file('banner'))
+        // ->asForm()->post(env('API_URL') . 'campaign', [
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'type' => $request->type,
+        //     'category' => $request->category,
+        //     'start_date' => $request->startDate,
+        //     'closing_date' => $request->closingDate,
+        //     'current_funding_amount' => 0,
+        //     'target_funding_amount' => $request->targetFundingAmount,
+        //     'tenors' => $request->tenor,
+        //     'profit_share' => $request->profitShare,
+        //     'return_investment_period' => $request->returnInvestmentPeriod,
+        //     'max_sukuk' => $request->sukuk,
+        //     'status' => "WAITING_VERIFICATION",
+        //     'is_approved' => 0,
+        //     'sold_sukuk' => 0,
+        // ]);
 
-        if ($response->successful()) {
+        // if ($response->successful()) {
+        //     // Permintaan berhasil, menampilkan data respons
+        //     session(['message' => "Data berhasil dibuat"]);
+        //     return redirect()->route('list_project');
+        // } else {
+        //     // Permintaan gagal, menampilkan pesan error
+        //     $errorResponse = $response->json();
+        //     error_log($errorResponse['message']);
+
+        //     if ($errorResponse['error'] == "Unauthorized") {
+        //         session()->invalidate();
+        //         return redirect()->route('login');
+        //     }
+        // }
+
+        $token = session('token');
+        $client = new Client();
+        
+        $multipartData = [
+            [
+                'name' => 'name',
+                'contents' => $request->name,
+            ],
+            [
+                'name' => 'description',
+                'contents' => $request->description,
+            ],
+            [
+                'name' => 'type',
+                'contents' => $request->type,
+            ],
+            [
+                'name' => 'category',
+                'contents' => $request->category,
+            ],
+            [
+                'name' => 'start_date',
+                'contents' => $request->startDate,
+            ],
+            [
+                'name' => 'closing_date',
+                'contents' => $request->closingDate,
+            ],
+            [
+                'name' => 'current_funding_amount',
+                'contents' => 0,
+            ],
+            [
+                'name' => 'target_funding_amount',
+                'contents' => $request->targetFundingAmount,
+            ],
+            [
+                'name' => 'tenors',
+                'contents' => $request->tenor,
+            ],
+            [
+                'name' => 'profit_share',
+                'contents' => $request->profitShare,
+            ],
+            [
+                'name' => 'return_investment_period',
+                'contents' => $request->returnInvestmentPeriod,
+            ],
+            [
+                'name' => 'max_sukuk',
+                'contents' => $request->sukuk,
+            ],
+            [
+                'name' => 'file_prospektus',
+                'contents' => $request->file('prospektus'),
+            ],
+            // [
+            //     'name' => 'file_banner[]',
+            //     'contents' => $request->file('banner'),
+            // ],
+            [
+                'name' => 'status',
+                'contents' => "WAITING_VERIFICATION",
+            ],
+            [
+                'name' => 'is_approved',
+                'contents' => 0,
+            ],
+            [
+                'name' => 'sold_sukuk',
+                'contents' => 0,
+            ],
+        ];
+        
+        $response = $client->post(env('API_URL') . 'campaign', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $token,
+            ],
+            RequestOptions::MULTIPART => $multipartData,
+        ]);
+        
+        if ($response->getStatusCode() === 200) {
             // Permintaan berhasil, menampilkan data respons
             session(['message' => "Data berhasil dibuat"]);
             return redirect()->route('list_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
-            $errorResponse = $response->json();
-            error_log($errorResponse['message']);
-
-            if ($errorResponse['error'] == "Unauthorized") {
+            $errorResponse = $response->getBody()->getContents();
+            error_log($errorResponse);
+        
+            if ($response->getStatusCode() === 401) {
                 session()->invalidate();
                 return redirect()->route('login');
             }
@@ -64,7 +162,7 @@ class ProjectController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign/' . $id);
+        ])->get(env('API_URL') . 'campaign/' . $id);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -88,38 +186,107 @@ class ProjectController extends Controller
     public function projectUpdate(Request $request, $id) 
     {
         $token = session('token');
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-        ])->attach('file_prospektus', $request->file('prospektus'))
-        ->attach('file_banner[]', $request->file('banner'))
-        ->asForm()->post(env('API_URL').'campaign/'.$id, [
-            'name' => $request->name,
-            'description' => $request->description,
-            'type' => $request->type,
-            'category' => $request->category,
-            'start_date' => $request->startDate,
-            'closing_date' => $request->closingDate,
-            'current_funding_amount' => $request->currentFundingAmount,
-            'target_funding_amount' => $request->targetFundingAmount,
-            'tenors' => $request->tenor,
-            'profit_share' => $request->profitShare,
-            'return_investment_period' => $request->returnInvestmentPeriod,
-            'max_sukuk' => $request->sukuk,
-            'status' => "WAITING_VERIFICATION",
-            'is_approved' => 0,
-            'sold_sukuk' => 0,
-        ]);
+        $client = new Client();
+        
+        $multipartData = [
+            [
+                'name' => 'name',
+                'contents' => $request->name,
+            ],
+            [
+                'name' => 'description',
+                'contents' => $request->description,
+            ],
+            [
+                'name' => 'type',
+                'contents' => $request->type,
+            ],
+            [
+                'name' => 'category',
+                'contents' => $request->category,
+            ],
+            [
+                'name' => 'start_date',
+                'contents' => $request->startDate,
+            ],
+            [
+                'name' => 'closing_date',
+                'contents' => $request->closingDate,
+            ],
+            [
+                'name' => 'current_funding_amount',
+                'contents' => $request->currentFundingAmount,
+            ],
+            [
+                'name' => 'target_funding_amount',
+                'contents' => $request->targetFundingAmount,
+            ],
+            [
+                'name' => 'tenors',
+                'contents' => $request->tenor,
+            ],
+            [
+                'name' => 'profit_share',
+                'contents' => $request->profitShare,
+            ],
+            [
+                'name' => 'return_investment_period',
+                'contents' => $request->returnInvestmentPeriod,
+            ],
+            [
+                'name' => 'max_sukuk',
+                'contents' => $request->sukuk,
+            ],
+            [
+                'name' => 'status',
+                'contents' => "WAITING_VERIFICATION",
+            ],
+            [
+                'name' => 'is_approved',
+                'contents' => 0,
+            ],
+            [
+                'name' => 'sold_sukuk',
+                'contents' => 0,
+            ],
+        ];
 
-        if ($response->successful()) {
+        if ($request->hasFile('prospektus')) {
+            $multipartData[] = [
+                'name' => 'file_prospektus',
+                'contents' => fopen($request->file('prospektus')->getPathname(), 'r'),
+                'filename' => $request->file('prospektus')->getClientOriginalName(),
+            ];
+        }
+        
+        if ($request->hasFile('banner')) {
+            $bannerFiles = $request->file('banner');
+            foreach ($bannerFiles as $bannerFile) {
+                $multipartData[] = [
+                    'name' => 'file_banner[]',
+                    'contents' => fopen($bannerFile->getPathname(), 'r'),
+                    'filename' => $bannerFile->getClientOriginalName(),
+                ];
+            }
+        }
+        
+        $response = $client->post(env('API_URL').'campaign/'.$id, [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $token,
+            ],
+            RequestOptions::MULTIPART => $multipartData,
+        ]);
+        
+        if ($response->getStatusCode() === 200) {
             // Permintaan berhasil, menampilkan data respons
             session(['message' => "Data berhasil diperbarui"]);
             return redirect()->route('list_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
-            $errorResponse = $response->json();
-            error_log($errorResponse['message']);
-
-            if ($errorResponse['error'] == "Unauthorized") {
+            $errorResponse = $response->getBody()->getContents();
+            error_log($errorResponse);
+        
+            if ($response->getStatusCode() === 401) {
                 session()->invalidate();
                 return redirect()->route('login');
             }
@@ -157,7 +324,7 @@ class ProjectController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign/' . $id . '?include[]=banners&include[]=user');
+        ])->get(env('API_URL') . 'campaign/' . $id . '?include[]=banners&include[]=user');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons

@@ -13,7 +13,7 @@ class RefundController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign?id_user='.$userId);
+        ])->get(env('API_URL') . 'campaign?id_user=' . $userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -37,7 +37,7 @@ class RefundController extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
         ])->attach('file_receipt', $request->file('fileReceipt'))
-        ->asForm()->post(env('API_URL').'payment', [
+        ->asForm()->post(env('API_URL') . 'payment', [
             'id_campaign' => $request->projectName,
             'amount' => $request->amount,
         ]);

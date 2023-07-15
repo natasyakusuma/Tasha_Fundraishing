@@ -92,6 +92,15 @@ Detail Laporan Proyek
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($responseData['data']['campaign_report_details'] as $item)
+                                        <tr>
+                                            <td>{{ $item['date'] }}</td>
+                                            <td>Rp {{ number_format($item['amount'], 0, ".", ".") }}</td>
+                                            <td>{{ $item['description'] }}</td>
+                                            <td><a href="{{ $item['evidence'] }}">Bukti</a></td>
+                                            <td>{{ $item['type'] }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

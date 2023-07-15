@@ -30,7 +30,7 @@ Laporan Proyek Saya
                         @foreach ($responseData['data'] as $item)
                             <tr>
                                 <td><a href="{{ route('detail_laporan_project', $item['id']) }}">{{ $item['document_name'] }}</a></td>
-                                <td style="color: red">- ga ada di return BE -</td>
+                                <td>{{ $item['campaign']['name'] }}</td>
                                 <td>{{ \Carbon\Carbon::parse($item['created_at'])->format('d-m-Y') }}</td>
                                 <td style="color: red">- ga ada di return BE -</td>
                                 <td>

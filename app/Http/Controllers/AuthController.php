@@ -14,7 +14,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $response = Http::asForm()->post(env('API_URL').'login', [
+        $response = Http::asForm()->post(env('API_URL') . 'login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -40,7 +40,7 @@ class AuthController extends Controller
 
     public function reg1(Request $request)
     {
-        $response = Http::asForm()->post(env('API_URL').'register', [
+        $response = Http::asForm()->post(env('API_URL') . 'register', [
             'full_name' => $request->fullName,
             'email' => $request->email,
             'password' => $request->password,
@@ -78,7 +78,7 @@ class AuthController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->asForm()->post(env('API_URL').'user', [
+        ])->asForm()->post(env('API_URL') . 'user', [
             'user_business_name' => $request->businessName,
             'user_business_address' => $request->businessAddress,
             'account_number' => $request->accountNumber,
@@ -108,7 +108,9 @@ class AuthController extends Controller
     public function logout()
     {
         $token = session('token');
-        Http::withToken($token)->post(env('API_URL').'logout');
+        Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->post(env('API_URL') . 'logout');
 
         session()->invalidate();
         return redirect()->route('login');

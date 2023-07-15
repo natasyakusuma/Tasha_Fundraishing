@@ -13,7 +13,7 @@ class ReportController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign?id_user='.$userId);
+        ])->get(env('API_URL') . 'campaign?id_user=' . $userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -37,7 +37,7 @@ class ReportController extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
         ])->attach('file_document', $request->file('uploadDocument'))
-        ->asForm()->post(env('API_URL').'campaign-report', [
+        ->asForm()->post(env('API_URL') . 'campaign-report', [
             'id_campaign' => $request->projectName,
             'document_name' => $request->documentName,
             'is_exported' => 0,
@@ -72,9 +72,10 @@ class ReportController extends Controller
     public function projectReportListPage()
     {
         $token = session('token');
+        $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign-report');
+        ])->get(env('API_URL') . 'campaign-report?id_user=' . $userId . '&include[]=campaign');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -99,7 +100,7 @@ class ReportController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'campaign-report/'.$id.'?include[]=campaign_report_details');
+        ])->get(env('API_URL') . 'campaign-report/' . $id . '?include[]=campaign_report_details');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
