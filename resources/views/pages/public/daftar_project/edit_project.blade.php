@@ -148,6 +148,8 @@ Edit Pengajuan Dana Proyek
                                             <td>
                                                 <input type="number" class="form-control" id="TotalSuku" name="sukuk"
                                                     value="{{ $responseData['data']['max_sukuk'] }}" required>
+                                                <input type="number" class="form-control" name="soldSukuk"
+                                                    value="{{ $responseData['data']['sold_sukuk'] }}" hidden>
                                             </td>
                                         </tr>
                                         <tr>
@@ -163,7 +165,7 @@ Edit Pengajuan Dana Proyek
                                                 <p> <b> Upload Gambar </b> </p>
                                             </td>
                                             <td>
-                                                <input type="file" class="form-control" id="UploadImage" name="banner[]"
+                                                <input type="file" class="form-control" id="UploadImage" name="banner"
                                                     multiple>
                                             </td>
                                         </tr>

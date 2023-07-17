@@ -1,9 +1,9 @@
-APP_NAME=tasha_fundraising
+APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:+97+EJ9s6Fjt23XfCi6AOD5NO2EXHhjjkbtwn9KACP8=
+APP_KEY=base64:TKDYHzAr3CkRFnjHrb8fSSLDcXVD13lySeVk4nvR82Y=
 APP_DEBUG=true
 APP_URL=http://localhost
-API_URL=http://103.250.11.97:8000/api/v1/
+API_URL=http://103.250.11.97:8000/api/v1
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null
