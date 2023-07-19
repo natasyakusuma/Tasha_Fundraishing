@@ -170,7 +170,7 @@ Proyek Saya
                                 <div class="carousel-inner">
                                     @foreach ($responseData['data']['banners'] as $key => $data)
                                         <div class="carousel-item {{ $key == '0' ? 'active' : '' }}">
-                                            <img src="{{ $data['url'] }}" class="d-block w-100" alt="...">
+                                            <img src="{{ env('API_URL') . $data['url'] }}" class="d-block w-100" alt="...">
                                         </div>
                                     @endforeach
                                 </div>

@@ -62,8 +62,8 @@ Route::middleware('auth.check')->group(function () {
 
     // Route - Pengembalian dana
     Route::prefix('pengembalian-dana')->group(function () {
-        Route::get('/', [RefundController::class, 'refundPage'])->name('create_return_dana');
-        Route::post('/', [RefundController::class, 'refund'])->name('refundForm');
+        Route::get('/create', [RefundController::class, 'refundPage'])->name('create_return_dana');
+        Route::post('/create', [RefundController::class, 'refundCreate'])->name('refundCreateForm');
         Route::post('/success', [RefundController::class, 'refundSuccessPage'])->name('success_dana_project');
         Route::get('/edit', [RefundController::class, 'refundEditPage'])->name('edit_return_dana_project');
         Route::get('simulasi', [RefundController::class, 'refundSimulation'])->name('simulation_return_dana_project');

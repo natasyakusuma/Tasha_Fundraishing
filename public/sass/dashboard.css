@@ -407,6 +407,7 @@ main .breadcrumbs li.divider {
 }
 
 main .info-data {
+    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     justify-content: center;
@@ -435,6 +436,7 @@ main .title h1 {
 
 main p {
     font-size: 14px;
+    margin-bottom: 0px;
 }
 
 main .col-md-6 .img-fluid{
@@ -446,9 +448,15 @@ main .col-md-6 .img-fluid{
 }
 
 main .data .content-data .content-detail {
-    border-right: #000;
-    border-width: 5px;
+    padding: 25px;
+    border-right: 1px solid black;
 }
+
+main .data .content-data .bar-chart {
+    padding: 25px;
+    border-left: 1px solid black;
+}
+
 main .bar-chart .col-2 p {
     font-weight: bold;
 }
@@ -595,6 +603,13 @@ main .content-data .progress .progress-bar::-webkit-scrollbar {
     display: none;
 }
 
+main .container .banner {
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 
 /* form */

@@ -12,7 +12,7 @@ class DashboardController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL').'dashboard');
+        ])->get(env('API_URL') . '/dashboard');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons

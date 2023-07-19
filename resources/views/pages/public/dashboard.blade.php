@@ -7,30 +7,31 @@ Login
 @section('content')
 <main>
     <h1 class="title"> Welcome Thea Anugrah Felicia</h1>
-    <p> Ajukan Proyek Anda Untuk Mendapatkan Pendanaan </p>
+    <p> Ajukan Proyek Anda Untuk Mendapatkan Pendanaan! <a href="{{ route('create_project') }}">Pengajuan Dana Proyek</a></p>
+    
     <div class=" container">
         <div class="row">
-            <div class="col-md-6">
-                <img class="img-fluid" src="{{asset('img/undraw_hello_re_3evm 1.png')}}" alt="">
+            <div class="col-md-6 d-flex">
+                <img class="img-fluid banner" src="{{asset('img/undraw_hello_re_3evm 1.png')}}" alt="">
             </div>
 
             <div class="col-md-6">
                 <div class="info-data">
                     <div class="row">
                         <div class="col-6">
-                            <div class="card">
+                            <div class="card shadow">
                                 <div class="head">
                                     <div>
                                         <p> Jumlah Daftar Proyek </p>
                                         <h2> {{ $responseData['data']['total_campaign'] }} </h2>
-                                        <p> Proyek </p>
+                                        <p class=""> Proyek </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-6">
-                            <div class="card">
+                            <div class="card shadow">
                                 <div class="head">
                                     <div>
                                         <p> Jumlah Laporan Proyek </p>
@@ -42,7 +43,7 @@ Login
                         </div>
 
                         <div class="col-6 mt-3">
-                            <div class="card">
+                            <div class="card shadow">
                                 <div class="head">
                                     <div>
                                         <p> Total Pengembalian Dana </p>
@@ -54,7 +55,7 @@ Login
                         </div>
 
                         <div class="col-6 mt-3">
-                            <div class="card">
+                            <div class="card shadow">
                                 <div class="head">
                                     <div>
                                         <p> Total Penarikan Dana </p>
@@ -71,7 +72,7 @@ Login
 
         <!-- Data  -->
         <div class="data">
-            <div class="content-data">
+            <div class="content-data shadow">
                 <!-- Carousel  -->
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -90,9 +91,9 @@ Login
                                         <div class="head">
                                             <h3> Progress Pengumpulan Dana</h3>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <div class="container">
+                                        <div class="row mb-3">
+                                            <div class="col-11">
+                                                <div class="container p-0">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="0"
                                                             aria-valuemin="0" aria-valuemax="100"></div>
@@ -106,21 +107,17 @@ Login
                                                 </div>
                                             </div>
 
-                                            <div class="col-2 font-bold">
-                                                <p id="calculate-value"></p>
+                                            <div class="col-1 font-bold">
+                                                <p id="calculate-value" class="mt-1"></p>
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="d-flex justify-content-end ">
-                                                <div class="col-8">
-                                                    <p>
-                                                        Total Dana yang Terkumpul
-                                                    </p>
-                                                </div>
-                                                <div class="col-4" style="color : #1775F1; font-weight : bold">
-                                                    <p>Rp {{ number_format($data['current_funding_amount'], 0, ".", ".") }}</p>
-                                                </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p>
+                                                <b>Total Dana yang Terkumpul</b>
+                                            </p>
+                                            <div style="color : #1775F1; font-weight : bold">
+                                                <p>Rp {{ number_format($data['current_funding_amount'], 0, ".", ".") }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -104,7 +104,7 @@ Pengajuan Dana Proyek
                         </div>
                         <div class="form-group mb-3">
                             <label for="UploadImage" class="form-label">Upload Gambar</label>
-                            <input type="file" class="form-control" id="UploadImage" name="banner[]" multiple required>
+                            <input type="file" class="form-control" id="UploadImage" name="banner" multiple required>
                         </div>
                         <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Submit</button>
                     </div>

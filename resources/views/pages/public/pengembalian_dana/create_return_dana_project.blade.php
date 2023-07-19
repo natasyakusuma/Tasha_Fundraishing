@@ -26,7 +26,7 @@ Pengajuan Pengembalian Dana
         </header>
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('refundForm') }}" method="POST" id="form-dana1" enctype="multipart/form-data">
+                <form action="{{ route('refundCreateForm') }}" method="POST" id="form-dana1" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-3">
                         <label for="InputProyek" class="form-label">Nama Proyek</label>

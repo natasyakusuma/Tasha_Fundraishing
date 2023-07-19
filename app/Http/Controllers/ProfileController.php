@@ -11,7 +11,7 @@ class ProfileController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . 'user');
+        ])->get(env('API_URL') . '/user');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . 'user');
+        ])->get(env('API_URL') . '/user');
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons

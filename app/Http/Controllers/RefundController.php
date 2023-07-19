@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -13,7 +14,7 @@ class RefundController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . 'campaign?id_user=' . $userId);
+        ])->get(env('API_URL') . '/campaign?id_user=' . $userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -31,16 +32,22 @@ class RefundController extends Controller
         }
     }
 
-    public function refund(Request $request) 
+    public function refundCreate(Request $request) 
     {
         $token = session('token');
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $token,
-        ])->attach('file_receipt', $request->file('fileReceipt'))
-        ->asForm()->post(env('API_URL') . 'payment', [
+        $fileReceipt = $request->file('fileReceipt');
+        $data = [
             'id_campaign' => $request->projectName,
             'amount' => $request->amount,
-        ]);
+        ];
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->attach(
+            'file_receipt', // Nama file yang diharapkan oleh API (gantilah sesuai dengan kebutuhan)
+            file_get_contents($fileReceipt->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
+            $fileReceipt->getClientOriginalName() // Nama asli file
+        )->post(env('API_URL') . '/payment/do-payment', $data);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
@@ -57,6 +64,49 @@ class RefundController extends Controller
             }
         }
     }
+
+    // public function refundCreate(Request $request)
+    // {
+    //     $token = session('token');
+    //     $fileReceipt = $request->file('fileReceipt');
+    //     $client = new Client();
+
+    //     $response = $client->request('POST', env('API_URL') . 'payment/do-payment', [
+    //         'headers' => [
+    //             'Authorization' => 'Bearer ' . $token,
+    //         ],
+    //         'multipart' => [
+    //             [
+    //                 'name' => 'id_campaign',
+    //                 'contents' => $request->projectName,
+    //             ],
+    //             [
+    //                 'name' => 'amount',
+    //                 'contents' => $request->amount,
+    //             ],
+    //             [
+    //                 'name' => 'file_receipt',
+    //                 'contents' => fopen($fileReceipt->getRealPath(), 'r'),
+    //                 'filename' => $fileReceipt->getClientOriginalName(),
+    //             ],
+    //         ],
+    //     ]);
+
+    //     $result = json_decode($response->getBody()->getContents());
+    //     if ($result->status == "success") {
+    //         // Permintaan berhasil, menampilkan data respons
+    //         session(['message' => "Pengajuan pengembalian dana diproses"]);
+    //         return redirect()->route('list_return_dana_project');
+    //     } else {
+    //         // Permintaan gagal, menampilkan pesan error
+    //         error_log($result->message);
+
+    //         if ($result->error == "Unauthorized") {
+    //             session()->invalidate();
+    //             return redirect()->route('login');
+    //         }
+    //     }
+    // }
 
     public function refundSuccessPage() 
     {
@@ -79,7 +129,7 @@ class RefundController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . 'payment?id_user=' . $userId);
+        ])->get(env('API_URL') . '/payment?id_user=' . $userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons

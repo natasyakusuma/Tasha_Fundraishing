@@ -28,7 +28,7 @@ Registrasi 2
                         <div class="form-header mb-3 mt-3">
                             <img src="{{ asset('img/Logo2.png')}}" alt="logo">
                         </div>
-                        <form action="{{ route('reg2Form') }}" method="POST" id="form-step2">
+                        <form action="{{ route('reg2Form') }}" method="POST" id="form-step2" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="InputUsaha" class="form-label">Nama Usaha</label>
