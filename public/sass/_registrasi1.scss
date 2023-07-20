@@ -27,7 +27,7 @@
         
                       
                 &.active {
-                    background-color: #007bff;
+                    background-color: $color_4;
                     color: #fff;
                 }
             }
@@ -44,6 +44,18 @@
             margin-left: 17.5px;
             background-color: #ccc;
         }
+    }
+
+    button[type=submit]{
+        color: #fff;
+        font-weight: 300;
+        background-color: $color_4;
+
+         &:hover{
+            background-color: $color_11;
+            color: #fff;
+            font-weight: 300;
+         }
     }
 
 

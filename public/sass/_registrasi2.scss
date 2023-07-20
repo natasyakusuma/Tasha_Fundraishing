@@ -154,15 +154,17 @@
             }
         }
 
-        .buttons {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            /* float: right; */
-            margin:0;
-            padding: 0;
-            /* justify-content:space-evenly; */
-
+        button[type=submit]{
+            color: #fff;
+            font-weight: bold;
+            background-color: $color_4;
+    
+             &:hover{
+                background-color: $color_11;
+                color: #fff;
+                font-weight: bold;
+             }
+        
             .nxt__btn {
                 width: 50%;
                 height: 1.8rem;

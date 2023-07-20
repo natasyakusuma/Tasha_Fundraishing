@@ -269,7 +269,7 @@ html li {
   margin-right: 10px;
 }
 .registrasi-page .stepper .stepper-item .stepper-number.active {
-  background-color: #007bff;
+  background-color: #144272;
   color: #fff;
 }
 .registrasi-page .stepper .stepper-item .stepper-title {
@@ -281,6 +281,16 @@ html li {
   height: 50px;
   margin-left: 17.5px;
   background-color: #ccc;
+}
+.registrasi-page button[type=submit] {
+  color: #fff;
+  font-weight: 300;
+  background-color: #144272;
+}
+.registrasi-page button[type=submit]:hover {
+  background-color: #1c1c80;
+  color: #fff;
+  font-weight: 300;
 }
 
 .registrasi1-page {
@@ -404,16 +414,17 @@ html li {
   background: #1cd68c;
   cursor: pointer;
 }
-.registrasi1-page .form__container .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* float: right; */
-  margin: 0;
-  padding: 0;
-  /* justify-content:space-evenly; */
+.registrasi1-page .form__container button[type=submit] {
+  color: #fff;
+  font-weight: bold;
+  background-color: #144272;
 }
-.registrasi1-page .form__container .buttons .nxt__btn {
+.registrasi1-page .form__container button[type=submit]:hover {
+  background-color: #1c1c80;
+  color: #fff;
+  font-weight: bold;
+}
+.registrasi1-page .form__container button[type=submit] .nxt__btn {
   width: 50%;
   height: 1.8rem;
   display: flex;
@@ -432,12 +443,12 @@ html li {
   /* margin-left: 20em; */
   /* margin-top: 0.55em;     */
 }
-.registrasi1-page .form__container .buttons .nxt__btn .hover {
+.registrasi1-page .form__container button[type=submit] .nxt__btn .hover {
   transform: scale(1.03);
   background: #1cd68c;
   cursor: pointer;
 }
-.registrasi1-page .form__container .buttons .prev__btn {
+.registrasi1-page .form__container button[type=submit] .prev__btn {
   margin: 0;
   /* padding: 0.5rem 1.5rem 0.7rem 1.5rem  ; */
   /* background-color: #857373; */
@@ -570,26 +581,29 @@ html li {
 .edit-project {
   padding-top: 30px;
 }
-.edit-project button {
+.edit-project button[type=submit] {
   padding: 10px 20px;
+  margin-top: 15px;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 10px;
-  width: 150px;
   height: 40px;
+  width: 100%;
 }
-.edit-project button#cancel-button {
+.edit-project a {
+  margin-right: 10px;
+}
+.edit-project a button#cancel-button {
   background-color: red;
 }
-.edit-project button#cancel-button:hover {
+.edit-project a button#cancel-button:hover {
   background-color: darkred;
 }
-.edit-project button#next-button {
+.edit-project a button#next-button {
   background-color: #144272;
 }
-.edit-project button#next-button:hover {
+.edit-project a button#next-button:hover {
   background-color: #1c1c80;
 }
 .edit-project .card {
@@ -878,7 +892,7 @@ html li {
 }
 .detail-laporan-project .col-md-6 .card .card-detail table td p {
   text-align: justify;
-  font-size: 14px;
+  font-size: 16px;
 }
 .detail-laporan-project .col-md-6 .card .card-detail2 {
   border-radius: 10px;
@@ -966,27 +980,28 @@ html li {
 }
 .edit-laporan-project button[type=submit] {
   padding: 10px 20px;
-  background-color: #144272;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
-  width: 150px;
+  width: 100%;
   height: 40px;
-  justify-items: flex-end;
 }
-.edit-laporan-project button#cancel-button {
+.edit-laporan-project a {
+  margin-right: 10px;
+}
+.edit-laporan-project a button#cancel-button {
   background-color: red;
 }
-.edit-laporan-project button#cancel-button:hover {
+.edit-laporan-project a button#cancel-button:hover {
   background-color: darkred;
 }
-.edit-laporan-project button#next-button {
+.edit-laporan-project a button#next-button {
   background-color: #144272;
 }
-.edit-laporan-project button#next-button:hover {
-  background-color: #132435;
+.edit-laporan-project a button#next-button:hover {
+  background-color: #1c1c80;
 }
 
 .create-return-dana {
@@ -1077,7 +1092,6 @@ html li {
   border-radius: 10px;
 }
 .list-return-dana-project .card .card-body th {
-  width: 50%;
   background-color: #144272;
   text-align: justify;
   color: #fff;
@@ -1085,7 +1099,6 @@ html li {
 .list-return-dana-project .card .card-body td {
   text-align: justify;
   font-size: 14px;
-  width: 0;
 }
 .list-return-dana-project .card .card-body td .btn-verification {
   background-color: greenyellow;
@@ -1118,21 +1131,24 @@ html li {
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
-  width: 150px;
+  width: 100%;
   height: 40px;
   justify-items: flex-end;
 }
-.edit-return-dana button#cancel-button {
+.edit-return-dana a {
+  margin-right: 10px;
+}
+.edit-return-dana a button#cancel-button {
   background-color: red;
 }
-.edit-return-dana button#cancel-button:hover {
+.edit-return-dana a button#cancel-button:hover {
   background-color: darkred;
 }
-.edit-return-dana button#next-button {
+.edit-return-dana a button#next-button {
   background-color: #144272;
 }
-.edit-return-dana button#next-button:hover {
-  background-color: #132435;
+.edit-return-dana a button#next-button:hover {
+  background-color: #1c1c80;
 }
 .edit-return-dana h2 {
   font-size: 20px;

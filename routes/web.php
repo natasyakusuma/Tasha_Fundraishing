@@ -80,3 +80,8 @@ Route::get('/view_laporan_project', function () {
 Route::get('/view_return_dana_project', function () {
     return view('pages.public.pengembalian_dana.view_return_dana_project');
 })->name('view_return_dana_project');
+
+
+Route::get('/uji_coba', function () {
+    return view('pages.public.ujicoba');
+})->name('uji_coba');

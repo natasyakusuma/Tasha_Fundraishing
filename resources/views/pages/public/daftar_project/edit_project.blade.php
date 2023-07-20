@@ -176,11 +176,14 @@ Edit Pengajuan Dana Proyek
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-end">
-                    <a href="{{ route('list_project') }}">
-                        <button class="button" id="cancel-button"> Batal </button>
+                <div class="d-flex justify-center">
+                    <a href="{{ route('list_project') }}" class="col-6">
+                        <button class="button" id="cancel-button" type="submit"> Batal </button>
                     </a>
-                    <button class="button" id="next-button" type="submit"> Simpan</button>
+    
+                    <a  class="col-6">
+                        <button class="button" id="next-button" type="submit"> Simpan</button>
+                    </a>
                 </div>
             </div>
         </form>

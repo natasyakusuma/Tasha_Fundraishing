@@ -75,7 +75,7 @@ Registrasi 1
                                 <label for="InputNPWP" class="form-label">NPWP</label>
                                 <input type="text" class="form-control" id="InputNPWP" name="npwp" required>
                             </div>
-                            <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</button>
+                            <button type="submit" class="col-12 btn mb-3 shadow">Selanjutnya</button>
                         </form>
                         <p class="text-center">
                             Sudah Punya Akun?

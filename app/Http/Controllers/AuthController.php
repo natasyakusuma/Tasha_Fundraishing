@@ -26,6 +26,7 @@ class AuthController extends Controller
             session(['token' => $responseData['authorization']['token']]);
             session(['user_id' => $responseData['user']['id']]);
             return redirect()->route('dashboard');
+           
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();

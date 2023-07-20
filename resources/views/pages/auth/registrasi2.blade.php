@@ -64,7 +64,7 @@ Registrasi 2
                                         class="col-12 btn btn-danger mb-3 shadow">Sebelumnya</a>
                                 </div>
                                 <div class="col-6">
-                                    <button type="submit" class="col-12 btn btn-primary mb-3 shadow">Selanjutnya</button>
+                                    <button type="submit" class="col-12 btn mb-3 shadow">Selanjutnya</button>
                                 </div>
                             </div>
                         </form>

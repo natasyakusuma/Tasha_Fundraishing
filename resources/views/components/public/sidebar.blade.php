@@ -2,7 +2,7 @@
     <a href="{{ route('dashboard') }}" class="brand"><img src="{{ asset('img/Logo2.png') }}" alt=""> </a>
     <ul class="side-menu">
         <li><a href="{{ route('dashboard') }}" class="{{ (request()->is('dashboard')) ? 'active' : '' }}"><i data-feather="grid" class = "icon"></i> Dashboard</a></li>
-        <li class="divider" data-text="main">Main</li>
+        <li class="divider" data-text="main"> Menu </li>
         <li>
             <a href="#" class="{{ (request()->is('proyek*')) ? 'active' : '' }}"><i data-feather="edit" class = "icon"></i> Daftar Proyek <i class='bx bx-chevron-right icon-right'></i></a>
             <ul class="side-dropdown">
