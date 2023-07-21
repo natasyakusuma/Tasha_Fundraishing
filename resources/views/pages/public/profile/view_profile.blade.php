@@ -66,28 +66,28 @@ Profil
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Nama Usaha </label>
-                                <input type="text" class="form-control" value="" readonly>
+                                <label class="labels"> Nama Usaha </label>
+                                <input readonly type="text" class="form-control" value="{{ $responseData['data']['user_business']['name']}}">
                             </div>
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Alamat Usaha </label>
-                                <input type="text" class="form-control" value="" readonly>
+                                <label class="labels"> Alamat Usaha </label>
+                                <input readonly type="text" class="form-control" value="{{ $responseData['data']['user_business']['address']}}">
                             </div>
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Surat Izin</label>
-                                <input type="file" class="form-control" value="" readonly>
+                                <label class="labels"> Surat Izin</label>
+                                <input readonly type="file" class="form-control" value="{{ $responseData['data']['user_business']['certificate_url']}}">
                             </div>
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Nama Rekening Usaha</label>
-                                <input type="text" class="form-control" value="" readonly>
+                                <label class="labels"> Nama Rekening Usaha</label>
+                                <input readonly type="text" class="form-control" value="{{ $responseData['data']['user_bank']['account_name']}}">
                             </div>
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Bank Tujuan </label>
-                                <input type="text" class="form-control" value="" readonly>
+                                <label class="labels"> Bank Tujuan </label>
+                                <input readonly type="text" class="form-control" value="{{ $responseData['data']['user_bank']['bank_name']}}">
                             </div>
                             <div class="col-md-6">
-                                <label class="labels" style="color: red"> Nomor Rekening Usaha </label>
-                                <input type="text" class="form-control" value="" readonly>
+                                <label class="labels"> Nomor Rekening Usaha </label>
+                                <input readonly type="text" class="form-control" value="{{ $responseData['data']['user_bank']['account_number']}}">
                             </div>
                         </div>
                     </div>

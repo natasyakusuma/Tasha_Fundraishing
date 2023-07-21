@@ -101,9 +101,19 @@ Proyek Saya
                                         <p> <b> Status </p>
                                     </td>
                                     <td>
-                                        <button class="btn btn-verification" disabled style="pointer-events: none;">
-                                            <span>{{ $responseData['data']['status'] }}</span>
-                                        </button>
+                                        @if($responseData['data']['status'] == "WAITING_VERIFICATION" ||
+                                        $responseData['data']['status'] == "RUNNING" || $responseData['data']['status']
+                                        == "PROCEECED")
+                                        <span class="badge bg-warning">{{ $responseData['data']['status'] }}</span>
+                                        @elseif($responseData['data']['status'] == "REJECTED")
+                                        <span class="badge bg-danger">{{ $responseData['data']['status'] }}</span>
+                                        @elseif($responseData['data']['status'] == "ACTIVE" ||
+                                        $responseData['data']['status'] == "ACHIEVED" || $responseData['data']['status']
+                                        == "DONE")
+                                        <span class="badge bg-success">{{ $responseData['data']['status'] }}</span>
+
+
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -111,8 +121,8 @@ Proyek Saya
                                         <p> <b> Dokumen Proyektus </b> </p>
                                     </td>
                                     <td>
-                                        <a href="{{ $responseData['data']['prospektus_url'] }}"><i
-                                                class='bx bxs-dashboard icon'></i></a>
+                                        <a href="http://103.250.11.97:8000{{ $responseData['data']['prospektus_url'] }}"><i
+                                                class='bx bxs-file icon'></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -166,22 +176,12 @@ Proyek Saya
                                     Gambar
                                 </h2>
                             </div>
-                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    @foreach ($responseData['data']['banners'] as $key => $data)
-                                        <div class="carousel-item {{ $key == '0' ? 'active' : '' }}">
-                                            <img src="{{ env('API_URL') . $data['url'] }}" class="d-block w-100" alt="...">
+                            <div>
+                                <div>
+                                        <div>
+                                            <img src="http://103.250.11.97:8000{{$responseData['data']['banners'][0]['url']}}" class="d-block w-100" alt="...">
                                         </div>
-                                    @endforeach
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
                               </div>
                         </div>
 

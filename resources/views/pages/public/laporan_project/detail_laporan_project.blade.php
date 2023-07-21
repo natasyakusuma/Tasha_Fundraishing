@@ -27,7 +27,7 @@ Detail Laporan Proyek
                                         <p> <b> Nama Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                        <p>{{ $responseData['data']['campaign']['name'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -35,15 +35,7 @@ Detail Laporan Proyek
                                         <p> <b> Tanggal Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p> <b> Waktu Pengembalian </b> </p>
-                                    </td>
-                                    <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                        <p>{{\Carbon\Carbon::parse($responseData['data']['campaign']['created_at'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -51,15 +43,7 @@ Detail Laporan Proyek
                                         <p> <b> Tenor </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p> <b> Periode </b> </p>
-                                    </td>
-                                    <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                        <p>{{ $responseData['data']['campaign']['tenors'] }}</p>
                                     </td>
                                 </tr>
 
@@ -68,7 +52,13 @@ Detail Laporan Proyek
                                         <p> <b> Status </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                        @if($responseData['data']['is_exported'] == 1 )
+                                        <span class="badge bg-success"> APPROVED </span>
+                                        @elseif($responseData['data']['is_exported'] == 0 )
+                                        <span class="badge bg-warning">WAITING_VERIFICATION </span>
+                                        @elseif($responseData['data']['is_exported'] == -1 )
+                                        <span class="badge bg-danger"> REJECTED </span>
+                                        @endif
                                     </td>
                                 </tr>
                             </tbody>
@@ -81,28 +71,30 @@ Detail Laporan Proyek
                 <div class="card">
                     <div class="card-detail2">
                         <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> Tanggal</th>
-                                        <th scope="col"> Jumlah </th>
-                                        <th scope="col"> Deskripsi </th>
-                                        <th scope="col"> Bukti </th>
-                                        <th scope="col"> Tipe </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($responseData['data']['campaign_report_details'] as $item)
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $item['date'] }}</td>
-                                            <td>Rp {{ number_format($item['amount'], 0, ".", ".") }}</td>
-                                            <td>{{ $item['description'] }}</td>
-                                            <td><a href="{{ $item['evidence'] }}">Bukti</a></td>
-                                            <td>{{ $item['type'] }}</td>
+                                            <th scope="col" style="width: 10px;"> Tanggal</th>
+                                            <th scope="col" style="width: 10px;"> Jumlah </th>
+                                            <th scope="col" style="width: 20px;"> Deskripsi </th>
+                                            <th scope="col" style="width: 180px;"> Bukti </th>
+                                            <th scope="col"> Tipe </th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($responseData['data']['campaign_report_details'] as $item)
+                                        <tr>
+                                            <td style="max-width: 10px; overflow: hidden; text-overflow: ellipsis;">{{$item['date']}}</td>
+                                            <td style="max-width: 10px; overflow: hidden; text-overflow: ellipsis;">{{$item['amount']}}</td>
+                                            <td style="max-width: 20px; overflow: hidden; text-overflow: ellipsis;">{{$item['description']}}</td>
+                                            <td style="max-width: 180px; overflow: hidden; text-overflow: ellipsis;">{{$item['evidence']}}</td>
+                                            <td>{{$item['type']}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

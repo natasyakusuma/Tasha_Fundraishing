@@ -35,13 +35,14 @@ Route::middleware('auth.check')->group(function () {
     Route::prefix('profile')->group(function () {
         Route::get('/', [ProfileController::class, 'profilePage'])->name('view_profile');
         Route::get('/edit/{id}', [ProfileController::class, 'profileEditPage'])->name('edit_profile');
+        Route::post('/update/{id}', [ProfileController::class, 'profileUpdate'])->name('update_profile');
     });
 
     // Route - Proyek
     Route::prefix('proyek')->group(function () {
         Route::get('/create', [ProjectController::class, 'projectCreatePage'])->name('create_project');
         Route::post('/create', [ProjectController::class, 'projectCreate'])->name('projectCreateForm');
-        Route::post('/success', [ProjectController::class, 'projectSuccessPage'])->name('success_project');
+        Route::get('/success', [ProjectController::class, 'projectSuccessPage'])->name('success_project');
         Route::get('/edit/{id}', [ProjectController::class, 'projectEditPage'])->name('edit_project');
         Route::post('/update/{id}', [ProjectController::class, 'projectUpdate'])->name('projectUpdateForm');
         Route::get('/list', [ProjectController::class, 'projectListPage'])->name('list_project');
@@ -54,7 +55,7 @@ Route::middleware('auth.check')->group(function () {
     Route::prefix('laporan-proyek')->group(function () {
         Route::get('/create', [ReportController::class, 'projectReportCreatePage'])->name('create_laporan_project');
         Route::post('/create', [ReportController::class, 'projectReportCreate'])->name('projectReportCreateForm');
-        Route::post('/success', [ReportController::class, 'projectReportSuccessPage'])->name('success_laporan_project');
+        Route::get('/success', [ReportController::class, 'projectReportSuccessPage'])->name('success_laporan_project');
         Route::get('/edit', [ReportController::class, 'projectReportEditPage'])->name('edit_laporan_project');
         Route::get('/list', [ReportController::class, 'projectReportListPage'])->name('list_laporan_project');
         Route::get('/{id}', [ReportController::class, 'projectReportDetailPage'])->name('detail_laporan_project');
@@ -64,7 +65,7 @@ Route::middleware('auth.check')->group(function () {
     Route::prefix('pengembalian-dana')->group(function () {
         Route::get('/create', [RefundController::class, 'refundPage'])->name('create_return_dana');
         Route::post('/create', [RefundController::class, 'refundCreate'])->name('refundCreateForm');
-        Route::post('/success', [RefundController::class, 'refundSuccessPage'])->name('success_dana_project');
+        Route::get('/success', [RefundController::class, 'refundSuccessPage'])->name('success_dana_project');
         Route::get('/edit', [RefundController::class, 'refundEditPage'])->name('edit_return_dana_project');
         Route::get('simulasi', [RefundController::class, 'refundSimulation'])->name('simulation_return_dana_project');
         Route::get('/list', [RefundController::class, 'refundListPage'])->name('list_return_dana_project');

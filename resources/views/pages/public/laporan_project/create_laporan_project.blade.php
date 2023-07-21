@@ -12,11 +12,11 @@ Membuat Laporan Proyek
         <div class="popup-container">
             <h2>Dokumen Laporan Proyek</h2>
             <p>
-                Untuk membuat laporan proyek Anda , dapat mengundah template laporan pada button berikut. 
+                Untuk membuat laporan proyek Anda , dapat mengundah template laporan pada button berikut. Pastikan mengunduh dalam format .CSV 
                 Jika sudah membuat laporan, Anda dapat melanjutkannya untuk submit
             </p>
-            <button class="button" id="cancel-button" type="submit"> Template Laporan </button>
-            <button class="button" id="next-button" type="submit"> Selanjutnya </button>
+            <a class="btn btn-success" id="cancel-button" href="http://bit.ly/TemplateReportUMKM"> Template Laporan </a>
+            <a class="btn btn-primary" id="next-button" type="submit"> Selanjutnya </a>
             <button class="close-btn" id="close-btn">&times;</button>
         </div>
     </div>
@@ -40,7 +40,7 @@ Membuat Laporan Proyek
                         <label for="InputProyek" class="form-label">Nama Proyek</label>
                         <select class="form-select" id="InputProyek" name="projectName" required>
                             <option value="">Pilih Tipe Proyek</option>
-                            @foreach ($responseData['data'] as $item)
+                            @foreach ($responseData as $item)
                                 <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                             @endforeach
                         </select>
@@ -49,7 +49,9 @@ Membuat Laporan Proyek
                         <label for="UploadDocument" class="form-label">Upload File Laporan</label>
                         <input type="file" class="form-control" id="UploadDocument" name="uploadDocument" required>
                     </div>
+
                     <button type="submit" id="next-button" class="col-12 btn btn-primary mb-3 shadow">Submit</button>
+                    
                 </form>
             </div>
         </div>

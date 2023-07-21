@@ -14,11 +14,12 @@ class RefundController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . '/campaign?id_user=' . $userId);
+        ])->get(env('API_URL').'/campaign?id_user='.$userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
-            $responseData = $response->json();
+            //$responseData = $response->json();
+            $responseData = collect($response['data'])->where('status','==', 'RUNNING')->all();
             return view('pages.public.pengembalian_dana.create_return_dana_project', compact('responseData'));
         } else {
             // Permintaan gagal, menampilkan pesan error
@@ -35,7 +36,15 @@ class RefundController extends Controller
     public function refundCreate(Request $request) 
     {
         $token = session('token');
-        $fileReceipt = $request->file('fileReceipt');
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer ' . $token,
+        // ])->attach('file_receipt', $request->file('fileReceipt'))
+        // ->asForm()->post(env('API_URL').'payment/do-payment', [
+        //     'id_campaign' => $request->projectName,
+        //     'amount' => $request->amount,
+        // ]);
+
+        $file = $request->file('fileReceipt');
         $data = [
             'id_campaign' => $request->projectName,
             'amount' => $request->amount,
@@ -45,14 +54,14 @@ class RefundController extends Controller
             'Authorization' => 'Bearer ' . $token,
         ])->attach(
             'file_receipt', // Nama file yang diharapkan oleh API (gantilah sesuai dengan kebutuhan)
-            file_get_contents($fileReceipt->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
-            $fileReceipt->getClientOriginalName() // Nama asli file
+            file_get_contents($file->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
+            $file->getClientOriginalName() // Nama asli file
         )->post(env('API_URL') . '/payment/do-payment', $data);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             session(['message' => "Pengajuan pengembalian dana diproses"]);
-            return redirect()->route('list_return_dana_project');
+            return redirect()->route('success_dana_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
@@ -129,11 +138,12 @@ class RefundController extends Controller
         $userId = session('user_id');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . '/payment?id_user=' . $userId);
+        ])->get(env('API_URL') . '/payment/with-campaign?id_user=' . $userId);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
-            $responseData = $response->json();
+            //$responseData = $response->json();
+            $responseData = collect($response['data'])->where('amount','!=',null)->all();
             $message = session('message');
             session()->forget('message');
             return view('pages.public.pengembalian_dana.list_return_dana_project', compact('responseData', 'message'));

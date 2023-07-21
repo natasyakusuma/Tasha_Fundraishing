@@ -19,7 +19,7 @@ Detail Penarikan Dana
                                         <p> <b> Nama Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ $responseData['data']['name'] }}</p>
+                                        <p>{{ $responseData['data'][0]['name'] }}</p>
                                     </td>
                                 </tr>
 
@@ -28,7 +28,7 @@ Detail Penarikan Dana
                                         <p> <b> Mulai Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['start_date'])->format('d-m-Y') }}</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data'][0]['start_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -36,7 +36,7 @@ Detail Penarikan Dana
                                         <p> <b> Akhir Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ \Carbon\Carbon::parse($responseData['data']['closing_date'])->format('d-m-Y') }}</p>
+                                        <p>{{ \Carbon\Carbon::parse($responseData['data'][0]['closing_date'])->format('d-m-Y') }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -44,7 +44,7 @@ Detail Penarikan Dana
                                         <p> <b> Tipe Proyek </b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ $responseData['data']['type'] }}</p>
+                                        <p>{{ $responseData['data'][0]['type'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,7 +52,7 @@ Detail Penarikan Dana
                                         <p> <b> Kategori</b> </p>
                                     </td>
                                     <td>
-                                        <p>{{ $responseData['data']['category'] }}</p>
+                                        <p>{{ $responseData['data'][0]['category'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -60,7 +60,7 @@ Detail Penarikan Dana
                                         <p> <b> Total Dana Pengajuan </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp {{ number_format($responseData['data']['target_funding_amount'], 0, ".", ".") }}</p>
+                                        <p>Rp {{ number_format($responseData['data'][0]['target_funding_amount'], 0, ".", ".") }}</p>
                                     </td>
                                 </tr>
 
@@ -69,7 +69,7 @@ Detail Penarikan Dana
                                         <p> <b> Status</b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: #67B74B">{{ $responseData['data']['status'] }}</p>
+                                        <p style="color: #67B74B">{{ $responseData['data'][0]['status'] }}</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -91,7 +91,7 @@ Detail Penarikan Dana
                                         <p> <b> Nama Lengkap Penerima </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                        <p>{{ $responseData['data'][0]['full_name'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -99,7 +99,7 @@ Detail Penarikan Dana
                                         <p> <b> Bank Tujuan </b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                    <p>{{ $responseData['data'][0]['bank_name'] }}</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -107,7 +107,7 @@ Detail Penarikan Dana
                                         <p> <b> Nomor Rekening</b> </p>
                                     </td>
                                     <td>
-                                        <p style="color: red">- Ga ada di return BE -</p>
+                                    <p>{{ $responseData['data'][0]['account_number'] }}</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -127,7 +127,7 @@ Detail Penarikan Dana
                                         <p> <b> Total Dana Terkumpul </b> </p>
                                     </td>
                                     <td>
-                                        <p>Rp {{ number_format($responseData['data']['current_funding_amount'], 0, ".", ".") }}</p>
+                                        <p>Rp {{ number_format($responseData['data'][0]['target_funding_amount'], 0, ".", ".") }}</p>
                                     </td>
                                     <td class="td-3">
 
@@ -178,9 +178,9 @@ Detail Penarikan Dana
                                 </tr>
                             </tbody>
                         </table>
-                        <form action="{{ route('withdrawFrom', $responseData['data']['id']) }}" method="POST">
+                        <form action="{{ route('withdrawFrom', $responseData['data'][0]['id']) }}" method="POST">
                             @csrf
-                            <input type="number" name="amount" value="{{ $responseData['data']['current_funding_amount'] }}" hidden>
+                            <input type="number" name="amount" value="{{ $totalWithDraw }}" hidden>
                             <button type="submit" class="btn btn-primary" id="liveToastBtn">Tarik Dana</button>
                         </form>
                     </div>

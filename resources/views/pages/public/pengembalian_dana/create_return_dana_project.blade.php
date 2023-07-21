@@ -32,7 +32,7 @@ Pengajuan Pengembalian Dana
                         <label for="InputProyek" class="form-label">Nama Proyek</label>
                         <select class="form-select" id="InputProyek" name="projectName" required>
                             <option value="">Pilih Tipe Proyek</option>
-                            @foreach ($responseData['data'] as $item)
+                            @foreach ($responseData as $item)
                                 <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                             @endforeach
                         </select>

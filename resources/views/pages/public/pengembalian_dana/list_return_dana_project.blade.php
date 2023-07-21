@@ -19,25 +19,27 @@ Pengembalian Dana Saya
                     <thead>
                         <tr>
                             <th scope="col"> Nama Proyek</th>
-                            <th scope="col"> Tanggal Pengembalian </th>
                             <th scope="col"> Waktu Pengembalian </th>
-                            <th scope="col"> Total Dana Pengembalian </th>
+                            <th scope="col"> Jumlah Pengembalian </th>
                             <th scope="col"> Status </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($responseData['data'] as $item)
-                            <tr>
-                                <td style="color: red"><a href="#">- ga ada di return BE -</a></td>
-                                <td style="color: red">- ga ada di return BE -</td>
-                                <td style="color: red">- ga ada di return BE -</td>
-                                <td>Rp {{ number_format($item['amount'], 0, ".", ".") }}</td>
-                                <td>
-                                    <button class="btn btn-verification" disabled style="pointer-events: none;">
-                                        <span>{{ $item['status'] }}</span>
-                                    </button>
-                                </td>
-                            </tr>
+                        @foreach ($responseData as $item)
+                        <tr>
+                            <td><a href="#">{{$item['name']}}</a></td>
+                            <td>{{$item['updated_at']}}</td>
+                            <td>Rp {{ number_format($item['amount'], 0, ".", ".") }}</td>
+                            <td>
+                                @if($item['status'] == "WAITING_VERIFICATION" )
+                                <span class="badge bg-warning">{{ $item['status'] }}</span>
+                                @elseif($item['status'] == "REJECTED")
+                                <span class="badge bg-danger">{{ $item['status'] }}</span>
+                                @elseif($item['status'] == "APPROVED")
+                                <span class="badge bg-success">{{ $item['status'] }}</span>
+                                @endif
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -45,18 +47,17 @@ Pengembalian Dana Saya
         </div>
     </div>
     @if ($message)
-        <div class="toast-container position-fixed top-0 end-0 p-3">
-            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <strong class="me-auto"> Berhasil </strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    {{ $message }}
-                </div>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto"> Berhasil </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                {{ $message }}
             </div>
         </div>
+    </div>
     @endif
 </div>
 @endsection

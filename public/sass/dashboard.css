@@ -610,6 +610,12 @@ main .container .banner {
     object-fit: cover;
 }
 
+main .content-data .carousel-button .carousel-control-prev,
+main .content-data .carousel-button .carousel-control-next{
+    position: static;
+    width: 50px;
+}
+
 
 
 /* form */

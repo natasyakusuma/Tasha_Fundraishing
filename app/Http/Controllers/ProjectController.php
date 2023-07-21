@@ -18,7 +18,7 @@ class ProjectController extends Controller
     public function projectCreate(Request $request)
     {
         $token = session('token');
-        $prospektus = $request->file('prospektus');
+        $file = $request->file('prospektus');
         $banner = $request->file('banner');
         $data = [
             'name' => $request->name,
@@ -42,8 +42,8 @@ class ProjectController extends Controller
             'Authorization' => 'Bearer ' . $token,
         ])->attach(
             'file_prospektus', // Nama file yang diharapkan oleh API (gantilah sesuai dengan kebutuhan)
-            file_get_contents($prospektus->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
-            $prospektus->getClientOriginalName() // Nama asli file
+            file_get_contents($file->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
+            $file->getClientOriginalName() // Nama asli file
         )->attach(
             'file_banner[]', // Nama file yang diharapkan oleh API (gantilah sesuai dengan kebutuhan)
             file_get_contents($banner->getRealPath()), // Baca isi file dan kirimkan sebagai lampiran
@@ -53,7 +53,7 @@ class ProjectController extends Controller
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             session(['message' => "Data berhasil dibuat"]);
-            return redirect()->route('list_project');
+            return redirect()->route('success_project');
         } else {
             // Permintaan gagal, menampilkan pesan error
             $errorResponse = $response->json();
@@ -206,15 +206,16 @@ class ProjectController extends Controller
         $token = session('token');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $token,
-        ])->get(env('API_URL') . '/campaign/' . $id);
+        ])->get(env('API_URL') . '/withdraw/detail/' . $id);
 
         if ($response->successful()) {
             // Permintaan berhasil, menampilkan data respons
             $responseData = $response->json();
+            //dd($responseData);
             $currentDate = Carbon::now();
-            $closingDate = Carbon::parse($responseData['data']['closing_date']);
+            $closingDate = Carbon::parse($responseData['data'][0]['closing_date']);
             $remainingDate = $currentDate->diffInDays($closingDate);
-            $totalWithDraw = ($responseData['data']['current_funding_amount']-110000);
+            $totalWithDraw = ($responseData['data'][0]['target_funding_amount'] - 110000);
             return view('pages.public.daftar_project.detail_withdraw_project', compact('responseData', 'remainingDate', 'totalWithDraw'));
         } else {
             // Permintaan gagal, menampilkan pesan error

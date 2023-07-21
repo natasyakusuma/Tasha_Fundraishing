@@ -73,6 +73,18 @@ Login
         <!-- Data  -->
         <div class="data">
             <div class="content-data shadow">
+
+                <div class="carousel-button d-flex justify-content-end">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <img src="{{asset('img/Arrow_LeftSquare.png')}}" alt="">
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <img src="{{asset('img/Arrow_RightSquare.png')}}" alt="">
+                    </button>
+                </div>
+
                 <!-- Carousel  -->
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -90,18 +102,6 @@ Login
                                 <div class="col-md-6 bar-chart">
                                     <div class="head">
                                         <h3> Progress Pengumpulan Dana</h3>
-
-                                        <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"> 
-                                                <i data-feather="arrow-right-feather"> </i></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
                                     </div>
 
                                     <div class="row mb-3">
